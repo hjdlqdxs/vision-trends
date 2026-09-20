@@ -1,0 +1,51 @@
+{
+  "testedAt": "2026-09-20T09:31:15.693Z",
+  "passed": true,
+  "findings": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 2155
+    },
+    {
+      "path": "/app.js",
+      "status": 200,
+      "bytes": 28282
+    },
+    {
+      "path": "/charts.js",
+      "status": 200,
+      "bytes": 4272
+    },
+    {
+      "path": "/import.js",
+      "status": 200,
+      "bytes": 7796
+    },
+    {
+      "path": "/styles.css",
+      "status": 200,
+      "bytes": 14490
+    },
+    {
+      "path": "/api/health",
+      "status": 200,
+      "bytes": 29
+    },
+    {
+      "operation": "Actual online exact-title crawl through HTTP",
+      "title": "Segment Anything",
+      "abstractCharacters": 866,
+      "keywords": [
+        "Image segmentation",
+        "Few-shot learning"
+      ],
+      "sourceUrl": "https://openaccess.thecvf.com/content/ICCV2023/html/Kirillov_Segment_Anything_ICCV_2023_paper.html",
+      "paperUrl": "https://openaccess.thecvf.com/content/ICCV2023/papers/Kirillov_Segment_Anything_ICCV_2023_paper.pdf"
+    },
+    {
+      "operation": "Exact search after real crawl",
+      "total": 1
+    }
+  ]
+}

@@ -250,6 +250,8 @@ Docker以非root用户运行，SQLite保存在具名卷；容器启动幂等导�
 
 当前16项自动化测试通过，覆盖CRUD、持久化、去重、关键词边界、统计、缺失年份、CSV、官网解析、错误响应、访问权限和在线回退。`docs/test-before-fix.txt`与`docs/test-after-fix.txt`保留真实前后结果。
 
+另外通过真实HTTP接口采集ICCV 2023《Segment Anything》，取得866字符官方摘要、关键词和PDF链接，随后精确查询命中。使用临时内存库，不修改正式样本；结果见 `docs/live-smoke.json`。首页与前端资源返回200，但资源可访问不等于浏览器交互已验收。
+
 Node默认测试子进程受当前Windows管理环境限制，测试命令使用非隔离模式；测试数据库仍分别创建。运行时不用Python，Python仅用于可选图表导出。
 
 浏览器渲染与交互截图尚未通过：Chrome、Edge及独立headless-shell启动受到Windows IPC限制。不能把HTTP测试或统计图视为真实浏览器验收。Figma执行与华为云部署也需要在本人实际环境验证。

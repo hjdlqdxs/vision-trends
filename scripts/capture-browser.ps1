@@ -1,9 +1,9 @@
 param(
-  [string]$Browser = 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe',
-  [int]$DebugPort = 9224
+  [string]$Browser = 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
 )
 # Run in your normal PowerShell session; the Codex managed sandbox may block browser IPC.
 $ErrorActionPreference = 'Stop'
+$DebugPort = 9224
 $projectDir = Split-Path -Parent $PSScriptRoot
 $profileDir = Join-Path $projectDir 'var\capture-browser-profile'
 New-Item -ItemType Directory -Force -Path $profileDir | Out-Null

@@ -21,6 +21,8 @@ npm run check
 
 选择方法为官方目录顺序等间距，不是随机抽样。官网列表数量是采集时解析条目数，可能与会议最终官方录取总数不同；没有强行改成作业举例数字。
 
+另运行 `node scripts/live-smoke.mjs`：通过真实HTTP接口抓取ICCV 2023《Segment Anything》，确认官方摘要、关键词、PDF及入库后精确查询均成功，同时确认首页和所有前端资源返回200。结果在 `docs/live-smoke.json`；使用临时内存库，没有污染演示库。这是网络/API验收，不替代浏览器渲染验收。
+
 ## 可视化材料
 
 `scripts/export-analytics.mjs` 直接调用应用统计模块生成数据，Python matplotlib/Pillow 导出11张PNG、2张GIF。已查看Top10和最终趋势图检查文字、配色和数据标签。图表不是浏览器界面截图。
