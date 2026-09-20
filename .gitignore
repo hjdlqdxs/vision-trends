@@ -1,0 +1,15 @@
+node_modules/
+var/
+.env
+*.log
+*.sqlite
+*.sqlite-*
+coverage/
+dist/
+.DS_Store
+Thumbs.db
+.vscode/
+playwright-report/
+test-results/
+*.zip
+*.bundle
