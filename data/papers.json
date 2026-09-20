@@ -1,0 +1,1056 @@
+[
+  {
+    "title": "Dual Cross-Attention Learning for Fine-Grained Visual Categorization and Object Re-Identification",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Zhu_Dual_Cross-Attention_Learning_for_Fine-Grained_Visual_Categorization_and_Object_Re-Identification_CVPR_2022_paper.html",
+    "abstract": "Recently, self-attention mechanisms have shown impressive performance in various NLP and CV tasks, which can help capture sequential characteristics and derive global information. In this work, we explore how to extend self-attention modules to better learn subtle feature embeddings for recognizing fine-grained objects, e.g., different bird species or person identities. To this end, we propose a dual cross-attention learning (DCAL) algorithm to coordinate with self-attention learning. First, we propose global-local cross-attention (GLCA) to enhance the interactions between global images and local high-response regions, which can help reinforce the spatial-wise discriminative clues for recognition. Second, we propose pair-wise cross-attention (PWCA) to establish the interactions between image pairs. PWCA can regularize the attention learning of an image by treating another image as distractor and will be removed during inference. We observe that DCAL can reduce misleading attentions and diffuse the attention response to discover more complementary parts for recognition. We conduct extensive evaluations on fine-grained visual categorization and object re-identification. Experiments demonstrate that DCAL performs on par with state-of-the-art methods and consistently improves multiple self-attention baselines, e.g., surpassing DeiT-Tiny and ViT-Base by 2.8% and 2.4% mAP on MSMT17, respectively.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Zhu_Dual_Cross-Attention_Learning_for_Fine-Grained_Visual_Categorization_and_Object_Re-Identification_CVPR_2022_paper.pdf",
+    "authors": "Zhu, Haowei; Ke, Wenjing; Li, Dong; Liu, Ji; Tian, Lu; Shan, Yi",
+    "keywords": [
+      "Visual recognition"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:37.966Z"
+  },
+  {
+    "title": "EfficientNeRF Efficient Neural Radiance Fields",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Hu_EfficientNeRF__Efficient_Neural_Radiance_Fields_CVPR_2022_paper.html",
+    "abstract": "Neural Radiance Fields (NeRF) has been wildly applied to various tasks for its high-quality representation of 3D scenes. It takes long per-scene training time and per-image testing time. In this paper, we present EfficientNeRF as an efficient NeRF-based method to represent 3D scene and synthesize novel-view images. Although several ways exist to accelerate the training or testing process, it is still difficult to much reduce time for both phases simultaneously. We analyze the density and weight distribution of the sampled points then propose valid and pivotal sampling at the coarse and fine stage, respectively, to significantly improve sampling efficiency. In addition, we design a novel data structure to cache the whole scene during testing to accelerate the testing speed. Overall, our method can reduce over 88% of training time, reach testing speed of around 200 to 500 FPS, while still achieving competitive accuracy. Experiments prove that our method promotes the practicality of NeRF in the real world and enables many applications.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Hu_EfficientNeRF__Efficient_Neural_Radiance_Fields_CVPR_2022_paper.pdf",
+    "authors": "Hu, Tao; Liu, Shu; Chen, Yilun; Shen, Tiancheng; Jia, Jiaya",
+    "keywords": [
+      "3D vision",
+      "Neural rendering"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:38.613Z"
+  },
+  {
+    "title": "Partially Does It: Towards Scene-Level FG-SBIR With Partial Input",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Chowdhury_Partially_Does_It_Towards_Scene-Level_FG-SBIR_With_Partial_Input_CVPR_2022_paper.html",
+    "abstract": "We scrutinise an important observation plaguing scene-level sketch research -- that a significant portion of scene sketches are \"partial\". A quick pilot study reveals: (i) a scene sketch does not necessarily contain all objects in the corresponding photo, due to the subjective holistic interpretation of scenes, (ii) there exists significant empty (white) regions as a result of object-level abstraction, and as a result, (iii) existing scene-level fine-grained sketch-based image retrieval methods collapse as scene sketches become more partial. To solve this \"partial\" problem, we advocate for a simple set-based approach using optimal transport (OT) to model cross-modal region associativity in a partially-aware fashion. Importantly, we improve upon OT to further account for holistic partialness by comparing intra-modal adjacency matrices. Our proposed method is not only robust to partial scene-sketches but also yields state-of-the-art performance on existing datasets.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Chowdhury_Partially_Does_It_Towards_Scene-Level_FG-SBIR_With_Partial_Input_CVPR_2022_paper.pdf",
+    "authors": "Chowdhury, Pinaki Nath; Bhunia, Ayan Kumar; Gajjala, Viswanatha Reddy; Sain, Aneeshan; Xiang, Tao; Song, Yi-Zhe",
+    "keywords": [],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:39.249Z"
+  },
+  {
+    "title": "Distinguishing Unseen From Seen for Generalized Zero-Shot Learning",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Su_Distinguishing_Unseen_From_Seen_for_Generalized_Zero-Shot_Learning_CVPR_2022_paper.html",
+    "abstract": "Generalized zero-shot learning (GZSL) aims to recognize samples whose categories may not have been seen at training. Recognizing unseen classes as seen ones or vice versa often leads to poor performance in GZSL. Therefore, distinguishing seen and unseen domains is naturally an effective yet challenging solution for GZSL. In this paper, we present a novel method which leverages both visual and semantic modalities to distinguish seen and unseen categories. Specifically, our method deploys two variational autoencoders to generate latent representations for visual and semantic modalities in a shared latent space, in which we align latent representations of both modalities by Wasserstein distance and reconstruct two modalities with the representations of each other. In order to learn a clearer boundary between seen and unseen classes, we propose a two-stage training strategy which takes advantage of seen and unseen semantic descriptions and searches a threshold to separate seen and unseen visual samples. At last, a seen expert and an unseen expert are used for final classification. Extensive experiments on five widely used benchmarks verify that the proposed method can significantly improve the results of GZSL. For instance, our method correctly recognizes more than 99% samples when separating domains and improves the final classification accuracy from 72.6% to 82.9% on AWA1.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Su_Distinguishing_Unseen_From_Seen_for_Generalized_Zero-Shot_Learning_CVPR_2022_paper.pdf",
+    "authors": "Su, Hongzu; Li, Jingjing; Chen, Zhi; Zhu, Lei; Lu, Ke",
+    "keywords": [
+      "Few-shot learning"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:39.902Z"
+  },
+  {
+    "title": "Depth-Guided Sparse Structure-From-Motion for Movies and TV Shows",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Liu_Depth-Guided_Sparse_Structure-From-Motion_for_Movies_and_TV_Shows_CVPR_2022_paper.html",
+    "abstract": "Existing approaches for Structure from Motion (SfM) produce impressive 3D reconstruction results especially when using imagery captured with large parallax. However, to create engaging video-content in movies and TV shows, the amount by which a camera can be moved while filming a particular shot is often limited. The resulting small-motion parallax between video frames makes standard geometry-based SfM approaches not as effective for movies and TV shows. To address this challenge, we propose a simple yet effective approach that uses single-frame depth-prior obtained from a pretrained network to significantly improve geometry-based SfM for our small-parallax setting. To this end, we first use the depth-estimates of the detected keypoints to reconstruct the point cloud and camera-pose for initial two-view reconstruction. We then perform depth-regularized optimization to register new images and triangulate the new points during incremental reconstruction. To comprehensively evaluate our approach, we introduce a new dataset (StudioSfM) consisting of 130 shots with 21K frames from 15 studio-produced videos that are manually annotated by a professional CG studio. We demonstrate that our approach: (a) significantly improves the quality of 3D reconstruction for our small-parallax setting, (b) does not cause any degradation for data with large-parallax, and (c) maintains the generalizability and scalability of geometry-based sparse SfM. Our dataset can be obtained at github.com/amazon-research/small-baseline-camera-tracking.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_Depth-Guided_Sparse_Structure-From-Motion_for_Movies_and_TV_Shows_CVPR_2022_paper.pdf",
+    "authors": "Liu, Sheng; Nie, Xiaohan; Hamid, Raffay",
+    "keywords": [
+      "3D vision",
+      "Video understanding",
+      "Tracking"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:40.543Z"
+  },
+  {
+    "title": "Performance-Aware Mutual Knowledge Distillation for Improving Neural Architecture Search",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Xie_Performance-Aware_Mutual_Knowledge_Distillation_for_Improving_Neural_Architecture_Search_CVPR_2022_paper.html",
+    "abstract": "Knowledge distillation has shown great effectiveness for improving neural architecture search (NAS). Mutual knowledge distillation (MKD), where a group of models mutually generate knowledge to train each other, has achieved promising results in many applications. In existing MKD methods, mutual knowledge distillation is performed between models without scrutiny: a worse-performing model is allowed to generate knowledge to train a better-performing model, which may lead to collective failures. To address this problem, we propose a performance-aware MKD (PAMKD) approach for NAS, where knowledge generated by model A is allowed to train model B only if the performance of A is better than B. We propose a three-level optimization framework to formulate PAMKD, where three learning stages are performed end-to-end: 1) each model trains an initial model independently; 2) the initial models are evaluated on a validation set and better-performing models generate knowledge to train worse-performing models; 3) architectures are updated by minimizing a validation loss. Experimental results on a variety of datasets demonstrate that our method is effective.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Xie_Performance-Aware_Mutual_Knowledge_Distillation_for_Improving_Neural_Architecture_Search_CVPR_2022_paper.pdf",
+    "authors": "Xie, Pengtao; Du, Xuefeng",
+    "keywords": [],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:41.237Z"
+  },
+  {
+    "title": "VisualGPT: Data-Efficient Adaptation of Pretrained Language Models for Image Captioning",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Chen_VisualGPT_Data-Efficient_Adaptation_of_Pretrained_Language_Models_for_Image_Captioning_CVPR_2022_paper.html",
+    "abstract": "The limited availability of annotated data often hinders real-world applications of machine learning. To efficiently learn from small quantities of multimodal data, we leverage the linguistic knowledge from a large pre-trained language model (PLM) and quickly adapt it to new domains of image captioning. To effectively utilize a pretrained model, it is critical to balance the visual input and prior linguistic knowledge from pretraining. We propose VisualGPT, which employs a novel self-resurrecting encoder-decoder attention mechanism to quickly adapt the PLM with a small amount of in-domain image-text data. The proposed self-resurrecting activation unit produces sparse activations that prevent accidental overwriting of linguistic knowledge. When trained on 0.1%, 0.5% and 1% of the respective training sets, VisualGPT surpasses the best baseline by up to 10.0% CIDEr on MS COCO and 17.9% CIDEr on Conceptual Captions. Furthermore, VisualGPT achieves the state-of-the-art result on IU X-ray, a medical report generation dataset. Our code is available at https://github.com/Vision-CAIR/VisualGPT.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Chen_VisualGPT_Data-Efficient_Adaptation_of_Pretrained_Language_Models_for_Image_Captioning_CVPR_2022_paper.pdf",
+    "authors": "Chen, Jun; Guo, Han; Yi, Kai; Li, Boyang; Elhoseiny, Mohamed",
+    "keywords": [
+      "Transformers",
+      "Multimodal learning",
+      "Medical imaging"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:41.878Z"
+  },
+  {
+    "title": "COAP: Compositional Articulated Occupancy of People",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Mihajlovic_COAP_Compositional_Articulated_Occupancy_of_People_CVPR_2022_paper.html",
+    "abstract": "We present a novel neural implicit representation for articulated human bodies. Compared to explicit template meshes, neural implicit body representations provide an efficient mechanism for modeling interactions with the environment, which is essential for human motion reconstruction and synthesis in 3D scenes. However, existing neural implicit bodies suffer from either poor generalization on highly articulated poses or slow inference time. In this work, we observe that prior knowledge about the human body's shape and kinematic structure can be leveraged to improve generalization and efficiency. We decompose the full-body geometry into local body parts and employ a part-aware encoder-decoder architecture to learn neural articulated occupancy that models complex deformations locally. Our local shape encoder represents the body deformation of not only the corresponding body part but also the neighboring body parts. The decoder incorporates the geometric constraints of local body shape which significantly improves pose generalization. We demonstrate that our model is suitable for resolving self-intersections and collisions with 3D environments. Quantitative and qualitative experiments show that our method largely outperforms existing solutions in terms of both efficiency and accuracy.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Mihajlovic_COAP_Compositional_Articulated_Occupancy_of_People_CVPR_2022_paper.pdf",
+    "authors": "Mihajlovic, Marko; Saito, Shunsuke; Bansal, Aayush; Zollhöfer, Michael; Tang, Siyu",
+    "keywords": [
+      "3D vision"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:42.525Z"
+  },
+  {
+    "title": "OmniFusion: 360 Monocular Depth Estimation via Geometry-Aware Fusion",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Li_OmniFusion_360_Monocular_Depth_Estimation_via_Geometry-Aware_Fusion_CVPR_2022_paper.html",
+    "abstract": "A well-known challenge in applying deep-learning methods to omnidirectional images is spherical distortion. In dense regression tasks such as depth estimation, where structural details are required, using a vanilla CNN layer on the distorted 360 image results in undesired information loss. In this paper, we propose a 360 monocular depth estimation pipeline, OmniFusion, to tackle the spherical distortion issue. Our pipeline transforms a 360 image into less-distorted perspective patches (i.e. tangent images) to obtain patch-wise predictions via CNN, and then merge the patch-wise results for final output. To handle the discrepancy between patch-wise predictions which is a major issue affecting the merging quality, we propose a new framework with the following key components. First, we propose a geometry-aware feature fusion mechanism that combines 3D geometric features with 2D image features to compensate for the patch-wise discrepancy. Second, we employ the self-attention-based transformer architecture to conduct a global aggregation of patch-wise information, which further improves the consistency. Last, we introduce an iterative depth refinement mechanism, to further refine the estimated depth based on the more accurate geometric features. Experiments show that our method greatly mitigates the distortion issue, and achieves state-of-the-art performances on several 360 monocular depth estimation benchmark datasets.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Li_OmniFusion_360_Monocular_Depth_Estimation_via_Geometry-Aware_Fusion_CVPR_2022_paper.pdf",
+    "authors": "Li, Yuyan; Guo, Yuliang; Yan, Zhixin; Huang, Xinyu; Duan, Ye; Ren, Liu",
+    "keywords": [
+      "3D vision",
+      "Transformers",
+      "Depth estimation"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:43.181Z"
+  },
+  {
+    "title": "Learning To Collaborate in Decentralized Learning of Personalized Models",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Li_Learning_To_Collaborate_in_Decentralized_Learning_of_Personalized_Models_CVPR_2022_paper.html",
+    "abstract": "Learning personalized models for user-customized computer-vision tasks is challenging due to the limited private-data and computation available on each edge device. Decentralized learning (DL) can exploit the images distributed over devices on a network topology to train a global model but is not designed to train personalized models for different tasks or optimize the topology. Moreover, the mixing weights used to aggregate neighbors' gradient messages in DL can be sub-optimal for personalization since they are not adaptive to different nodes/tasks and learning stages. In this paper, we dynamically update the mixing-weights to improve the personalized model for each node's task and meanwhile learn a sparse topology to reduce communication costs. Our first approach, \"learning to collaborate (L2C)\", directly optimizes the mixing weights to minimize the local validation loss per node for a pre-defined set of nodes/tasks. In order to produce mixing weights for new nodes or tasks, we further develop \"meta-L2C\", which learns an attention mechanism to automatically assign mixing weights by comparing two nodes' model updates. We evaluate both methods on diverse benchmarks and experimental settings for image classification. Thorough comparisons to both classical and recent methods for IID/non-IID decentralized and federated learning demonstrate our method's advantages in identifying collaborators among nodes, learning sparse topology, and producing better personalized models with low communication and computational cost.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Learning_To_Collaborate_in_Decentralized_Learning_of_Personalized_Models_CVPR_2022_paper.pdf",
+    "authors": "Li, Shuangtong; Zhou, Tianyi; Tian, Xinmei; Tao, Dacheng",
+    "keywords": [
+      "Transformers",
+      "Visual recognition"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:43.845Z"
+  },
+  {
+    "title": "The Probabilistic Normal Epipolar Constraint for Frame-to-Frame Rotation Optimization Under Uncertain Feature Positions",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Muhle_The_Probabilistic_Normal_Epipolar_Constraint_for_Frame-to-Frame_Rotation_Optimization_Under_CVPR_2022_paper.html",
+    "abstract": "The estimation of the relative pose of two camera views is a fundamental problem in computer vision. Kneip et al. proposed to solve this problem by introducing the normal epipolar constraint (NEC). However, their approach does not take into account uncertainties, so that the accuracy of the estimated relative pose is highly dependent on accurate feature positions in the target frame. In this work, we introduce the probabilistic normal epipolar constraint (PNEC) that overcomes this limitation by accounting for anisotropic and inhomogeneous uncertainties in the feature positions. To this end, we propose a novel objective function, along with an efficient optimization scheme that effectively minimizes our objective while maintaining real-time performance. In experiments on synthetic data, we demonstrate that the novel PNEC yields more accurate rotation estimates than the original NEC and several popular relative rotation estimation algorithms. Furthermore, we integrate the proposed method into a state-of-the-art monocular rotation-only odometry system and achieve consistently improved results for the real-world KITTI dataset.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Muhle_The_Probabilistic_Normal_Epipolar_Constraint_for_Frame-to-Frame_Rotation_Optimization_Under_CVPR_2022_paper.pdf",
+    "authors": "Muhle, Dominik; Koestler, Lukas; Demmel, Nikolaus; Bernard, Florian; Cremers, Daniel",
+    "keywords": [],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:44.480Z"
+  },
+  {
+    "title": "DAIR-V2X: A Large-Scale Dataset for Vehicle-Infrastructure Cooperative 3D Object Detection",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Yu_DAIR-V2X_A_Large-Scale_Dataset_for_Vehicle-Infrastructure_Cooperative_3D_Object_Detection_CVPR_2022_paper.html",
+    "abstract": "Autonomous driving faces great safety challenges for a lack of global perspective and the limitation of long-range perception capabilities. It has been widely agreed that vehicle-infrastructure cooperation is required to achieve Level 5 autonomy. However, there is still NO dataset from real scenarios available for computer vision researchers to work on vehicle-infrastructure cooperation-related problems. To accelerate computer vision research and innovation for Vehicle-Infrastructure Cooperative Autonomous Driving (VICAD), we release DAIR-V2X Dataset, which is the first large-scale, multi-modal, multi-view dataset from real scenarios for VICAD. DAIR-V2X comprises 71254 LiDAR frames and 71254 Camera frames, and all frames are captured from real scenes with 3D annotations. The Vehicle-Infrastructure Cooperative 3D Object Detection problem (VIC3D) is introduced, formulating the problem of collaboratively locating and identifying 3D objects using sensory input from both vehicles and infrastructure. In addition to solving traditional 3D object detection problems, the solution of VIC3D needs to consider the time asynchrony problem between vehicle and infrastructure sensors and the data transmission cost between them. Furthermore, we propose Time Compensation Late Fusion (TCLF), a late fusion framework for the VIC3D task as a benchmark based on DAIR-V2X. Find data, code, and more up-to-date information at \\href https://thudair.baai.ac.cn/index https://thudair.baai.ac.cn/index and \\href https://github.com/AIR-THU/DAIR-V2X https://github.com/AIR-THU/DAIR-V2X .",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Yu_DAIR-V2X_A_Large-Scale_Dataset_for_Vehicle-Infrastructure_Cooperative_3D_Object_Detection_CVPR_2022_paper.pdf",
+    "authors": "Yu, Haibao; Luo, Yizhen; Shu, Mao; Huo, Yiyi; Yang, Zebang; Shi, Yifeng; Guo, Zhenglong; Li, Hanyu; Hu, Xing; Yuan, Jirui; Nie, Zaiqing",
+    "keywords": [
+      "3D vision",
+      "Object detection",
+      "Autonomous driving",
+      "Multimodal learning"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:45.124Z"
+  },
+  {
+    "title": "Focal Length and Object Pose Estimation via Render and Compare",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Ponimatkin_Focal_Length_and_Object_Pose_Estimation_via_Render_and_Compare_CVPR_2022_paper.html",
+    "abstract": "We introduce FocalPose, a neural render-and-compare method for jointly estimating the camera-object 6D pose and camera focal length given a single RGB input image depicting a known object. The contributions of this work are twofold. First, we derive a focal length update rule that extends an existing state-of-the-art render-and-compare 6D pose estimator to address the joint estimation task. Second, we investigate several different loss functions for jointly estimating the object pose and focal length. We find that a combination of direct focal length regression with a reprojection loss disentangling the contribution of translation, rotation, and focal length leads to improved results. We show results on three challenging benchmark datasets that depict known 3D models in uncontrolled settings. We demonstrate that our focal length and 6D pose estimates have lower error than the existing state-of-the-art methods.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Ponimatkin_Focal_Length_and_Object_Pose_Estimation_via_Render_and_Compare_CVPR_2022_paper.pdf",
+    "authors": "Ponimatkin, Georgy; Labbé, Yann; Russell, Bryan; Aubry, Mathieu; Sivic, Josef",
+    "keywords": [
+      "3D vision",
+      "Pose estimation"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:45.762Z"
+  },
+  {
+    "title": "MLP-3D: A MLP-Like 3D Architecture With Grouped Time Mixing",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Qiu_MLP-3D_A_MLP-Like_3D_Architecture_With_Grouped_Time_Mixing_CVPR_2022_paper.html",
+    "abstract": "Convolutional Neural Networks (CNNs) have been regarded as the go-to models for visual recognition. More recently, convolution-free networks, based on multi-head self-attention (MSA) or multi-layer perceptrons (MLPs), become more and more popular. Nevertheless, it is not trivial when utilizing these newly-minted networks for video recognition due to the large variations and complexities in video data. In this paper, we present MLP-3D networks, a novel MLP-like 3D architecture for video recognition. Specifically, the architecture consists of MLP-3D blocks, where each block contains one MLP applied across tokens (i.e., token-mixing MLP) and one MLP applied independently to each token (i.e., channel MLP). By deriving the novel grouped time mixing (GTM) operations, we equip the basic token-mixing MLP with the ability of temporal modeling. GTM divides the input tokens into several temporal groups and linearly maps the tokens in each group with the shared projection matrix. Furthermore, we devise several variants of GTM with different grouping strategies, and compose each variant in different blocks of MLP-3D network by greedy architecture search. Without the dependence on convolutions or attention mechanisms, our MLP-3D networks achieves 68.5%/81.4% top-1 accuracy on Something-Something V2 and Kinetics-400 datasets, respectively. Despite with fewer computations, the results are comparable to state-of-the-art widely-used 3D CNNs and video transformers.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Qiu_MLP-3D_A_MLP-Like_3D_Architecture_With_Grouped_Time_Mixing_CVPR_2022_paper.pdf",
+    "authors": "Qiu, Zhaofan; Yao, Ting; Ngo, Chong-Wah; Mei, Tao",
+    "keywords": [
+      "3D vision",
+      "Transformers",
+      "Video understanding",
+      "Visual recognition"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:46.408Z"
+  },
+  {
+    "title": "Efficient Two-Stage Detection of Human-Object Interactions With a Novel Unary-Pairwise Transformer",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Zhang_Efficient_Two-Stage_Detection_of_Human-Object_Interactions_With_a_Novel_Unary-Pairwise_CVPR_2022_paper.html",
+    "abstract": "Recent developments in transformer models for visual data have led to significant improvements in recognition and detection tasks. In particular, using learnable queries in place of region proposals has given rise to a new class of one-stage detection models, spearheaded by the Detection Transformer (DETR). Variations on this one-stage approach have since dominated human-object interaction (HOI) detection. However, the success of such one-stage HOI detectors can largely be attributed to the representation power of transformers. We discovered that when equipped with the same transformer, their two-stage counterparts can be more performant and memory-efficient, while taking a fraction of the time to train. In this work, we propose the Unary-Pairwise Transformer, a two-stage detector that exploits unary and pairwise representations for HOIs. We observe that the unary and pairwise parts of our transformer network specialise, with the former preferentially increasing the scores of positive examples and the latter decreasing the scores of negative examples. We evaluate our method on the HICO-DET and V-COCO datasets, and significantly outperform state-of-the-art approaches. At inference time, our model with ResNet50 approaches real-time performance on a single GPU.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Zhang_Efficient_Two-Stage_Detection_of_Human-Object_Interactions_With_a_Novel_Unary-Pairwise_CVPR_2022_paper.pdf",
+    "authors": "Zhang, Frederic Z.; Campbell, Dylan; Gould, Stephen",
+    "keywords": [
+      "Object detection",
+      "Transformers",
+      "Visual recognition"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:47.044Z"
+  },
+  {
+    "title": "Delving Into the Estimation Shift of Batch Normalization in a Network",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Huang_Delving_Into_the_Estimation_Shift_of_Batch_Normalization_in_a_CVPR_2022_paper.html",
+    "abstract": "Batch normalization (BN) is a milestone technique in deep learning. It normalizes the activation using mini-batch statistics during training but the estimated population statistics during inference. This paper focuses on investigating the estimation of population statistics. We define the estimation shift magnitude of BN to quantitatively measure the difference between its estimated population statistics and expected ones. Our primary observation is that the estimation shift can be accumulated due to the stack of BN in a network, which has detriment effects for the test performance. We further find a batch-free normalization (BFN) can block such an accumulation of estimation shift. These observations motivate our design of XBNBlock that replace one BN with BFN in the bottleneck block of residual-style networks. Experiments on the ImageNet and COCO benchmarks show that XBNBlock consistently improves the performance of different architectures, including ResNet and ResNeXt, by a significant margin and seems to be more robust to distribution shift.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Huang_Delving_Into_the_Estimation_Shift_of_Batch_Normalization_in_a_CVPR_2022_paper.pdf",
+    "authors": "Huang, Lei; Zhou, Yi; Wang, Tian; Luo, Jie; Liu, Xianglong",
+    "keywords": [
+      "Domain adaptation"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:47.692Z"
+  },
+  {
+    "title": "Bi-Level Doubly Variational Learning for Energy-Based Latent Variable Models",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Kan_Bi-Level_Doubly_Variational_Learning_for_Energy-Based_Latent_Variable_Models_CVPR_2022_paper.html",
+    "abstract": "Energy-based latent variable models (EBLVMs) are more expressive than conventional energy-based models. However, its potential on visual tasks are limited by its training process based on maximum likelihood estimate that requires sampling from two intractable distributions. In this paper, we propose Bi-level doubly variational learning (BiDVL), which is based on a new bi-level optimization framework and two tractable variational distributions to facilitate learning EBLVMs. Particularly, we lead a decoupled EBLVM consisting of a marginal energy-based distribution and a structural posterior to handle the difficulties when learning deep EBLVMs on images. By choosing a symmetric KL divergence in the lower level of our framework, a compact BiDVL for visual tasks can be obtained. Our model achieves impressive image generation performance over related works. It also demonstrates the significant capacity of testing image reconstruction and out-of-distribution detection.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Kan_Bi-Level_Doubly_Variational_Learning_for_Energy-Based_Latent_Variable_Models_CVPR_2022_paper.pdf",
+    "authors": "Kan, Ge; Lü, Jinhu; Wang, Tian; Zhang, Baochang; Zhu, Aichun; Huang, Lei; Guo, Guodong; Snoussi, Hichem",
+    "keywords": [
+      "Image generation"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:48.332Z"
+  },
+  {
+    "title": "GrainSpace: A Large-Scale Dataset for Fine-Grained and Domain-Adaptive Recognition of Cereal Grains",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Fan_GrainSpace_A_Large-Scale_Dataset_for_Fine-Grained_and_Domain-Adaptive_Recognition_of_CVPR_2022_paper.html",
+    "abstract": "Cereal grains are a vital part of human diets and are important commodities for people's livelihood and international trade. Grain Appearance Inspection (GAI) serves as one of the crucial steps for the determination of grain quality and grain stratification for proper circulation, storage and food processing, etc. GAI is routinely performed manually by qualified inspectors with the aid of some hand tools. Automated GAI has the benefit of greatly assisting inspectors with their jobs but has been limited due to the lack of datasets and clear definitions of the tasks. In this paper we formulate GAI as three ubiquitous computer vision tasks: fine-grained recognition, domain adaptation and out-of-distribution recognition. We present a large-scale and publicly available cereal grains dataset called GrainSpace. Specifically, we construct three types of device prototypes for data acquisition, and a total of 5.25 million images determined by professional inspectors. The grain samples including wheat, maize and rice are collected from five countries and more than 30 regions. We also develop a comprehensive benchmark based on semi-supervised learning and self-supervised learning techniques. To the best of our knowledge, GrainSpace is the first publicly released dataset for cereal grain inspection, https://github.com/hellodfan/GrainSpace.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Fan_GrainSpace_A_Large-Scale_Dataset_for_Fine-Grained_and_Domain-Adaptive_Recognition_of_CVPR_2022_paper.pdf",
+    "authors": "Fan, Lei; Ding, Yiwen; Fan, Dongdong; Di, Donglin; Pagnucco, Maurice; Song, Yang",
+    "keywords": [
+      "Self-supervised learning",
+      "Domain adaptation",
+      "Visual recognition"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:49.039Z"
+  },
+  {
+    "title": "Continual Stereo Matching of Continuous Driving Scenes With Growing Architecture",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Zhang_Continual_Stereo_Matching_of_Continuous_Driving_Scenes_With_Growing_Architecture_CVPR_2022_paper.html",
+    "abstract": "The deep stereo models have achieved state-of-the-art performance on driving scenes, but they suffer from severe performance degradation when tested on unseen scenes. Although recent work has narrowed this performance gap through continuous online adaptation, this setup requires continuous gradient updates at inference and can hardly deal with rapidly changing scenes. To address these challenges, we propose to perform continual stereo matching where a model is tasked to 1) continually learn new scenes, 2) overcome forgetting previously learned scenes, and 3) continuously predict disparities at deployment. We achieve this goal by introducing a Reusable Architecture Growth (RAG) framework. RAG leverages task-specific neural unit search and architecture growth for continual learning of new scenes. During growth, it can maintain high reusability by reusing previous neural units while achieving good performance. A module named Scene Router is further introduced to adaptively select the scene-specific architecture path at inference. Experimental results demonstrate that our method achieves compelling performance in various types of challenging driving scenes.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Zhang_Continual_Stereo_Matching_of_Continuous_Driving_Scenes_With_Growing_Architecture_CVPR_2022_paper.pdf",
+    "authors": "Zhang, Chenghao; Tian, Kun; Fan, Bin; Meng, Gaofeng; Zhang, Zhaoxiang; Pan, Chunhong",
+    "keywords": [
+      "Depth estimation",
+      "Autonomous driving"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:49.783Z"
+  },
+  {
+    "title": "Point-Level Region Contrast for Object Detection Pre-Training",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Bai_Point-Level_Region_Contrast_for_Object_Detection_Pre-Training_CVPR_2022_paper.html",
+    "abstract": "In this work we present point-level region contrast, a self-supervised pre-training approach for the task of object detection. This approach is motivated by the two key factors in detection: localization and recognition. While accurate localization favors models that operate at the pixel- or point-level, correct recognition typically relies on a more holistic, region-level view of objects. Incorporating this perspective in pre-training, our approach performs contrastive learning by directly sampling individual point pairs from different regions. Compared to an aggregated representation per region, our approach is more robust to the change in input region quality, and further enables us to implicitly improve initial region assignments via online knowledge distillation during training. Both advantages are important when dealing with imperfect regions encountered in the unsupervised setting. Experiments show point-level region contrast improves on state-of-the-art pre-training methods for object detection and segmentation across multiple tasks and datasets, and we provide extensive ablation studies and visualizations to aid understanding. Code will be made available.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Bai_Point-Level_Region_Contrast_for_Object_Detection_Pre-Training_CVPR_2022_paper.pdf",
+    "authors": "Bai, Yutong; Chen, Xinlei; Kirillov, Alexander; Yuille, Alan; Berg, Alexander C.",
+    "keywords": [
+      "Image segmentation",
+      "Object detection",
+      "Self-supervised learning",
+      "Visual recognition"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:50.419Z"
+  },
+  {
+    "title": "End-to-End Semi-Supervised Learning for Video Action Detection",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Kumar_End-to-End_Semi-Supervised_Learning_for_Video_Action_Detection_CVPR_2022_paper.html",
+    "abstract": "In this work, we focus on semi-supervised learning for video action detection which utilizes both labeled as well as unlabeled data. We propose a simple end-to-end consistency based approach which effectively utilizes the unlabeled data. Video action detection requires both, action class prediction as well as a spatio-temporal localization of actions. Therefore, we investigate two types of constraints, classification consistency, and spatio-temporal consistency. The presence of predominant background and static regions in a video makes it challenging to utilize spatio-temporal consistency for action detection. To address this, we propose two novel regularization constraints for spatio-temporal consistency; 1) temporal coherency, and 2) gradient smoothness. Both these aspects exploit the temporal continuity of action in videos and are found to be effective for utilizing unlabeled videos for action detection. We demonstrate the effectiveness of the proposed approach on two different action detection benchmark datasets, UCF101-24 and JHMDB-21. In addition, we also show the effectiveness of the proposed approach for video object segmentation on the Youtube-VOS which demonstrates its generalization capability The proposed approach achieves competitive performance by using merely 20% of annotations on UCF101-24 when compared with recent fully supervised methods. On UCF101-24, it improves the score by +8.9% and +11% at 0.5 f-mAP and v-mAP respectively, compared to supervised approach.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Kumar_End-to-End_Semi-Supervised_Learning_for_Video_Action_Detection_CVPR_2022_paper.pdf",
+    "authors": "Kumar, Akash; Rawat, Yogesh Singh",
+    "keywords": [
+      "Image segmentation",
+      "Video understanding"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:51.050Z"
+  },
+  {
+    "title": "Open-Set Text Recognition via Character-Context Decoupling",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Liu_Open-Set_Text_Recognition_via_Character-Context_Decoupling_CVPR_2022_paper.html",
+    "abstract": "The open-set text recognition task is an emerging challenge that requires an extra capability to cognize novel characters during evaluation. We argue that a major cause of the limited performance for current methods is the confounding effect of contextual information over the visual information of individual characters. Under open-set scenarios, the intractable bias in contextual information can be passed down to visual information, consequently impairing the classification performance. In this paper, a Character-Context Decoupling framework is proposed to alleviate this problem by separating contextual information and character-visual information. Contextual information can be decomposed into temporal information and linguistic information. Here, temporal information that models character order and word length is isolated with a detached temporal attention module. Linguistic information that models n-gram and other linguistic statistics is separated with a decoupled context anchor mechanism. A variety of quantitative and qualitative experiments show that our method achieves promising performance on open-set, zero-shot, and close-set text recognition datasets.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_Open-Set_Text_Recognition_via_Character-Context_Decoupling_CVPR_2022_paper.pdf",
+    "authors": "Liu, Chang; Yang, Chun; Yin, Xu-Cheng",
+    "keywords": [
+      "Few-shot learning",
+      "Visual recognition"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:52.147Z"
+  },
+  {
+    "title": "Class-Balanced Pixel-Level Self-Labeling for Domain Adaptive Semantic Segmentation",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Li_Class-Balanced_Pixel-Level_Self-Labeling_for_Domain_Adaptive_Semantic_Segmentation_CVPR_2022_paper.html",
+    "abstract": "Domain adaptive semantic segmentation aims to learn a model with the supervision of source domain data, and produce satisfactory dense predictions on unlabeled target domain. One popular solution to this challenging task is self-training, which selects high-scoring predictions on target samples as pseudo labels for training. However, the produced pseudo labels often contain much noise because the model is biased to source domain as well as majority categories. To address the above issues, we propose to directly explore the intrinsic pixel distributions of target domain data, instead of heavily relying on the source domain. Specifically, we simultaneously cluster pixels and rectify pseudo labels with the obtained cluster assignments. This process is done in an online fashion so that pseudo labels could co-evolve with the segmentation model without extra training rounds. To overcome the class imbalance problem on long-tailed categories, we employ a distribution alignment technique to enforce the marginal class distribution of cluster assignments to be close to that of pseudo labels. The proposed method, namely Class-balanced Pixel-level Self-Labeling (CPSL), improves the segmentation performance on target domain over state-of-the-arts by a large margin, especially on long-tailed categories.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Class-Balanced_Pixel-Level_Self-Labeling_for_Domain_Adaptive_Semantic_Segmentation_CVPR_2022_paper.pdf",
+    "authors": "Li, Ruihuang; Li, Shuai; He, Chenhang; Zhang, Yabin; Jia, Xu; Zhang, Lei",
+    "keywords": [
+      "Image segmentation"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:53.256Z"
+  },
+  {
+    "title": "Towards Unsupervised Domain Generalization",
+    "conference": "CVPR",
+    "year": 2022,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2022/html/Zhang_Towards_Unsupervised_Domain_Generalization_CVPR_2022_paper.html",
+    "abstract": "Domain generalization (DG) aims to help models trained on a set of source domains generalize better on unseen target domains. The performances of current DG methods largely rely on sufficient labeled data, which are usually costly or unavailable, however. Since unlabeled data are far more accessible, we seek to explore how unsupervised learning can help deep models generalize across domains. Specifically, we study a novel generalization problem called unsupervised domain generalization (UDG), which aims to learn generalizable models with unlabeled data and analyze the effects of pre-training on DG. In UDG, models are pretrained with unlabeled data from various source domains before being trained on labeled source data and eventually tested on unseen target domains. Then we propose a method named Domain-Aware Representation LearnING (DARLING) to cope with the significant and misleading heterogeneity within unlabeled pretraining data and severe distribution shifts between source and target data. Surprisingly we observe that DARLING can not only counterbalance the scarcity of labeled data but also further strengthen the generalization ability of models when the labeled data are insufficient. As a pretraining approach, DARLING shows superior or comparable performance compared with ImageNet pretraining protocol even when the available data are unlabeled and of a vastly smaller amount compared to ImageNet, which may shed light on improving generalization with large-scale unlabeled data.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2022/papers/Zhang_Towards_Unsupervised_Domain_Generalization_CVPR_2022_paper.pdf",
+    "authors": "Zhang, Xingxuan; Zhou, Linjun; Xu, Renzhe; Cui, Peng; Shen, Zheyan; Liu, Haoxin",
+    "keywords": [
+      "Domain adaptation"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:54.365Z"
+  },
+  {
+    "title": "Learning Depth from Focus in the Wild",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/19_ECCV_2022_paper.php",
+    "abstract": "\"For better photography, most recent commercial cameras including smartphones have either adopted large-aperture lens to collect more light or used a burst mode to take multiple images within short times. These interesting features lead us to examine depth from focus/defocus. In this work, we present a convolutional neural network-based depth estimation from single focal stacks. Our method differs from relevant state-of-the-art works with three unique features. First, our method allows depth maps to be inferred in an end-to-end manner even with image alignment. Second, we propose a sharp region detection module to reduce blur ambiguities in subtle focus changes and weakly texture-less regions. Third, we design an effective downsampling module to ease flows of focal information in feature extractions. In addition, for the generalization of the proposed network, we develop a simulator to realistically reproduce the features of commercial cameras, such as changes in field of view, focal length and principal points. By effectively incorporating these three unique features, our network achieves the top rank in the DDFF 12-Scene benchmark on most metrics. We also demonstrate the effectiveness of the proposed method on various quantitative evaluations and real-world images taken from various off-the-shelf cameras compared with state-of-the-art methods. Our source code is publicly available at https://github.com/wcy199705/DfFintheWild.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136610001.pdf",
+    "authors": "Changyeon Won, Hae-Gon Jeon ;",
+    "keywords": [
+      "Depth estimation"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:58.279Z"
+  },
+  {
+    "title": "Minimal Neural Atlas: Parameterizing Complex Surfaces with Minimal Charts and Distortion",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/107_ECCV_2022_paper.php",
+    "abstract": "\"Explicit neural surface representations allow for exact and efficient extraction of the encoded surface at arbitrary precision, as well as analytic derivation of differential geometric properties such as surface normal and curvature. Such desirable properties, which are absent in its implicit counterpart, makes it ideal for various applications in computer vision, graphics and robotics. However, SOTA works are limited in terms of the topology it can effectively describe, distortion it introduces to reconstruct complex surfaces and model efficiency. In this work, we present Minimal Neural Atlas, a novel atlas-based explicit neural surface representation. At its core is a fully learnable parametric domain, given by an implicit probabilistic occupancy field defined on an open square of the parametric space. In contrast, prior works generally predefine the parametric domain. The added flexibility enables charts to admit arbitrary topology and boundary. Thus, our representation can learn a minimal atlas of 3 charts with distortion-minimal parameterization for surfaces of arbitrary topology, including closed and open surfaces with arbitrary connected components. Our experiments support the hypotheses and show that our reconstructions are more accurate in terms of the overall geometry, due to the separation of concerns on topology and geometry.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136620452.pdf",
+    "authors": "Weng Fei Low, Gim Hee Lee ;",
+    "keywords": [],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:58.948Z"
+  },
+  {
+    "title": "Dual-Evidential Learning for Weakly-Supervised Temporal Action Localization",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/3504_ECCV_2022_paper.php",
+    "abstract": "\"Weakly-supervised temporal action localization (WS-TAL) aims to localize the action instances and recognize their categories with only video-level labels. Despite great progress, existing methods suffer from severe action-background ambiguity, which mainly comes from background noise introduced by aggregation operations and large intra-action variations caused by the task gap between classification and localization. To address this issue, we propose a generalized evidential deep learning (EDL) framework for WS-TAL, called Dual-Evidential Learning for Uncertainty modeling (DELU), which extends the traditional paradigm of EDL to adapt to the weakly-supervised multi-label classification goal. Specifically, targeting at adaptively excluding the undesirable background snippets, we utilize the video-level uncertainty to measure the interference of background noise to video-level prediction. Then, the snippet-level uncertainty is further induced for progressive learning, which gradually focuses on the entire action instances in an “easy-to-hard” manner. Extensive experiments show that DELU achieves state-of-the-art performance on THUMOS14 and ActivityNet1.2 benchmarks. Our code is available in github.com/MengyuanChen21/ECCV2022-DELU.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136640190.pdf",
+    "authors": "Mengyuan Chen, Junyu Gao, Shicai Yang, Changsheng Xu ;",
+    "keywords": [
+      "Video understanding"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:52:59.614Z"
+  },
+  {
+    "title": "Multi-Person 3D Pose and Shape Estimation via Inverse Kinematics and Refinement",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/2418_ECCV_2022_paper.php",
+    "abstract": "\"Estimating 3D poses and shapes in the form of meshes from monocular RGB images is challenging. Obviously, it is more difficult than estimating 3D poses only in the form of skeletons or heatmaps. When interacting persons are involved, the 3D mesh reconstruction becomes more challenging due to the ambiguity introduced by person-to-person occlusions. To tackle the challenges, we propose a coarse-to-fine pipeline that benefits from 1) inverse kinematics from the occlusion-robust 3D skeleton estimation and 2) transformer-based relation-aware refinement techniques. In our pipeline, we first obtain occlusion-robust 3D skeletons for multiple persons from an RGB image. Then, we apply inverse kinematics to convert the estimated skeletons to deformable 3D mesh parameters. Finally, we apply the transformer-based mesh refinement that refines the obtained mesh parameters considering intra- and inter-person relations of 3D meshes. Via extensive experiments, we demonstrate the effectiveness of our method, outperforming state-of-the-arts on 3DPW, MuPoTS and AGORA datasets.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136650650.pdf",
+    "authors": "Junuk Cha, Muhammad Saqlain, GeonU Kim, Mingyu Shin, Seungryul Baek ;",
+    "keywords": [
+      "3D vision",
+      "Transformers"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:00.308Z"
+  },
+  {
+    "title": "Deep Semantic Statistics Matching (D2SM) Denoising Network",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/6145_ECCV_2022_paper.php",
+    "abstract": "\"The ultimate aim of image restoration like denoising is to find an exact correlation between the noisy and clear image domains. But the optimization of end-to-end denoising learning like pixel-wise losses is performed in a sample-to-sample manner, which ignores the intrinsic correlation of images, especially semantics. In this paper, we introduce the Deep Semantic Statistics Matching (D2SM) Denoising Network. It exploits semantic features of pretrained classification networks, then it implicitly matches the probabilistic distribution of clear images at the semantic feature space. By learning to preserve the semantic distribution of denoised images, we empirically find our method significantly improves the denoising capabilities of networks, and the denoised results can be better understood by high-level vision tasks. Comprehensive experiments conducted on the noisy Cityscapes dataset demonstrate the superiority of our method on both the denoising performance and semantic segmentation accuracy. Moreover, the performance improvement observed on our extended tasks including super-resolution and dehazing experiments shows its potentiality as a new general plug-and-play component.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136670377.pdf",
+    "authors": "Kangfu Mei, Vishal M. Patel, Rui Huang ;",
+    "keywords": [
+      "Image segmentation",
+      "Image restoration"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:00.985Z"
+  },
+  {
+    "title": "Open-Vocabulary DETR with Conditional Matching",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/1248_ECCV_2022_paper.php",
+    "abstract": "\"Open-vocabulary object detection, which is concerned with the problem of detecting novel objects guided by natural language, has gained increasing attention from the community. Ideally, we would like to extend an open-vocabulary detector such that it can produce bounding box predictions based on user inputs in form of either natural language or exemplar image. This offers great flexibility and user experience for human-computer interaction. To this end, we propose a novel open-vocabulary detector based on DETR---hence the name OV-DETR---which, once trained, can detect any object given its class name or an exemplar image. The biggest challenge of turning DETR into an open-vocabulary detector is that it is impossible to calculate the classification cost matrix of novel classes without access to their labeled images. To overcome this challenge, we formulate the learning objective as a binary matching one between input queries (class name or exemplar image) and the corresponding objects, which learns useful correspondence to generalize to unseen queries during testing. For training, we choose to condition the Transformer decoder on the input embeddings obtained from a pre-trained vision-language model like CLIP, in order to enable matching for both text and image queries. With extensive experiments on LVIS and COCO datasets, we demonstrate that our OV-DETR---the first end-to-end Transformer-based open-vocabulary detector---achieves non-trivial improvements over current state of the arts.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136690107.pdf",
+    "authors": "Yuhang Zang, Wei Li, Kaiyang Zhou, Chen Huang, Chen Change Loy ;",
+    "keywords": [
+      "Object detection",
+      "Vision-language",
+      "Transformers",
+      "Few-shot learning"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:01.647Z"
+  },
+  {
+    "title": "Weakly-Supervised Temporal Action Detection for Fine-Grained Videos with Hierarchical Atomic Actions",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/6982_ECCV_2022_paper.php",
+    "abstract": "\"Action understanding has evolved into the era of fine granularity, as most human behaviors in real life have only minor differences. To detect these fine-grained actions accurately in a label-efficient way, we tackle the problem of weakly-supervised fine-grained temporal action detection in videos for the first time. Without the careful design to capture subtle differences between fine-grained actions, previous weakly-supervised models for general action detection cannot perform well in fine-grained settings. We propose to model actions as the combinations of reusable atomic actions which are automatically discovered from data through self-supervised clustering, in order to capture the commonality and individuality of fine-grained actions. The learnt atomic actions, represented by visual concepts, are further mapped to fine and coarse action labels leveraging the semantic label hierarchy. Our approach constructs a visual representation hierarchy of four levels: clip level, atomic action level, fine action class level and coarse action class level, with supervision at each level. Extensive experiments on two large-scale fine-grained video datasets, FineAction and FineGym, show the benefit of our proposed weakly-supervised model for fine-grained action detection, and it achieves state-of-the-art results.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136700562.pdf",
+    "authors": "Zhi Li, Lu He, Huijuan Xu ;",
+    "keywords": [
+      "Vision-language",
+      "Self-supervised learning",
+      "Video understanding"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:02.314Z"
+  },
+  {
+    "title": "Making Heads or Tails: Towards Semantically Consistent Visual Counterfactuals",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/1330_ECCV_2022_paper.php",
+    "abstract": "\"A visual counterfactual explanation replaces image regions in a query image with regions from a distractor image such that the system’s decision on the transformed image changes to the distractor class. In this work, we present a novel framework for computing visual counterfactual explanations based on two key ideas. First, we enforce that the replaced and replacer regions contain the same semantic part, resulting in more semantically consistent explanations. Second, we use multiple distractor images in a computationally efficient way and obtain more discriminative explanations with fewer region replacements. Our approach is 27 % more semantically consistent and an order of magnitude faster than a competing method on three fine-grained image recognition datasets. We highlight the utility of our counterfactuals over existing works through machine teaching experiments where we teach humans to classify different bird species. We also complement our explanations with the vocabulary of parts and attributes that contributed the most to the system’s decision. In this task as well, we obtain state-of-the-art results when using our counterfactual explanations relative to existing works, reinforcing the importance of semantically consistent explanations. Source code is available at https://github.com/facebookresearch/visual-counterfactuals.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136720260.pdf",
+    "authors": "Simon Vandenhende, Dhruv Mahajan, Filip Radenovic, Deepti Ghadiyaram ;",
+    "keywords": [
+      "Visual recognition"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:03.012Z"
+  },
+  {
+    "title": "Self-Supervised Sparse Representation for Video Anomaly Detection",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/1561_ECCV_2022_paper.php",
+    "abstract": "\"Video anomaly detection (VAD) aims at localizing unexpected actions or activities in a video sequence. Existing mainstream VAD techniques are based on either the one-class formulation, which assumes all training data are normal, or weakly-supervised, which requires only video-level normal/anomaly labels. To establish a unified approach to solving the two VAD settings, we introduce a self-supervised sparse representation (S3R) framework that models the concept of anomaly at feature level by exploring the synergy between dictionary-based representation and self-supervised learning. With the learned dictionary, S3R facilitates two coupled modules, en-Normal and de-Normal, to reconstruct snippet-level features and filter out normal-event features. The self-supervised techniques also enable generating samples of pseudo normal/anomaly to train the anomaly detector. We demonstrate with extensive experiments that S3R achieves new state-of-the-art performances on popular benchmark datasets for both one-class and weakly-supervised VAD tasks. Our code is publicly available at https://github.com/louisYen/S3R.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136730727.pdf",
+    "authors": "Jhih-Ciang Wu, He-Yen Hsieh, Ding-Jie Chen, Chiou-Shann Fuh, Tyng-Luh Liu ;",
+    "keywords": [
+      "Object detection",
+      "Self-supervised learning",
+      "Video understanding"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:03.683Z"
+  },
+  {
+    "title": "Hierarchical Semantic Regularization of Latent Spaces in StyleGANs",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/2336_ECCV_2022_paper.php",
+    "abstract": "\"Progress in GANs has enabled the generation of high-resolution photorealistic images of astonishing quality. StyleGANs allow for compelling attribute modification on such images via mathematical operations on the latent style vectors in the W/W+ space that effectively modulate the rich hierarchical representations of the generator. Such operations have recently been generalized beyond mere attribute swapping in the original StyleGAN paper to include interpolations. In spite of many significant improvements in StyleGANs, they are still seen to generate unnatural images. The quality of the generated images is predicated on two assumptions; (a) The richness of the hierarchical representations learnt by the generator, and, (b) The linearity and smoothness of the style spaces. In this work, we propose a Hierarchical Semantic Regularizer (HSR) which aligns the hierarchical representations learnt by the generator to corresponding powerful features learnt by pretrained networks on large amounts of data. HSR is shown to not only improve generator representations but also the linearity and smoothness of the latent style spaces, leading to the generation of more natural-looking style-edited images. To demonstrate improved linearity, we propose a novel metric - Attribute Linearity Score (ALS). A significant reduction in the generation of unnatural images is corroborated by improvement in the Perceptual Path Length (PPL) metric by 16.19% averaged across different standard datasets while simultaneously improving the linearity of attribute-change in the attribute editing tasks.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136750440.pdf",
+    "authors": "Tejan Karmali, Rishubh Parihar, Susmit Agrawal, Harsh Rangwani, Varun Jampani, Maneesh Singh, R. Venkatesh Babu ;",
+    "keywords": [],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:04.359Z"
+  },
+  {
+    "title": "Transformers As Meta-Learners for Implicit Neural Representations",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/6220_ECCV_2022_paper.php",
+    "abstract": "\"Implicit Neural Representations (INRs) have emerged and shown their benefits over discrete representations in recent years. However, fitting an INR to the given observations usually requires optimization with gradient descent from scratch, which is inefficient and does not generalize well with sparse observations. To address this problem, most of the prior works train a hypernetwork that generates a single vector to modulate the INR weights, where the single vector becomes an information bottleneck that limits the reconstruction precision of the output INR. Recent work shows that the whole set of weights in INR can be precisely inferred without the single-vector bottleneck by gradient-based meta-learning. Motivated by a generalized formulation of gradient-based meta-learning, we propose a formulation that uses Transformers as hypernetworks for INRs, where it can directly build the whole set of INR weights with Transformers specialized as set-to-set mapping. We demonstrate the effectiveness of our method for building INRs in different tasks and domains, including 2D image regression and view synthesis for 3D objects. Our work draws connections between the Transformer hypernetworks and gradient-based meta-learning algorithms and we provide further analysis for understanding the generated INRs.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136770173.pdf",
+    "authors": "Yinbo Chen, Xiaolong Wang ;",
+    "keywords": [
+      "3D vision",
+      "Transformers"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:05.064Z"
+  },
+  {
+    "title": "Secrets of Event-Based Optical Flow",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4067_ECCV_2022_paper.php",
+    "abstract": "\"Event cameras respond to scene dynamics and offer advantages to estimate motion. Following recent image-based deep-learning achievements, optical flow estimation methods for event cameras have rushed to combine those image-based methods with event data. However, it requires several adaptations (data conversion, loss function, etc.) as they have very different properties. We develop a principled method to extend the Contrast Maximization framework to estimate optical flow from events alone. We investigate key elements: how to design the objective function to prevent overfitting, how to warp events to deal better with occlusions, and how to improve convergence with multi-scale raw events. With these key elements, our method ranks first among unsupervised methods on the MVSEC benchmark, and is competitive on the DSEC benchmark. Moreover, our method allows us to expose the issues of the ground truth flow in those benchmarks, and produces remarkable results when it is transferred to unsupervised learning settings. Our code is available at https://github.com/tub-rip/event_based_optical_flow\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136780616.pdf",
+    "authors": "Shintaro Shiba, Yoshimitsu Aoki, Guillermo Gallego ;",
+    "keywords": [],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:05.773Z"
+  },
+  {
+    "title": "Few-Shot Object Counting and Detection",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/5138_ECCV_2022_paper.php",
+    "abstract": "\"We tackle a new task of few-shot object counting and detection. Given a few exemplar bounding boxes of a target object class, we seek to count and detect all the objects of the target class. This task shares the same supervision as the few-shot counting but additionally outputs the object bounding boxes along with the total object count. To address this challenging problem, we introduce a novel two-stage training strategy and a novel uncertainty-aware few-shot object detector Counting-DETR. The former is aimed at generating pseudo ground truth bounding boxes to train the latter. The latter leverages the pseudo ground-truth provided by the former, but taking the necessary steps to account for the imperfection of pseudo ground truth. To validate the performance of our method on the new task, we introduce a two new datasets named FSCD-147 and FSCD-LVIS. Both datasets contain images with complex scene, multiple object classes per image, and huge variation in object shapes, sizes, and appearance. Our propose approach outperforms very strong baselines adapted from few-shot object counting and few-shot object detection with a large margin in both counting and detection metrics.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136800336.pdf",
+    "authors": "Thanh Nguyen, Chau Pham, Khoi Nguyen, Minh Hoai ;",
+    "keywords": [
+      "Object detection",
+      "Few-shot learning"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:06.460Z"
+  },
+  {
+    "title": "Particle Video Revisited: Tracking through Occlusions Using Point Trajectories",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/561_ECCV_2022_paper.php",
+    "abstract": "\"Tracking pixels in videos is typically studied as an optical flow estimation problem, where every pixel is described with a displacement vector that locates it in the next frame. Even though wider temporal context is freely available, prior efforts to take this into account have yielded only small gains over 2-frame methods. In this paper, we revisit Sand and Teller’s \"\"particle video\"\" approach, and study pixel tracking as a long-range motion estimation problem, where every pixel is described with a trajectory that locates it in multiple future frames. We re-build this classic approach using components that drive the current state-of-the-art in flow and object tracking, such as dense cost maps, iterative optimization, and learned appearance updates. We train our models using long-range amodal point trajectories mined from existing optical flow data that we synthetically augment with multi-frame occlusions. We test our approach in trajectory estimation benchmarks and in keypoint label propagation tasks, and compare favorably against state-of-the-art optical flow and feature tracking methods.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136820055.pdf",
+    "authors": "Adam W. Harley, Zhaoyuan Fang, Katerina Fragkiadaki ;",
+    "keywords": [
+      "Video understanding",
+      "Pose estimation",
+      "Tracking"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:07.130Z"
+  },
+  {
+    "title": "Bayesian Optimization with Clustering and Rollback for CNN Auto Pruning",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4872_ECCV_2022_paper.php",
+    "abstract": "\"Pruning is an effective technique for convolutional neural networks (CNNs) model compression, but it is difficult to find the optimal pruning policy due to the large design space. To improve the usability of pruning, many auto pruning methods have been developed. Recently, Bayesian optimization (BO) has been considered to be a competitive algorithm for auto pruning due to its solid theoretical foundation and high sampling efficiency. However, BO suffers from the curse of dimensionality. The performance of BO deteriorates when pruning deep CNNs, since the dimension of the design spaces increase. We propose a novel clustering algorithm that reduces the dimension of the design space to speed up the searching process. Subsequently, a rollback algorithm is proposed to recover the high-dimensional design space so that higher pruning accuracy can be obtained. We validate our proposed method on ResNet, MobileNetV1, and MobileNetV2 models. Experiments show that the proposed method significantly improves the convergence rate of BO when pruning deep CNNs with no increase in running time. The source code is available at https://github.com/fanhanwei/BOCR.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136830480.pdf",
+    "authors": "Hanwei Fan, Jiandong Mu, Wei Zhang ;",
+    "keywords": [],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:07.800Z"
+  },
+  {
+    "title": "Training Vision Transformers with Only 2040 Images",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/5381_ECCV_2022_paper.php",
+    "abstract": "\"Vision Transformers (ViTs) is emerging as an alternative to convolutional neural networks (CNNs) for visual recognition. They achieve competitive results with CNNs but the lack of the typical convolutional inductive bias makes them more data-hungry than common CNNs. They are often pretrained on JFT-300M or at least ImageNet and few works study training ViTs with limited data. In this paper, we investigate how to train ViTs with limited data (e.g., 2040 images). We give theoretical analyses that our method (based on parametric instance discrimination) is superior to other methods in that it can capture both feature alignment and instance similarities. We achieve state-of-the-art results when training from scratch on 7 small datasets under various ViT backbones. We also investigate the transferring ability of small datasets and find that representations learned from small datasets can even improve large-scale ImageNet training.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136850218.pdf",
+    "authors": "Yun-Hao Cao, Hao Yu, Jianxin Wu ;",
+    "keywords": [
+      "Transformers",
+      "Visual recognition"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:08.470Z"
+  },
+  {
+    "title": "Joint Learning of Localized Representations from Medical Images and Reports",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/5595_ECCV_2022_paper.php",
+    "abstract": "\"Contrastive learning has proven effective for pre-training image models on unlabeled data with promising results for tasks such as medical image classification. Using paired text (like radiological reports) during pre-training improves the results even further. Still, most existing methods target image classification downstream tasks and may not be optimal for localized tasks like semantic segmentation or object detection. We therefore propose Localized representation learning from Vision and Text (LoVT), a text-supervised pre-training method that explicitly targets localized medical imaging tasks. Our method combines instance-level image-report contrastive learning with local contrastive learning on image region and report sentence representations. We evaluate LoVT and commonly used pre-training methods on an evaluation framework of 18 localized tasks on chest X-rays from five public datasets. LoVT performs best on 10 of the 18 studied tasks making it the preferred method of choice for localized tasks.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136860670.pdf",
+    "authors": "Philip Müller, Georgios Kaissis, Congyu Zou, Daniel Rueckert ;",
+    "keywords": [
+      "Image segmentation",
+      "Object detection",
+      "Self-supervised learning",
+      "Medical imaging",
+      "Visual recognition"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:09.148Z"
+  },
+  {
+    "title": "Don’t Forget Me: Accurate Background Recovery for Text Removal via Modeling Local-Global Context",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/5051_ECCV_2022_paper.php",
+    "abstract": "\"Text removal has attracted increasingly attention due to its various applications on privacy protection, document restoration, and text editing. It has shown significant progress with deep neural network. However, most of the existing methods often generate inconsistent results for complex background. To address this issue, we propose a Contextual-guided Text Removal Network, termed as CTRNet. CTRNet explores both low-level structure and high-level discriminative context feature as prior knowledge to guide the process of background restoration. We further propose a Local-global Content Modeling (LGCM) block with CNNs and Transformer-Encoder to capture local features and establish the long-term relationship among pixels globally. Finally, we incorporate LGCM with context guidance for feature modeling and decoding. Experiments on benchmark datasets, SCUT-EnsText and SCUT-Syn show that CTRNet significantly outperforms the existing state-of-the-art methods. Furthermore, a qualitative experiment on examination papers also demonstrates the generalization ability of our method. The code of CTRNet is available at https://github.com/lcy0604/CTRNet.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136880406.pdf",
+    "authors": "Chongyu Liu, Lianwen Jin, Yuliang Liu, Canjie Luo, Bangdong Chen, Fengjun Guo, Kai Ding ;",
+    "keywords": [
+      "Transformers"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:09.814Z"
+  },
+  {
+    "title": "Demystifying Unsupervised Semantic Correspondence Estimation",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/499_ECCV_2022_paper.php",
+    "abstract": "\"We explore semantic correspondence estimation through the lens of unsupervised learning. We thoroughly evaluate several recently proposed unsupervised methods across multiple challenging datasets using a standardized evaluation protocol where we vary factors such as the backbone architecture, the pre-training strategy, and the pre-training and finetuning datasets. To better understand the failure modes of these methods, and in order to provide a clearer path for improvement, we provide a new diagnostic framework along with a new performance metric that is better suited to the semantic matching task. Finally, we introduce a new unsupervised correspondence approach which utilizes the strength of pre-trained features while encouraging better matches during training. This results in significantly better matching performance compared to current state-of-the-art methods.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136900124.pdf",
+    "authors": "Mehmet Aygün, Oisin Mac Aodha ;",
+    "keywords": [],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:10.477Z"
+  },
+  {
+    "title": "R2L: Distilling Neural Radiance Field to Neural Light Field for Efficient Novel View Synthesis",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/626_ECCV_2022_paper.php",
+    "abstract": "\"Recent research explosion on Neural Radiance Field (NeRF) shows the encouraging potential to represent complex scenes with neural networks. One major drawback of NeRF is its prohibitive inference time: Rendering a single pixel requires querying the NeRF network hundreds of times. To resolve it, existing efforts mainly attempt to reduce the number of required sampled points. However, the problem of iterative sampling still exists. On the other hand, Neural \\textit{Light} Field (NeLF) presents a more straightforward representation over NeRF in novel view synthesis -- the rendering of a pixel amounts to \\textit{one single forward pass} without ray-marching. In this work, we present a \\textit{deep residual MLP} network (88 layers) to effectively learn the light field. We show the key to successfully learning such a deep NeLF network is to have sufficient data, for which we transfer the knowledge from a pre-trained NeRF model via data distillation. Extensive experiments on both synthetic and real-world scenes show the merits of our method over other counterpart algorithms. On the synthetic scenes, we achieve $26\\sim35\\times$ FLOPs reduction (per camera ray) and $28\\sim31\\times$ runtime speedup, meanwhile delivering \\textit{significantly better} ($1.4\\sim2.8$ dB average PSNR improvement) rendering quality than NeRF without any customized parallelism requirement.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136910598.pdf",
+    "authors": "Huan Wang, Jian Ren, Zeng Huang, Kyle Olszewski, Menglei Chai, Yun Fu, Sergey Tulyakov ;",
+    "keywords": [
+      "Neural rendering"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:11.143Z"
+  },
+  {
+    "title": "Class-Incremental Novel Class Discovery",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/101_ECCV_2022_paper.php",
+    "abstract": "\"We study the new task of class-incremental Novel Class Discovery (class-iNCD), which refers to the problem of discovering novel categories in an unlabelled data set by leveraging a pre-trained model that has been trained on a labelled data set containing disjoint yet related categories. Apart from discovering novel classes, we also aim at preserving the ability of the model to recognize previously seen base categories. Inspired by rehearsal-based incremental learning methods, in this paper we propose a novel approach for class-iNCD which prevents forgetting of past information about the base classes by jointly exploiting base class feature prototypes and feature-level knowledge distillation. We also propose a self-training clustering strategy that simultaneously clusters novel categories and trains a joint classifier for both the base and novel classes. This makes our method able to operate in a class-incremental setting. Our experiments, conducted on three common benchmarks, demonstrate that our method significantly outperforms state-of-the-art approaches. Code is available at \\url{https://github.com/OatmealLiu/class-iNCD}.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136930312.pdf",
+    "authors": "Subhankar Roy, Mingxuan Liu, Zhun Zhong, Nicu Sebe, Elisa Ricci ;",
+    "keywords": [],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:11.817Z"
+  },
+  {
+    "title": "Unified Fully and Timestamp Supervised Temporal Action Segmentation via Sequence to Sequence Translation",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/3672_ECCV_2022_paper.php",
+    "abstract": "\"This paper introduces a unified framework for video action segmentation via sequence to sequence (seq2seq) translation in a fully and timestamp supervised setup. In contrast to current state-of-the-art frame-level prediction methods, we view action segmentation as a seq2seq translation task, i.e., mapping a sequence of video frames to a sequence of action segments. Our proposed method involves a series of modifications and auxiliary loss functions on the standard Transformer seq2seq translation model to cope with long input sequences opposed to short output sequences and relatively few videos. We incorporate an auxiliary supervision signal for the encoder via a frame-wise loss and propose a separate alignment decoder for an implicit duration prediction. Finally, we extend our framework to the timestamp supervised setting via our proposed constrained k-medoids algorithm to generate pseudo-segmentations. Our proposed framework performs consistently on both fully and timestamp supervised settings, outperforming or competing state-of-the-art on several datasets.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136950052.pdf",
+    "authors": "Nadine Behrmann, S. Alireza Golestaneh, Zico Kolter, Jürgen Gall, Mehdi Noroozi ;",
+    "keywords": [
+      "Image segmentation",
+      "Transformers",
+      "Video understanding"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:12.501Z"
+  },
+  {
+    "title": "UniTAB: Unifying Text and Box Outputs for Grounded Vision-Language Modeling",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/5226_ECCV_2022_paper.php",
+    "abstract": "\"We propose UniTAB that Unifies Text And Box outputs for grounded vision-language (VL) modeling. Grounded VL tasks such as grounded captioning require the model to generate a text description and align predicted words with object regions. To achieve this, models must generate desired text and box outputs together, and meanwhile indicate the alignments between words and boxes. In contrast to existing solutions that use multiple separate modules for different outputs, UniTAB represents both text and box outputs with a shared token sequence, and introduces a special token to naturally indicate word-box alignments in the sequence. UniTAB thus could provide a more comprehensive and interpretable image description, by freely grounding generated words to object regions. On grounded captioning, UniTAB presents a simpler solution with a single output head, and significantly outperforms state of the art in both grounding and captioning evaluations. On general VL tasks that have different desired output formats (i.e., text, box, or their combination), UniTAB with a single network achieves better or comparable performance than task-specific state of the art. Experiments cover 7 VL benchmarks, including grounded captioning, visual grounding, image captioning, and visual question answering. Furthermore, UniTAB’s unified multi-task network and the task-agnostic output sequence design make the model parameter efficient and generalizable to new tasks.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136960514.pdf",
+    "authors": "Zhengyuan Yang, Zhe Gan, Jianfeng Wang, Xiaowei Hu, Faisal Ahmed, Zicheng Liu, Yumao Lu, Lijuan Wang ;",
+    "keywords": [
+      "Vision-language"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:13.187Z"
+  },
+  {
+    "title": "A Cloud 3D Dataset and Application-Specific Learned Image Compression in Cloud 3D",
+    "conference": "ECCV",
+    "year": 2022,
+    "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/7443_ECCV_2022_paper.php",
+    "abstract": "\"In Cloud 3D, such as Cloud Gaming and Cloud Virtual Reality (VR), image frames are rendered and compressed (encoded) in the cloud, and sent to the clients for users to view. For low latency and high image quality, fast, high compression rate, and high-quality image compression techniques are preferable. This paper explores computation time reduction techniques for learned image compression to make it more suitable for cloud 3D. More specifically, we employed slim (low-complexity) and application-specific AI models to reduce the computation time without degrading image quality. Our approach is based on two key insights: (1) as the frames generated by a 3D application are highly homogeneous, application-specific compression models can improve the rate-distortion performance over a general model; (2) many computer-generated frames from 3D applications are less complex than natural photos, which makes it feasible to reduce the model complexity to accelerate compression computation. We evaluated our models on six gaming image datasets. The results show that our approach has similar rate-distortion performance as a state-of-the-art learned image compression algorithm, while obtaining about 5x to 9x speedup and reducing the compression time to be less than 1 second (0.74s), bringing learned image compression closer to being viable for cloud 3D. Code is available at https://github.com/cloud-graphics-rendering/AppSpecificLIC.\"",
+    "paperUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136980265.pdf",
+    "authors": "Tianyi Liu, Sen He, Vinodh Kumaran Jayakumar, Wei Wang ;",
+    "keywords": [
+      "3D vision"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:13.886Z"
+  },
+  {
+    "title": "GFPose: Learning 3D Human Pose Prior With Gradient Fields",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Ci_GFPose_Learning_3D_Human_Pose_Prior_With_Gradient_Fields_CVPR_2023_paper.html",
+    "abstract": "Learning 3D human pose prior is essential to human-centered AI. Here, we present GFPose, a versatile framework to model plausible 3D human poses for various applications. At the core of GFPose is a time-dependent score network, which estimates the gradient on each body joint and progressively denoises the perturbed 3D human pose to match a given task specification. During the denoising process, GFPose implicitly incorporates pose priors in gradients and unifies various discriminative and generative tasks in an elegant framework. Despite the simplicity, GFPose demonstrates great potential in several downstream tasks. Our experiments empirically show that 1) as a multi-hypothesis pose estimator, GFPose outperforms existing SOTAs by 20% on Human3.6M dataset. 2) as a single-hypothesis pose estimator, GFPose achieves comparable results to deterministic SOTAs, even with a vanilla backbone. 3) GFPose is able to produce diverse and realistic samples in pose denoising, completion and generation tasks.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Ci_GFPose_Learning_3D_Human_Pose_Prior_With_Gradient_Fields_CVPR_2023_paper.pdf",
+    "authors": "Ci, Hai; Wu, Mingdong; Zhu, Wentao; Ma, Xiaoxuan; Dong, Hao; Zhong, Fangwei; Wang, Yizhou",
+    "keywords": [
+      "3D vision",
+      "Image generation",
+      "Pose estimation",
+      "Image restoration"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:16.879Z"
+  },
+  {
+    "title": "GD-MAE: Generative Decoder for MAE Pre-Training on LiDAR Point Clouds",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Yang_GD-MAE_Generative_Decoder_for_MAE_Pre-Training_on_LiDAR_Point_Clouds_CVPR_2023_paper.html",
+    "abstract": "Despite the tremendous progress of Masked Autoencoders (MAE) in developing vision tasks such as image and video, exploring MAE in large-scale 3D point clouds remains challenging due to the inherent irregularity. In contrast to previous 3D MAE frameworks, which either design a complex decoder to infer masked information from maintained regions or adopt sophisticated masking strategies, we instead propose a much simpler paradigm. The core idea is to apply a Generative Decoder for MAE (GD-MAE) to automatically merges the surrounding context to restore the masked geometric knowledge in a hierarchical fusion manner. In doing so, our approach is free from introducing the heuristic design of decoders and enjoys the flexibility of exploring various masking strategies. The corresponding part costs less than 12% latency compared with conventional methods, while achieving better performance. We demonstrate the efficacy of the proposed method on several large-scale benchmarks: Waymo, KITTI, and ONCE. Consistent improvement on downstream detection tasks illustrates strong robustness and generalization capability. Not only our method reveals state-of-the-art results, but remarkably, we achieve comparable accuracy even with 20% of the labeled data on the Waymo dataset. Code will be released.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Yang_GD-MAE_Generative_Decoder_for_MAE_Pre-Training_on_LiDAR_Point_Clouds_CVPR_2023_paper.pdf",
+    "authors": "Yang, Honghui; He, Tong; Liu, Jiaheng; Chen, Hua; Wu, Boxi; Lin, Binbin; He, Xiaofei; Ouyang, Wanli",
+    "keywords": [
+      "3D vision",
+      "Image generation",
+      "Video understanding",
+      "Autonomous driving"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:17.530Z"
+  },
+  {
+    "title": "BAD-NeRF: Bundle Adjusted Deblur Neural Radiance Fields",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Wang_BAD-NeRF_Bundle_Adjusted_Deblur_Neural_Radiance_Fields_CVPR_2023_paper.html",
+    "abstract": "Neural Radiance Fields (NeRF) have received considerable attention recently, due to its impressive capability in photo-realistic 3D reconstruction and novel view synthesis, given a set of posed camera images. Earlier work usually assumes the input images are of good quality. However, image degradation (e.g. image motion blur in low-light conditions) can easily happen in real-world scenarios, which would further affect the rendering quality of NeRF. In this paper, we present a novel bundle adjusted deblur Neural Radiance Fields (BAD-NeRF), which can be robust to severe motion blurred images and inaccurate camera poses. Our approach models the physical image formation process of a motion blurred image, and jointly learns the parameters of NeRF and recovers the camera motion trajectories during exposure time. In experiments, we show that by directly modeling the real physical image formation process, BAD-NeRF achieves superior performance over prior works on both synthetic and real datasets. Code and data are available at https://github.com/WU-CVGL/BAD-NeRF.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_BAD-NeRF_Bundle_Adjusted_Deblur_Neural_Radiance_Fields_CVPR_2023_paper.pdf",
+    "authors": "Wang, Peng; Zhao, Lingzhe; Ma, Ruijie; Liu, Peidong",
+    "keywords": [
+      "3D vision",
+      "Neural rendering"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:18.176Z"
+  },
+  {
+    "title": "CLOTH4D: A Dataset for Clothed Human Reconstruction",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Zou_CLOTH4D_A_Dataset_for_Clothed_Human_Reconstruction_CVPR_2023_paper.html",
+    "abstract": "Clothed human reconstruction is the cornerstone for creating the virtual world. To a great extent, the quality of recovered avatars decides whether the Metaverse is a passing fad. In this work, we introduce CLOTH4D, a clothed human dataset containing 1,000 subjects with varied appearances, 1,000 3D outfits, and over 100,000 clothed meshes with paired unclothed humans, to fill the gap in large-scale and high-quality 4D clothing data. It enjoys appealing characteristics: 1) Accurate and detailed clothing textured meshes---all clothing items are manually created and then simulated in professional software, strictly following the general standard in fashion design. 2) Separated textured clothing and under-clothing body meshes, closer to the physical world than single-layer raw scans. 3) Clothed human motion sequences simulated given a set of 289 actions, covering fundamental and complicated dynamics. Upon CLOTH4D, we novelly designed a series of temporally-aware metrics to evaluate the temporal stability of the generated 3D human meshes, which has been overlooked previously. Moreover, by assessing and retraining current state-of-the-art clothed human reconstruction methods, we reveal insights, present improved performance, and propose potential future research directions, confirming our dataset's advancement. The dataset is available at www.github.com/AemikaChow/AiDLab-fAshIon-Data",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Zou_CLOTH4D_A_Dataset_for_Clothed_Human_Reconstruction_CVPR_2023_paper.pdf",
+    "authors": "Zou, Xingxing; Han, Xintong; Wong, Waikeung",
+    "keywords": [
+      "3D vision"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:20.449Z"
+  },
+  {
+    "title": "Lite-Mono: A Lightweight CNN and Transformer Architecture for Self-Supervised Monocular Depth Estimation",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Zhang_Lite-Mono_A_Lightweight_CNN_and_Transformer_Architecture_for_Self-Supervised_Monocular_CVPR_2023_paper.html",
+    "abstract": "Self-supervised monocular depth estimation that does not require ground truth for training has attracted attention in recent years. It is of high interest to design lightweight but effective models so that they can be deployed on edge devices. Many existing architectures benefit from using heavier backbones at the expense of model sizes. This paper achieves comparable results with a lightweight architecture. Specifically, the efficient combination of CNNs and Transformers is investigated, and a hybrid architecture called Lite-Mono is presented. A Consecutive Dilated Convolutions (CDC) module and a Local-Global Features Interaction (LGFI) module are proposed. The former is used to extract rich multi-scale local features, and the latter takes advantage of the self-attention mechanism to encode long-range global information into the features. Experiments demonstrate that Lite-Mono outperforms Monodepth2 by a large margin in accuracy, with about 80% fewer trainable parameters. Our codes and models are available at https://github.com/noahzn/Lite-Mono.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Lite-Mono_A_Lightweight_CNN_and_Transformer_Architecture_for_Self-Supervised_Monocular_CVPR_2023_paper.pdf",
+    "authors": "Zhang, Ning; Nex, Francesco; Vosselman, George; Kerle, Norman",
+    "keywords": [
+      "Transformers",
+      "Self-supervised learning",
+      "Depth estimation"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:21.084Z"
+  },
+  {
+    "title": "PLA: Language-Driven Open-Vocabulary 3D Scene Understanding",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Ding_PLA_Language-Driven_Open-Vocabulary_3D_Scene_Understanding_CVPR_2023_paper.html",
+    "abstract": "Open-vocabulary scene understanding aims to localize and recognize unseen categories beyond the annotated label space. The recent breakthrough of 2D open-vocabulary perception is largely driven by Internet-scale paired image-text data with rich vocabulary concepts. However, this success cannot be directly transferred to 3D scenarios due to the inaccessibility of large-scale 3D-text pairs. To this end, we propose to distill knowledge encoded in pre-trained vision-language (VL) foundation models through captioning multi-view images from 3D, which allows explicitly associating 3D and semantic-rich captions. Further, to foster coarse-to-fine visual-semantic representation learning from captions, we design hierarchical 3D-caption pairs, leveraging geometric constraints between 3D scenes and multi-view images. Finally, by employing contrastive learning, the model learns language-aware embeddings that connect 3D and text for open-vocabulary tasks. Our method not only remarkably outperforms baseline methods by 25.8% 44.7% hIoU and 14.5% 50.4% hAP_ 50 in open-vocabulary semantic and instance segmentation, but also shows robust transferability on challenging zero-shot domain transfer tasks. See the project website at https://dingry.github.io/projects/PLA.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Ding_PLA_Language-Driven_Open-Vocabulary_3D_Scene_Understanding_CVPR_2023_paper.pdf",
+    "authors": "Ding, Runyu; Yang, Jihan; Xue, Chuhui; Zhang, Wenqing; Bai, Song; Qi, Xiaojuan",
+    "keywords": [
+      "3D vision",
+      "Image segmentation",
+      "Vision-language",
+      "Self-supervised learning",
+      "Few-shot learning"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:21.721Z"
+  },
+  {
+    "title": "Semi-Supervised Video Inpainting With Cycle Consistency Constraints",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Wu_Semi-Supervised_Video_Inpainting_With_Cycle_Consistency_Constraints_CVPR_2023_paper.html",
+    "abstract": "Deep learning-based video inpainting has yielded promising results and gained increasing attention from researchers. Generally, these methods usually assume that the corrupted region masks of each frame are known and easily obtained. However, the annotation of these masks are labor-intensive and expensive, which limits the practical application of current methods. Therefore, we expect to relax this assumption by defining a new semi-supervised inpainting setting, making the networks have the ability of completing the corrupted regions of the whole video using the annotated mask of only one frame. Specifically, in this work, we propose an end-to-end trainable framework consisting of completion network and mask prediction network, which are designed to generate corrupted contents of the current frame using the known mask and decide the regions to be filled of the next frame, respectively. Besides, we introduce a cycle consistency loss to regularize the training parameters of these two networks. In this way, the completion network and the mask prediction network can constrain each other, and hence the overall performance of the trained model can be maximized. Furthermore, due to the natural existence of prior knowledge (e.g., corrupted contents and clear borders), current video inpainting datasets are not suitable in the context of semi-supervised video inpainting. Thus, we create a new dataset by simulating the corrupted video of real-world scenarios. Extensive experimental results are reported to demonstrate the superiority of our model in the video inpainting task. Remarkably, although our model is trained in a semi-supervised manner, it can achieve comparable performance as fully-supervised methods.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Wu_Semi-Supervised_Video_Inpainting_With_Cycle_Consistency_Constraints_CVPR_2023_paper.pdf",
+    "authors": "Wu, Zhiliang; Xuan, Hanyu; Sun, Changchang; Guan, Weili; Zhang, Kang; Yan, Yan",
+    "keywords": [
+      "Video understanding"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:22.368Z"
+  },
+  {
+    "title": "High-Fidelity Clothed Avatar Reconstruction From a Single Image",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Liao_High-Fidelity_Clothed_Avatar_Reconstruction_From_a_Single_Image_CVPR_2023_paper.html",
+    "abstract": "This paper presents a framework for efficient 3D clothed avatar reconstruction. By combining the advantages of the high accuracy of optimization-based methods and the efficiency of learning-based methods, we propose a coarse-to-fine way to realize a high-fidelity clothed avatar reconstruction (CAR) from a single image. At the first stage, we use an implicit model to learn the general shape in the canonical space of a person in a learning-based way, and at the second stage, we refine the surface detail by estimating the non-rigid deformation in the posed space in an optimization way. A hyper-network is utilized to generate a good initialization so that the convergence of the optimization process is greatly accelerated. Extensive experiments on various datasets show that the proposed CAR successfully produces high-fidelity avatars for arbitrarily clothed humans in real scenes. The codes will be released.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Liao_High-Fidelity_Clothed_Avatar_Reconstruction_From_a_Single_Image_CVPR_2023_paper.pdf",
+    "authors": "Liao, Tingting; Zhang, Xiaomei; Xiu, Yuliang; Yi, Hongwei; Liu, Xudong; Qi, Guo-Jun; Zhang, Yong; Wang, Xuan; Zhu, Xiangyu; Lei, Zhen",
+    "keywords": [
+      "3D vision"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:23.045Z"
+  },
+  {
+    "title": "Detecting Everything in the Open World: Towards Universal Object Detection",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Wang_Detecting_Everything_in_the_Open_World_Towards_Universal_Object_Detection_CVPR_2023_paper.html",
+    "abstract": "In this paper, we formally address universal object detection, which aims to detect every scene and predict every category. The dependence on human annotations, the limited visual information, and the novel categories in the open world severely restrict the universality of traditional detectors. We propose UniDetector, a universal object detector that has the ability to recognize enormous categories in the open world. The critical points for the universality of UniDetector are: 1) it leverages images of multiple sources and heterogeneous label spaces for training through the alignment of image and text spaces, which guarantees sufficient information for universal representations. 2) it generalizes to the open world easily while keeping the balance between seen and unseen classes, thanks to abundant information from both vision and language modalities. 3) it further promotes the generalization ability to novel categories through our proposed decoupling training manner and probability calibration. These contributions allow UniDetector to detect over 7k categories, the largest measurable category size so far, with only about 500 classes participating in training. Our UniDetector behaves the strong zero-shot generalization ability on large-vocabulary datasets like LVIS, ImageNetBoxes, and VisualGenome - it surpasses the traditional supervised baselines by more than 4% on average without seeing any corresponding images. On 13 public detection datasets with various scenes, UniDetector also achieves state-of-the-art performance with only a 3% amount of training data.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Detecting_Everything_in_the_Open_World_Towards_Universal_Object_Detection_CVPR_2023_paper.pdf",
+    "authors": "Wang, Zhenyu; Li, Yali; Chen, Xi; Lim, Ser-Nam; Torralba, Antonio; Zhao, Hengshuang; Wang, Shengjin",
+    "keywords": [
+      "Object detection",
+      "Vision-language",
+      "Few-shot learning"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:23.689Z"
+  },
+  {
+    "title": "UniHCP: A Unified Model for Human-Centric Perceptions",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Ci_UniHCP_A_Unified_Model_for_Human-Centric_Perceptions_CVPR_2023_paper.html",
+    "abstract": "Human-centric perceptions (e.g., pose estimation, human parsing, pedestrian detection, person re-identification, etc.) play a key role in industrial applications of visual models. While specific human-centric tasks have their own relevant semantic aspect to focus on, they also share the same underlying semantic structure of the human body. However, few works have attempted to exploit such homogeneity and design a general-propose model for human-centric tasks. In this work, we revisit a broad range of human-centric tasks and unify them in a minimalist manner. We propose UniHCP, a Unified Model for Human-Centric Perceptions, which unifies a wide range of human-centric tasks in a simplified end-to-end manner with the plain vision transformer architecture. With large-scale joint training on 33 humancentric datasets, UniHCP can outperform strong baselines on several in-domain and downstream tasks by direct evaluation. When adapted to a specific task, UniHCP achieves new SOTAs on a wide range of human-centric tasks, e.g., 69.8 mIoU on CIHP for human parsing, 86.18 mA on PA-100K for attribute prediction, 90.3 mAP on Market1501 for ReID, and 85.8 JI on CrowdHuman for pedestrian detection, performing better than specialized models tailored for each task. The code and pretrained model are available at https://github.com/OpenGVLab/UniHCP.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Ci_UniHCP_A_Unified_Model_for_Human-Centric_Perceptions_CVPR_2023_paper.pdf",
+    "authors": "Ci, Yuanzheng; Wang, Yizhou; Chen, Meilin; Tang, Shixiang; Bai, Lei; Zhu, Feng; Zhao, Rui; Yu, Fengwei; Qi, Donglian; Ouyang, Wanli",
+    "keywords": [
+      "Transformers",
+      "Pose estimation"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:24.330Z"
+  },
+  {
+    "title": "Delving StyleGAN Inversion for Image Editing: A Foundation Latent Space Viewpoint",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Liu_Delving_StyleGAN_Inversion_for_Image_Editing_A_Foundation_Latent_Space_CVPR_2023_paper.html",
+    "abstract": "GAN inversion and editing via StyleGAN maps an input image into the embedding spaces (W, W^+, and F) to simultaneously maintain image fidelity and meaningful manipulation. From latent space W to extended latent space W^+ to feature space F in StyleGAN, the editability of GAN inversion decreases while its reconstruction quality increases. Recent GAN inversion methods typically explore W^+ and F rather than W to improve reconstruction fidelity while maintaining editability. As W^+ and F are derived from W that is essentially the foundation latent space of StyleGAN, these GAN inversion methods focusing on W^+ and F spaces could be improved by stepping back to W. In this work, we propose to first obtain the proper latent code in foundation latent space W. We introduce contrastive learning to align W and the image space for proper latent code discovery. Then, we leverage a cross-attention encoder to transform the obtained latent code in W into W^+ and F, accordingly. Our experiments show that our exploration of the foundation latent space W improves the representation ability of latent codes in W^+ and features in F, which yields state-of-the-art reconstruction fidelity and editability results on the standard benchmarks. Project page: https://kumapowerliu.github.io/CLCAE.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Liu_Delving_StyleGAN_Inversion_for_Image_Editing_A_Foundation_Latent_Space_CVPR_2023_paper.pdf",
+    "authors": "Liu, Hongyu; Song, Yibing; Chen, Qifeng",
+    "keywords": [
+      "Self-supervised learning"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:24.977Z"
+  },
+  {
+    "title": "Geometry and Uncertainty-Aware 3D Point Cloud Class-Incremental Semantic Segmentation",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Yang_Geometry_and_Uncertainty-Aware_3D_Point_Cloud_Class-Incremental_Semantic_Segmentation_CVPR_2023_paper.html",
+    "abstract": "Despite the significant recent progress made on 3D point cloud semantic segmentation, the current methods require training data for all classes at once, and are not suitable for real-life scenarios where new categories are being continuously discovered. Substantial memory storage and expensive re-training is required to update the model to sequentially arriving data for new concepts. In this paper, to continually learn new categories using previous knowledge, we introduce class-incremental semantic segmentation of 3D point cloud. Unlike 2D images, 3D point clouds are disordered and unstructured, making it difficult to store and transfer knowledge especially when the previous data is not available. We further face the challenge of semantic shift, where previous/future classes are indiscriminately collapsed and treated as the background in the current step, causing a dramatic performance drop on past classes. We exploit the structure of point cloud and propose two strategies to address these challenges. First, we design a geometry-aware distillation module that transfers point-wise feature associations in terms of their geometric characteristics. To counter forgetting caused by the semantic shift, we further develop an uncertainty-aware pseudo-labelling scheme that eliminates noise in uncertain pseudo-labels by label propagation within a local neighborhood. Our extensive experiments on S3DIS and ScanNet in a class-incremental setting show impressive results comparable to the joint training strategy (upper bound). Code is available at: https://github.com/leolyj/3DPC-CISS",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Yang_Geometry_and_Uncertainty-Aware_3D_Point_Cloud_Class-Incremental_Semantic_Segmentation_CVPR_2023_paper.pdf",
+    "authors": "Yang, Yuwei; Hayat, Munawar; Jin, Zhao; Ren, Chao; Lei, Yinjie",
+    "keywords": [
+      "3D vision",
+      "Image segmentation"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:25.619Z"
+  },
+  {
+    "title": "Affordance Grounding From Demonstration Video To Target Image",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Chen_Affordance_Grounding_From_Demonstration_Video_To_Target_Image_CVPR_2023_paper.html",
+    "abstract": "Humans excel at learning from expert demonstrations and solving their own problems. To equip intelligent robots and assistants, such as AR glasses, with this ability, it is essential to ground human hand interactions (i.e., affordances) from demonstration videos and apply them to a target image like a user's AR glass view. The video-to-image affordance grounding task is challenging due to (1) the need to predict fine-grained affordances, and (2) the limited training data, which inadequately covers video-image discrepancies and negatively impacts grounding. To tackle them, we propose Affordance Transformer (Afformer), which has a fine-grained transformer-based decoder that gradually refines affordance grounding. Moreover, we introduce Mask Affordance Hand (MaskAHand), a self-supervised pretraining technique for synthesizing video-image data and simulating context changes, enhancing affordance grounding across video-image discrepancies. Afformer with MaskAHand pre-training achieves state-of-the-art performance on multiple benchmarks, including a substantial 37% improvement on the OPRA dataset. Code is made available at https://github.com/showlab/afformer.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Chen_Affordance_Grounding_From_Demonstration_Video_To_Target_Image_CVPR_2023_paper.pdf",
+    "authors": "Chen, Joya; Gao, Difei; Lin, Kevin Qinghong; Shou, Mike Zheng",
+    "keywords": [
+      "Transformers",
+      "Self-supervised learning",
+      "Video understanding"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:26.253Z"
+  },
+  {
+    "title": "Critical Learning Periods for Multisensory Integration in Deep Networks",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Kleinman_Critical_Learning_Periods_for_Multisensory_Integration_in_Deep_Networks_CVPR_2023_paper.html",
+    "abstract": "We show that the ability of a neural network to integrate information from diverse sources hinges critically on being exposed to properly correlated signals during the early phases of training. Interfering with the learning process during this initial stage can permanently impair the development of a skill, both in artificial and biological systems where the phenomenon is known as a critical learning period. We show that critical periods arise from the complex and unstable early transient dynamics, which are decisive of final performance of the trained system and their learned representations. This evidence challenges the view, engendered by analysis of wide and shallow networks, that early learning dynamics of neural networks are simple, akin to those of a linear model. Indeed, we show that even deep linear networks exhibit critical learning periods for multi-source integration, while shallow networks do not. To better understand how the internal representations change according to disturbances or sensory deficits, we introduce a new measure of source sensitivity, which allows us to track the inhibition and integration of sources during training. Our analysis of inhibition suggests cross-source reconstruction as a natural auxiliary training objective, and indeed we show that architectures trained with cross-sensor reconstruction objectives are remarkably more resilient to critical periods. Our findings suggest that the recent success in self-supervised multi-modal training compared to previous supervised efforts may be in part due to more robust learning dynamics and not solely due to better architectures and/or more data.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Kleinman_Critical_Learning_Periods_for_Multisensory_Integration_in_Deep_Networks_CVPR_2023_paper.pdf",
+    "authors": "Kleinman, Michael; Achille, Alessandro; Soatto, Stefano",
+    "keywords": [
+      "Self-supervised learning",
+      "Multimodal learning"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:26.897Z"
+  },
+  {
+    "title": "Relational Space-Time Query in Long-Form Videos",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Yang_Relational_Space-Time_Query_in_Long-Form_Videos_CVPR_2023_paper.html",
+    "abstract": "Egocentric videos are often available in the form of uninterrupted, uncurated long videos capturing the camera wearers' daily life activities.Understanding these videos requires models to be able to reason about activities, objects, and their interactions. However, current video benchmarks study these problems independently and under short, curated clips. In contrast, real-world applications, e.g., AR assistants, require bundling these problems for both model development and evaluation. In this paper, we propose to study these problems in a joint framework for long video understanding. Our contributions are three-fold. First, we propose an integrated framework, namely Relational Space-Time Query (ReST), for evaluating video understanding models via templated spatiotemporal queries. Second, we introduce two new benchmarks, ReST-ADL and ReST-Ego4D, which augment the existing egocentric video datasets with abundant query annotations generated by the ReST framework. Finally, we present a set of baselines and in-depth analysis on the two benchmarks and provide insights about the query tasks. We view our integrated framework and benchmarks as a step towards comprehensive, multi-step reasoning in long videos, and believe it will facilitate the development of next generations of video understanding models.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Yang_Relational_Space-Time_Query_in_Long-Form_Videos_CVPR_2023_paper.pdf",
+    "authors": "Yang, Xitong; Chu, Fu-Jen; Feiszli, Matt; Goyal, Raghav; Torresani, Lorenzo; Tran, Du",
+    "keywords": [
+      "Video understanding"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:27.541Z"
+  },
+  {
+    "title": "Rawgment: Noise-Accounted RAW Augmentation Enables Recognition in a Wide Variety of Environments",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Yoshimura_Rawgment_Noise-Accounted_RAW_Augmentation_Enables_Recognition_in_a_Wide_Variety_CVPR_2023_paper.html",
+    "abstract": "Image recognition models that work in challenging environments (e.g., extremely dark, blurry, or high dynamic range conditions) must be useful. However, creating training datasets for such environments is expensive and hard due to the difficulties of data collection and annotation. It is desirable if we could get a robust model without the need for hard-to-obtain datasets. One simple approach is to apply data augmentation such as color jitter and blur to standard RGB (sRGB) images in simple scenes. Unfortunately, this approach struggles to yield realistic images in terms of pixel intensity and noise distribution due to not considering the non-linearity of Image Signal Processors (ISPs) and noise characteristics of image sensors. Instead, we propose a noise-accounted RAW image augmentation method. In essence, color jitter and blur augmentation are applied to a RAW image before applying non-linear ISP, resulting in realistic intensity. Furthermore, we introduce a noise amount alignment method that calibrates the domain gap in the noise property caused by the augmentation. We show that our proposed noise-accounted RAW augmentation method doubles the image recognition accuracy in challenging environments only with simple training data.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Yoshimura_Rawgment_Noise-Accounted_RAW_Augmentation_Enables_Recognition_in_a_Wide_Variety_CVPR_2023_paper.pdf",
+    "authors": "Yoshimura, Masakazu; Otsuka, Junji; Irie, Atsushi; Ohashi, Takeshi",
+    "keywords": [
+      "Visual recognition"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:28.187Z"
+  },
+  {
+    "title": "Layout-Based Causal Inference for Object Navigation",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Zhang_Layout-Based_Causal_Inference_for_Object_Navigation_CVPR_2023_paper.html",
+    "abstract": "Previous works for ObjectNav task attempt to learn the association (e.g. relation graph) between the visual inputs and the goal during training. Such association contains the prior knowledge of navigating in training environments, which is denoted as the experience. The experience performs a positive effect on helping the agent infer the likely location of the goal when the layout gap between the unseen environments of the test and the prior knowledge obtained in training is minor. However, when the layout gap is significant, the experience exerts a negative effect on navigation. Motivated by keeping the positive effect and removing the negative effect of the experience, we propose the layout-based soft Total Direct Effect (L-sTDE) framework based on the causal inference to adjust the prediction of the navigation policy. In particular, we propose to calculate the layout gap which is defined as the KL divergence between the posterior and the prior distribution of the object layout. Then the sTDE is proposed to appropriately control the effect of the experience based on the layout gap. Experimental results on AI2THOR, RoboTHOR, and Habitat demonstrate the effectiveness of our method.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Layout-Based_Causal_Inference_for_Object_Navigation_CVPR_2023_paper.pdf",
+    "authors": "Zhang, Sixian; Song, Xinhang; Li, Weijie; Bai, Yubing; Yu, Xinyao; Jiang, Shuqiang",
+    "keywords": [],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:28.819Z"
+  },
+  {
+    "title": "Diffusion Probabilistic Model Made Slim",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Yang_Diffusion_Probabilistic_Model_Made_Slim_CVPR_2023_paper.html",
+    "abstract": "Despite the visually-pleasing results achieved, the massive computational cost has been a long-standing flaw for diffusion probabilistic models (DPMs), which, in turn, greatly limits their applications on resource-limited platforms. Prior methods towards efficient DPM, however, have largely focused on accelerating the testing yet overlooked their huge complexity and size. In this paper, we make a dedicated attempt to lighten DPM while striving to preserve its favourable performance. We start by training a small-sized latent diffusion model (LDM) from scratch but observe a significant fidelity drop in the synthetic images. Through a thorough assessment, we find that DPM is intrinsically biased against high-frequency generation, and learns to recover different frequency components at different time-steps. These properties make compact networks unable to represent frequency dynamics with accurate high-frequency estimation. Towards this end, we introduce a customized design for slim DPM, which we term as Spectral Diffusion (SD), for lightweight image synthesis. SD incorporates wavelet gating in its architecture to enable frequency dynamic feature extraction at every reverse steps, and conducts spectrum-aware distillation to promote high-frequency recovery by inverse weighting the objective based on spectrum magnitudes. Experimental results demonstrate that, SD achieves 8-18x computational complexity reduction as compared to the latent diffusion models on a series of conditional and unconditional image generation tasks while retaining competitive image fidelity.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Yang_Diffusion_Probabilistic_Model_Made_Slim_CVPR_2023_paper.pdf",
+    "authors": "Yang, Xingyi; Zhou, Daquan; Feng, Jiashi; Wang, Xinchao",
+    "keywords": [
+      "Diffusion models",
+      "Image generation"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:29.464Z"
+  },
+  {
+    "title": "Compacting Binary Neural Networks by Sparse Kernel Selection",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Wang_Compacting_Binary_Neural_Networks_by_Sparse_Kernel_Selection_CVPR_2023_paper.html",
+    "abstract": "Binary Neural Network (BNN) represents convolution weights with 1-bit values, which enhances the efficiency of storage and computation. This paper is motivated by a previously revealed phenomenon that the binary kernels in successful BNNs are nearly power-law distributed: their values are mostly clustered into a small number of codewords. This phenomenon encourages us to compact typical BNNs and obtain further close performance through learning non-repetitive kernels within a binary kernel subspace. Specifically, we regard the binarization process as kernel grouping in terms of a binary codebook, and our task lies in learning to select a smaller subset of codewords from the full codebook. We then leverage the Gumbel-Sinkhorn technique to approximate the codeword selection process, and develop the Permutation Straight-Through Estimator (PSTE) that is able to not only optimize the selection process end-to-end but also maintain the non-repetitive occupancy of selected codewords. Experiments verify that our method reduces both the model size and bit-wise computational costs, and achieves accuracy improvements compared with state-of-the-art BNNs under comparable budgets.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Compacting_Binary_Neural_Networks_by_Sparse_Kernel_Selection_CVPR_2023_paper.pdf",
+    "authors": "Wang, Yikai; Huang, Wenbing; Dong, Yinpeng; Sun, Fuchun; Yao, Anbang",
+    "keywords": [],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:30.104Z"
+  },
+  {
+    "title": "Combining Implicit-Explicit View Correlation for Light Field Semantic Segmentation",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Cong_Combining_Implicit-Explicit_View_Correlation_for_Light_Field_Semantic_Segmentation_CVPR_2023_paper.html",
+    "abstract": "Since light field simultaneously records spatial information and angular information of light rays, it is considered to be beneficial for many potential applications, and semantic segmentation is one of them. The regular variation of image information across views facilitates a comprehensive scene understanding. However, in the case of limited memory, the high-dimensional property of light field makes the problem more intractable than generic semantic segmentation, manifested in the difficulty of fully exploiting the relationships among views while maintaining contextual information in single view. In this paper, we propose a novel network called LF-IENet for light field semantic segmentation. It contains two different manners to mine complementary information from surrounding views to segment central view. One is implicit feature integration that leverages attention mechanism to compute inter-view and intra-view similarity to modulate features of central view. The other is explicit feature propagation that directly warps features of other views to central view under the guidance of disparity. They complement each other and jointly realize complementary information fusion across views in light field. The proposed method achieves outperforming performance on both real-world and synthetic light field datasets, demonstrating the effectiveness of this new architecture.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Cong_Combining_Implicit-Explicit_View_Correlation_for_Light_Field_Semantic_Segmentation_CVPR_2023_paper.pdf",
+    "authors": "Cong, Ruixuan; Yang, Da; Chen, Rongshan; Wang, Sizhe; Cui, Zhenglong; Sheng, Hao",
+    "keywords": [
+      "Image segmentation",
+      "Transformers"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:30.737Z"
+  },
+  {
+    "title": "NLOST: Non-Line-of-Sight Imaging With Transformer",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Li_NLOST_Non-Line-of-Sight_Imaging_With_Transformer_CVPR_2023_paper.html",
+    "abstract": "Time-resolved non-line-of-sight (NLOS) imaging is based on the multi-bounce indirect reflections from the hidden objects for 3D sensing. Reconstruction from NLOS measurements remains challenging especially for complicated scenes. To boost the performance, we present NLOST, the first transformer-based neural network for NLOS reconstruction. Specifically, after extracting the shallow features with the assistance of physics-based priors, we design two spatial-temporal self attention encoders to explore both local and global correlations within 3D NLOS data by splitting or downsampling the features into different scales, respectively. Then, we design a spatial-temporal cross attention decoder to integrate local and global features in the token space of transformer, resulting in deep features with high representation capabilities. Finally, deep and shallow features are fused to reconstruct the 3D volume of hidden scenes. Extensive experimental results demonstrate the superior performance of the proposed method over existing solutions on both synthetic data and real-world data captured by different NLOS imaging systems.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Li_NLOST_Non-Line-of-Sight_Imaging_With_Transformer_CVPR_2023_paper.pdf",
+    "authors": "Li, Yue; Peng, Jiayong; Ye, Juntian; Zhang, Yueyi; Xu, Feihu; Xiong, Zhiwei",
+    "keywords": [
+      "3D vision",
+      "Transformers"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:31.379Z"
+  },
+  {
+    "title": "DualVector: Unsupervised Vector Font Synthesis With Dual-Part Representation",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Liu_DualVector_Unsupervised_Vector_Font_Synthesis_With_Dual-Part_Representation_CVPR_2023_paper.html",
+    "abstract": "Automatic generation of fonts can be an important aid to typeface design. Many current approaches regard glyphs as pixelated images, which present artifacts when scaling and inevitable quality losses after vectorization. On the other hand, existing vector font synthesis methods either fail to represent the shape concisely or require vector supervision during training. To push the quality of vector font synthesis to the next level, we propose a novel dual-part representation for vector glyphs, where each glyph is modeled as a collection of closed \"positive\" and \"negative\" path pairs. The glyph contour is then obtained by boolean operations on these paths. We first learn such a representation only from glyph images and devise a subsequent contour refinement step to align the contour with an image representation to further enhance details. Our method, named DualVector, outperforms state-of-the-art methods in vector font synthesis both quantitatively and qualitatively. Our synthesized vector fonts can be easily converted to common digital font formats like TrueType Font for practical use. The code is released at https://github.com/thuliu-yt16/dualvector.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Liu_DualVector_Unsupervised_Vector_Font_Synthesis_With_Dual-Part_Representation_CVPR_2023_paper.pdf",
+    "authors": "Liu, Ying-Tian; Zhang, Zhifei; Guo, Yuan-Chen; Fisher, Matthew; Wang, Zhaowen; Zhang, Song-Hai",
+    "keywords": [],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:32.034Z"
+  },
+  {
+    "title": "Multi-Concept Customization of Text-to-Image Diffusion",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Kumari_Multi-Concept_Customization_of_Text-to-Image_Diffusion_CVPR_2023_paper.html",
+    "abstract": "While generative models produce high-quality images of concepts learned from a large-scale database, a user often wishes to synthesize instantiations of their own concepts (for example, their family, pets, or items). Can we teach a model to quickly acquire a new concept, given a few examples? Furthermore, can we compose multiple new concepts together? We propose Custom Diffusion, an efficient method for augmenting existing text-to-image models. We find that only optimizing a few parameters in the text-to-image conditioning mechanism is sufficiently powerful to represent new concepts while enabling fast tuning ( 6 minutes). Additionally, we can jointly train for multiple concepts or combine multiple fine-tuned models into one via closed-form constrained optimization. Our fine-tuned model generates variations of multiple new concepts and seamlessly composes them with existing concepts in novel settings. Our method outperforms or performs on par with several baselines and concurrent works in both qualitative and quantitative evaluations, while being memory and computationally efficient.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Kumari_Multi-Concept_Customization_of_Text-to-Image_Diffusion_CVPR_2023_paper.pdf",
+    "authors": "Kumari, Nupur; Zhang, Bingliang; Zhang, Richard; Shechtman, Eli; Zhu, Jun-Yan",
+    "keywords": [
+      "Diffusion models",
+      "Image generation"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:32.680Z"
+  },
+  {
+    "title": "Class-Balancing Diffusion Models",
+    "conference": "CVPR",
+    "year": 2023,
+    "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Qin_Class-Balancing_Diffusion_Models_CVPR_2023_paper.html",
+    "abstract": "Diffusion-based models have shown the merits of generating high-quality visual data while preserving better diversity in recent studies. However, such observation is only justified with curated data distribution, where the data samples are nicely pre-processed to be uniformly distributed in terms of their labels. In practice, a long-tailed data distribution appears more common and how diffusion models perform on such class-imbalanced data remains unknown. In this work, we first investigate this problem and observe significant degradation in both diversity and fidelity when the diffusion model is trained on datasets with class-imbalanced distributions. Especially in tail classes, the generations largely lose diversity and we observe severe mode-collapse issues. To tackle this problem, we set from the hypothesis that the data distribution is not class-balanced, and propose Class-Balancing Diffusion Models (CBDM) that are trained with a distribution adjustment regularizer as a solution. Experiments show that images generated by CBDM exhibit higher diversity and quality in both quantitative and qualitative ways. Our method benchmarked the generation results on CIFAR100/CIFAR100LT dataset and shows outstanding performance on the downstream recognition task.",
+    "paperUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Qin_Class-Balancing_Diffusion_Models_CVPR_2023_paper.pdf",
+    "authors": "Qin, Yiming; Zheng, Huangjie; Yao, Jiangchao; Zhou, Mingyuan; Zhang, Ya",
+    "keywords": [
+      "Diffusion models",
+      "Visual recognition"
+    ],
+    "keywordMethod": "controlled-vocabulary-v1",
+    "retrievedAt": "2026-09-20T08:53:33.324Z"
+  }
+]
