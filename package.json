@@ -7,7 +7,7 @@
   "engines": { "node": ">=22.13.0" },
   "scripts": {
     "start": "node src/server.mjs",
-    "test": "node --test test/*.test.mjs",
+    "test": "node --test --experimental-test-isolation=none test/*.test.mjs",
     "seed": "node scripts/seed.mjs",
     "collect": "node scripts/collect.mjs",
     "check": "node scripts/check.mjs"
