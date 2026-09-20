@@ -26,6 +26,7 @@ async function waitFor(expression) {
 const root = fileURLToPath(new URL('../', import.meta.url));
 mkdirSync(`${root}/docs/screenshots`, { recursive: true });
 await cdp('Page.enable'); await cdp('Runtime.enable');
+const browserVersion = await cdp('Browser.getVersion');
 await cdp('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1080, deviceScaleFactor: 1, mobile: false });
 async function navigate(hash, selector) {
   await cdp('Page.navigate', { url: `http://127.0.0.1:3000/#/${hash}` });
@@ -52,7 +53,7 @@ await waitFor('!document.querySelector("#modal").open');
 await waitFor('document.querySelector("#app").innerText.includes("Browser QA temporary paper")');
 const added = await (await fetch('http://127.0.0.1:3000/api/papers?q=Browser%20QA%20temporary%20paper')).json();
 const id = added.papers[0].id;
-await evaluate(`document.querySelector('[data-edit="${id}"]').click()`); await waitFor('!!document.querySelector("#paper-form")'); await shot('05-edit-dialog', false);
+await evaluate(`document.querySelector('[data-edit="${id}"]').click()`); await waitFor('document.querySelector("#modal").open && document.querySelector("#edit-title")?.value === "Browser QA temporary paper"'); await shot('05-edit-dialog', false);
 await evaluate(`document.querySelector('#edit-keywords').value='Manual QA';document.querySelector('#paper-form').requestSubmit(document.querySelector('#paper-form button[type=submit]'))`);
 await waitFor('!document.querySelector("#modal").open');
 await waitFor(`!!document.querySelector('[data-delete="${id}"]')`);
@@ -73,6 +74,7 @@ await cdp('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, devic
 await navigate('overview', '.graph-node'); await shot('14-mobile');
 const horizontalOverflow = await evaluate('document.documentElement.scrollWidth > window.innerWidth');
 if (horizontalOverflow) throw new Error('Mobile horizontal overflow');
-writeFileSync(`${root}/docs/browser-test.json`, JSON.stringify({ testedAt: new Date().toISOString(), browser: 'Chrome for Testing headless-shell 153', checks: ['dashboard loaded', 'graph click filters papers', 'create via dialog', 'edit via dialog', 'delete with confirmation', 'paper details', 'three import modes', 'trend animation advances', 'annual chart', 'about provenance', '390px mobile layout'], uncaughtErrors: errors, horizontalOverflow }, null, 2));
+writeFileSync(`${root}/docs/browser-test.json`, JSON.stringify({ testedAt: new Date().toISOString(), browser: browserVersion.product, checks: ['dashboard loaded', 'graph click filters papers', 'create via dialog', 'edit via dialog', 'delete with confirmation', 'paper details', 'three import modes', 'trend animation advances', 'annual chart', 'about provenance', '390px mobile layout'], uncaughtErrors: errors, horizontalOverflow }, null, 2));
 console.log('browser QA complete; exceptions', errors.length);
 socket.close();
+if (errors.length) throw new Error('Uncaught browser exceptions: see docs/browser-test.json');
