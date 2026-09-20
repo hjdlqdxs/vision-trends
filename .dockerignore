@@ -1,0 +1,9 @@
+.git
+node_modules
+var
+.env
+docs
+prototype
+test
+*.zip
+*.bundle
