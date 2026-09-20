@@ -1,0 +1,87 @@
+{
+  "startedAt": "2026-09-20T08:52:34.804Z",
+  "finishedAt": "2026-09-20T08:55:14.407Z",
+  "method": "Deterministic evenly spaced samples from official index order; not a random or complete census.",
+  "keywords": "controlled-vocabulary-v1 from title + official abstract; not author-provided keywords",
+  "editions": [
+    {
+      "conference": "CVPR",
+      "year": 2022,
+      "listed": 2074,
+      "requested": 24,
+      "collected": 24
+    },
+    {
+      "conference": "ECCV",
+      "year": 2022,
+      "listed": 1645,
+      "requested": 24,
+      "collected": 24
+    },
+    {
+      "conference": "CVPR",
+      "year": 2023,
+      "listed": 2353,
+      "requested": 24,
+      "collected": 24
+    },
+    {
+      "conference": "ICCV",
+      "year": 2023,
+      "listed": 2156,
+      "requested": 24,
+      "collected": 24
+    },
+    {
+      "conference": "CVPR",
+      "year": 2024,
+      "listed": 2716,
+      "requested": 24,
+      "collected": 23
+    },
+    {
+      "conference": "ECCV",
+      "year": 2024,
+      "listed": 2387,
+      "requested": 24,
+      "collected": 24
+    },
+    {
+      "conference": "CVPR",
+      "year": 2025,
+      "listed": 2871,
+      "requested": 24,
+      "collected": 23
+    },
+    {
+      "conference": "ICCV",
+      "year": 2025,
+      "listed": 2701,
+      "requested": 24,
+      "collected": 23
+    }
+  ],
+  "failures": [
+    {
+      "title": "FaceTalk: Audio-Driven Motion Diffusion for Neural Parametric Head Models",
+      "conference": "CVPR",
+      "year": 2024,
+      "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2024/html/Aneja_FaceTalk_Audio-Driven_Motion_Diffusion_for_Neural_Parametric_Head_Models_CVPR_2024_paper.html",
+      "error": "fetch failed"
+    },
+    {
+      "title": "Animate and Sound an Image",
+      "conference": "CVPR",
+      "year": 2025,
+      "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Animate_and_Sound_an_Image_CVPR_2025_paper.html",
+      "error": "fetch failed"
+    },
+    {
+      "title": "UniversalBooth: Model-Agnostic Personalized Text-to-Image Generation",
+      "conference": "ICCV",
+      "year": 2025,
+      "sourceUrl": "https://openaccess.thecvf.com/content/ICCV2025/html/Liu_UniversalBooth_Model-Agnostic_Personalized_Text-to-Image_Generation_ICCV_2025_paper.html",
+      "error": "fetch failed"
+    }
+  ]
+}

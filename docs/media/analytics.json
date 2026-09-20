@@ -1,0 +1,2593 @@
+{
+  "generatedAt": "2026-09-20T09:22:26.117Z",
+  "source": "data/papers.json",
+  "summary": {
+    "total": 189,
+    "abstractCount": 189,
+    "keywordCoverage": 162,
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "conferences": [
+      {
+        "name": "CVPR",
+        "count": 94
+      },
+      {
+        "name": "ICCV",
+        "count": 47
+      },
+      {
+        "name": "ECCV",
+        "count": 48
+      }
+    ],
+    "topics": [
+      {
+        "name": "3D vision",
+        "count": 47,
+        "percent": 24.867724867724867
+      },
+      {
+        "name": "Video understanding",
+        "count": 34,
+        "percent": 17.989417989417987
+      },
+      {
+        "name": "Transformers",
+        "count": 30,
+        "percent": 15.873015873015872
+      },
+      {
+        "name": "Diffusion models",
+        "count": 24,
+        "percent": 12.698412698412698
+      },
+      {
+        "name": "Image generation",
+        "count": 22,
+        "percent": 11.64021164021164
+      },
+      {
+        "name": "Visual recognition",
+        "count": 22,
+        "percent": 11.64021164021164
+      },
+      {
+        "name": "Self-supervised learning",
+        "count": 21,
+        "percent": 11.11111111111111
+      },
+      {
+        "name": "Vision-language",
+        "count": 20,
+        "percent": 10.582010582010582
+      },
+      {
+        "name": "Image segmentation",
+        "count": 19,
+        "percent": 10.052910052910052
+      },
+      {
+        "name": "Few-shot learning",
+        "count": 18,
+        "percent": 9.523809523809524
+      },
+      {
+        "name": "Image restoration",
+        "count": 18,
+        "percent": 9.523809523809524
+      },
+      {
+        "name": "Multimodal learning",
+        "count": 16,
+        "percent": 8.465608465608465
+      },
+      {
+        "name": "Object detection",
+        "count": 12,
+        "percent": 6.349206349206349
+      },
+      {
+        "name": "Depth estimation",
+        "count": 9,
+        "percent": 4.761904761904762
+      },
+      {
+        "name": "Neural rendering",
+        "count": 9,
+        "percent": 4.761904761904762
+      },
+      {
+        "name": "Autonomous driving",
+        "count": 8,
+        "percent": 4.232804232804233
+      },
+      {
+        "name": "Domain adaptation",
+        "count": 6,
+        "percent": 3.1746031746031744
+      },
+      {
+        "name": "Pose estimation",
+        "count": 6,
+        "percent": 3.1746031746031744
+      },
+      {
+        "name": "Tracking",
+        "count": 5,
+        "percent": 2.6455026455026456
+      },
+      {
+        "name": "Medical imaging",
+        "count": 3,
+        "percent": 1.5873015873015872
+      }
+    ],
+    "top10": [
+      {
+        "name": "3D vision",
+        "count": 47,
+        "percent": 24.867724867724867
+      },
+      {
+        "name": "Video understanding",
+        "count": 34,
+        "percent": 17.989417989417987
+      },
+      {
+        "name": "Transformers",
+        "count": 30,
+        "percent": 15.873015873015872
+      },
+      {
+        "name": "Diffusion models",
+        "count": 24,
+        "percent": 12.698412698412698
+      },
+      {
+        "name": "Image generation",
+        "count": 22,
+        "percent": 11.64021164021164
+      },
+      {
+        "name": "Visual recognition",
+        "count": 22,
+        "percent": 11.64021164021164
+      },
+      {
+        "name": "Self-supervised learning",
+        "count": 21,
+        "percent": 11.11111111111111
+      },
+      {
+        "name": "Vision-language",
+        "count": 20,
+        "percent": 10.582010582010582
+      },
+      {
+        "name": "Image segmentation",
+        "count": 19,
+        "percent": 10.052910052910052
+      },
+      {
+        "name": "Few-shot learning",
+        "count": 18,
+        "percent": 9.523809523809524
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "name": "3D vision",
+          "count": 47,
+          "percent": 24.867724867724867
+        },
+        {
+          "name": "Video understanding",
+          "count": 34,
+          "percent": 17.989417989417987
+        },
+        {
+          "name": "Transformers",
+          "count": 30,
+          "percent": 15.873015873015872
+        },
+        {
+          "name": "Diffusion models",
+          "count": 24,
+          "percent": 12.698412698412698
+        },
+        {
+          "name": "Image generation",
+          "count": 22,
+          "percent": 11.64021164021164
+        },
+        {
+          "name": "Visual recognition",
+          "count": 22,
+          "percent": 11.64021164021164
+        },
+        {
+          "name": "Self-supervised learning",
+          "count": 21,
+          "percent": 11.11111111111111
+        },
+        {
+          "name": "Vision-language",
+          "count": 20,
+          "percent": 10.582010582010582
+        },
+        {
+          "name": "Image segmentation",
+          "count": 19,
+          "percent": 10.052910052910052
+        },
+        {
+          "name": "Few-shot learning",
+          "count": 18,
+          "percent": 9.523809523809524
+        },
+        {
+          "name": "Image restoration",
+          "count": 18,
+          "percent": 9.523809523809524
+        },
+        {
+          "name": "Multimodal learning",
+          "count": 16,
+          "percent": 8.465608465608465
+        },
+        {
+          "name": "Object detection",
+          "count": 12,
+          "percent": 6.349206349206349
+        },
+        {
+          "name": "Depth estimation",
+          "count": 9,
+          "percent": 4.761904761904762
+        },
+        {
+          "name": "Neural rendering",
+          "count": 9,
+          "percent": 4.761904761904762
+        },
+        {
+          "name": "Autonomous driving",
+          "count": 8,
+          "percent": 4.232804232804233
+        }
+      ],
+      "edges": [
+        {
+          "source": "Diffusion models",
+          "target": "Image generation",
+          "weight": 15
+        },
+        {
+          "source": "Diffusion models",
+          "target": "Image restoration",
+          "weight": 10
+        },
+        {
+          "source": "3D vision",
+          "target": "Transformers",
+          "weight": 9
+        },
+        {
+          "source": "Image generation",
+          "target": "Image restoration",
+          "weight": 9
+        },
+        {
+          "source": "3D vision",
+          "target": "Neural rendering",
+          "weight": 7
+        },
+        {
+          "source": "3D vision",
+          "target": "Self-supervised learning",
+          "weight": 6
+        },
+        {
+          "source": "3D vision",
+          "target": "Video understanding",
+          "weight": 5
+        },
+        {
+          "source": "Transformers",
+          "target": "Visual recognition",
+          "weight": 5
+        },
+        {
+          "source": "3D vision",
+          "target": "Autonomous driving",
+          "weight": 5
+        },
+        {
+          "source": "Transformers",
+          "target": "Video understanding",
+          "weight": 5
+        },
+        {
+          "source": "Video understanding",
+          "target": "Visual recognition",
+          "weight": 5
+        },
+        {
+          "source": "Few-shot learning",
+          "target": "Vision-language",
+          "weight": 5
+        },
+        {
+          "source": "Video understanding",
+          "target": "Vision-language",
+          "weight": 5
+        },
+        {
+          "source": "3D vision",
+          "target": "Image segmentation",
+          "weight": 5
+        },
+        {
+          "source": "Multimodal learning",
+          "target": "Vision-language",
+          "weight": 5
+        },
+        {
+          "source": "Object detection",
+          "target": "Visual recognition",
+          "weight": 4
+        },
+        {
+          "source": "Image segmentation",
+          "target": "Self-supervised learning",
+          "weight": 4
+        },
+        {
+          "source": "Image segmentation",
+          "target": "Visual recognition",
+          "weight": 4
+        },
+        {
+          "source": "Few-shot learning",
+          "target": "Object detection",
+          "weight": 4
+        },
+        {
+          "source": "Self-supervised learning",
+          "target": "Video understanding",
+          "weight": 4
+        },
+        {
+          "source": "Self-supervised learning",
+          "target": "Transformers",
+          "weight": 4
+        },
+        {
+          "source": "Diffusion models",
+          "target": "Video understanding",
+          "weight": 4
+        },
+        {
+          "source": "Image restoration",
+          "target": "Video understanding",
+          "weight": 4
+        },
+        {
+          "source": "3D vision",
+          "target": "Depth estimation",
+          "weight": 3
+        },
+        {
+          "source": "Depth estimation",
+          "target": "Transformers",
+          "weight": 3
+        },
+        {
+          "source": "Autonomous driving",
+          "target": "Multimodal learning",
+          "weight": 3
+        },
+        {
+          "source": "Multimodal learning",
+          "target": "Object detection",
+          "weight": 3
+        },
+        {
+          "source": "Object detection",
+          "target": "Transformers",
+          "weight": 3
+        },
+        {
+          "source": "Self-supervised learning",
+          "target": "Visual recognition",
+          "weight": 3
+        },
+        {
+          "source": "Image segmentation",
+          "target": "Object detection",
+          "weight": 3
+        },
+        {
+          "source": "Object detection",
+          "target": "Self-supervised learning",
+          "weight": 3
+        },
+        {
+          "source": "Image generation",
+          "target": "Video understanding",
+          "weight": 3
+        },
+        {
+          "source": "Depth estimation",
+          "target": "Self-supervised learning",
+          "weight": 3
+        },
+        {
+          "source": "3D vision",
+          "target": "Few-shot learning",
+          "weight": 3
+        },
+        {
+          "source": "Few-shot learning",
+          "target": "Image segmentation",
+          "weight": 3
+        },
+        {
+          "source": "Multimodal learning",
+          "target": "Video understanding",
+          "weight": 3
+        },
+        {
+          "source": "Image restoration",
+          "target": "Visual recognition",
+          "weight": 3
+        },
+        {
+          "source": "Neural rendering",
+          "target": "Self-supervised learning",
+          "weight": 3
+        },
+        {
+          "source": "Vision-language",
+          "target": "Visual recognition",
+          "weight": 3
+        },
+        {
+          "source": "3D vision",
+          "target": "Multimodal learning",
+          "weight": 2
+        },
+        {
+          "source": "3D vision",
+          "target": "Object detection",
+          "weight": 2
+        },
+        {
+          "source": "Autonomous driving",
+          "target": "Object detection",
+          "weight": 2
+        },
+        {
+          "source": "Autonomous driving",
+          "target": "Depth estimation",
+          "weight": 2
+        },
+        {
+          "source": "Image segmentation",
+          "target": "Video understanding",
+          "weight": 2
+        },
+        {
+          "source": "Few-shot learning",
+          "target": "Visual recognition",
+          "weight": 2
+        },
+        {
+          "source": "Image restoration",
+          "target": "Image segmentation",
+          "weight": 2
+        },
+        {
+          "source": "Object detection",
+          "target": "Vision-language",
+          "weight": 2
+        },
+        {
+          "source": "Self-supervised learning",
+          "target": "Vision-language",
+          "weight": 2
+        },
+        {
+          "source": "Image segmentation",
+          "target": "Transformers",
+          "weight": 2
+        },
+        {
+          "source": "3D vision",
+          "target": "Image generation",
+          "weight": 2
+        }
+      ]
+    },
+    "formula": "每篇每词计1次；占比=关键词命中论文数/该筛选条件样本论文数×100%。样本不代表会议全量。"
+  },
+  "diffusion": {
+    "keyword": "Diffusion models",
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "series": [
+      {
+        "conference": "CVPR",
+        "points": [
+          {
+            "year": 2022,
+            "total": 24,
+            "count": 0,
+            "percent": 0,
+            "status": "sampled"
+          },
+          {
+            "year": 2023,
+            "total": 24,
+            "count": 3,
+            "percent": 12.5,
+            "status": "sampled"
+          },
+          {
+            "year": 2024,
+            "total": 23,
+            "count": 6,
+            "percent": 26.08695652173913,
+            "status": "sampled"
+          },
+          {
+            "year": 2025,
+            "total": 23,
+            "count": 6,
+            "percent": 26.08695652173913,
+            "status": "sampled"
+          }
+        ]
+      },
+      {
+        "conference": "ICCV",
+        "points": [
+          {
+            "year": 2022,
+            "total": 0,
+            "count": null,
+            "percent": null,
+            "status": "not-held"
+          },
+          {
+            "year": 2023,
+            "total": 24,
+            "count": 2,
+            "percent": 8.333333333333332,
+            "status": "sampled"
+          },
+          {
+            "year": 2024,
+            "total": 0,
+            "count": null,
+            "percent": null,
+            "status": "not-held"
+          },
+          {
+            "year": 2025,
+            "total": 23,
+            "count": 3,
+            "percent": 13.043478260869565,
+            "status": "sampled"
+          }
+        ]
+      },
+      {
+        "conference": "ECCV",
+        "points": [
+          {
+            "year": 2022,
+            "total": 24,
+            "count": 0,
+            "percent": 0,
+            "status": "sampled"
+          },
+          {
+            "year": 2023,
+            "total": 0,
+            "count": null,
+            "percent": null,
+            "status": "not-held"
+          },
+          {
+            "year": 2024,
+            "total": 24,
+            "count": 4,
+            "percent": 16.666666666666664,
+            "status": "sampled"
+          },
+          {
+            "year": 2025,
+            "total": 0,
+            "count": null,
+            "percent": null,
+            "status": "not-held"
+          }
+        ]
+      }
+    ]
+  },
+  "annual": [
+    {
+      "year": 2022,
+      "total": 48,
+      "abstractCount": 48,
+      "keywordCoverage": 39,
+      "years": [
+        2022
+      ],
+      "conferences": [
+        {
+          "name": "CVPR",
+          "count": 24
+        },
+        {
+          "name": "ICCV",
+          "count": 0
+        },
+        {
+          "name": "ECCV",
+          "count": 24
+        }
+      ],
+      "topics": [
+        {
+          "name": "Transformers",
+          "count": 11,
+          "percent": 22.916666666666664
+        },
+        {
+          "name": "3D vision",
+          "count": 10,
+          "percent": 20.833333333333336
+        },
+        {
+          "name": "Visual recognition",
+          "count": 10,
+          "percent": 20.833333333333336
+        },
+        {
+          "name": "Video understanding",
+          "count": 8,
+          "percent": 16.666666666666664
+        },
+        {
+          "name": "Object detection",
+          "count": 7,
+          "percent": 14.583333333333334
+        },
+        {
+          "name": "Image segmentation",
+          "count": 6,
+          "percent": 12.5
+        },
+        {
+          "name": "Self-supervised learning",
+          "count": 5,
+          "percent": 10.416666666666668
+        },
+        {
+          "name": "Few-shot learning",
+          "count": 4,
+          "percent": 8.333333333333332
+        },
+        {
+          "name": "Depth estimation",
+          "count": 3,
+          "percent": 6.25
+        },
+        {
+          "name": "Domain adaptation",
+          "count": 3,
+          "percent": 6.25
+        },
+        {
+          "name": "Vision-language",
+          "count": 3,
+          "percent": 6.25
+        },
+        {
+          "name": "Autonomous driving",
+          "count": 2,
+          "percent": 4.166666666666666
+        },
+        {
+          "name": "Medical imaging",
+          "count": 2,
+          "percent": 4.166666666666666
+        },
+        {
+          "name": "Multimodal learning",
+          "count": 2,
+          "percent": 4.166666666666666
+        },
+        {
+          "name": "Neural rendering",
+          "count": 2,
+          "percent": 4.166666666666666
+        },
+        {
+          "name": "Pose estimation",
+          "count": 2,
+          "percent": 4.166666666666666
+        },
+        {
+          "name": "Tracking",
+          "count": 2,
+          "percent": 4.166666666666666
+        },
+        {
+          "name": "Image generation",
+          "count": 1,
+          "percent": 2.083333333333333
+        },
+        {
+          "name": "Image restoration",
+          "count": 1,
+          "percent": 2.083333333333333
+        }
+      ],
+      "top10": [
+        {
+          "name": "Transformers",
+          "count": 11,
+          "percent": 22.916666666666664
+        },
+        {
+          "name": "3D vision",
+          "count": 10,
+          "percent": 20.833333333333336
+        },
+        {
+          "name": "Visual recognition",
+          "count": 10,
+          "percent": 20.833333333333336
+        },
+        {
+          "name": "Video understanding",
+          "count": 8,
+          "percent": 16.666666666666664
+        },
+        {
+          "name": "Object detection",
+          "count": 7,
+          "percent": 14.583333333333334
+        },
+        {
+          "name": "Image segmentation",
+          "count": 6,
+          "percent": 12.5
+        },
+        {
+          "name": "Self-supervised learning",
+          "count": 5,
+          "percent": 10.416666666666668
+        },
+        {
+          "name": "Few-shot learning",
+          "count": 4,
+          "percent": 8.333333333333332
+        },
+        {
+          "name": "Depth estimation",
+          "count": 3,
+          "percent": 6.25
+        },
+        {
+          "name": "Domain adaptation",
+          "count": 3,
+          "percent": 6.25
+        }
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "name": "Transformers",
+            "count": 11,
+            "percent": 22.916666666666664
+          },
+          {
+            "name": "3D vision",
+            "count": 10,
+            "percent": 20.833333333333336
+          },
+          {
+            "name": "Visual recognition",
+            "count": 10,
+            "percent": 20.833333333333336
+          },
+          {
+            "name": "Video understanding",
+            "count": 8,
+            "percent": 16.666666666666664
+          },
+          {
+            "name": "Object detection",
+            "count": 7,
+            "percent": 14.583333333333334
+          },
+          {
+            "name": "Image segmentation",
+            "count": 6,
+            "percent": 12.5
+          },
+          {
+            "name": "Self-supervised learning",
+            "count": 5,
+            "percent": 10.416666666666668
+          },
+          {
+            "name": "Few-shot learning",
+            "count": 4,
+            "percent": 8.333333333333332
+          },
+          {
+            "name": "Depth estimation",
+            "count": 3,
+            "percent": 6.25
+          },
+          {
+            "name": "Domain adaptation",
+            "count": 3,
+            "percent": 6.25
+          },
+          {
+            "name": "Vision-language",
+            "count": 3,
+            "percent": 6.25
+          },
+          {
+            "name": "Autonomous driving",
+            "count": 2,
+            "percent": 4.166666666666666
+          },
+          {
+            "name": "Medical imaging",
+            "count": 2,
+            "percent": 4.166666666666666
+          },
+          {
+            "name": "Multimodal learning",
+            "count": 2,
+            "percent": 4.166666666666666
+          },
+          {
+            "name": "Neural rendering",
+            "count": 2,
+            "percent": 4.166666666666666
+          },
+          {
+            "name": "Pose estimation",
+            "count": 2,
+            "percent": 4.166666666666666
+          }
+        ],
+        "edges": [
+          {
+            "source": "3D vision",
+            "target": "Transformers",
+            "weight": 4
+          },
+          {
+            "source": "Transformers",
+            "target": "Visual recognition",
+            "weight": 4
+          },
+          {
+            "source": "Object detection",
+            "target": "Visual recognition",
+            "weight": 3
+          },
+          {
+            "source": "Self-supervised learning",
+            "target": "Visual recognition",
+            "weight": 3
+          },
+          {
+            "source": "Object detection",
+            "target": "Self-supervised learning",
+            "weight": 3
+          },
+          {
+            "source": "3D vision",
+            "target": "Video understanding",
+            "weight": 2
+          },
+          {
+            "source": "Transformers",
+            "target": "Video understanding",
+            "weight": 2
+          },
+          {
+            "source": "Object detection",
+            "target": "Transformers",
+            "weight": 2
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Object detection",
+            "weight": 2
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Self-supervised learning",
+            "weight": 2
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Visual recognition",
+            "weight": 2
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Video understanding",
+            "weight": 2
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Object detection",
+            "weight": 2
+          },
+          {
+            "source": "Self-supervised learning",
+            "target": "Video understanding",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Neural rendering",
+            "weight": 1
+          },
+          {
+            "source": "Medical imaging",
+            "target": "Multimodal learning",
+            "weight": 1
+          },
+          {
+            "source": "Medical imaging",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "Multimodal learning",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Depth estimation",
+            "weight": 1
+          },
+          {
+            "source": "Depth estimation",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Autonomous driving",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Multimodal learning",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Object detection",
+            "weight": 1
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Multimodal learning",
+            "weight": 1
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Object detection",
+            "weight": 1
+          },
+          {
+            "source": "Multimodal learning",
+            "target": "Object detection",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Pose estimation",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Visual recognition",
+            "weight": 1
+          },
+          {
+            "source": "Video understanding",
+            "target": "Visual recognition",
+            "weight": 1
+          },
+          {
+            "source": "Domain adaptation",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Domain adaptation",
+            "target": "Visual recognition",
+            "weight": 1
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Depth estimation",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Visual recognition",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Object detection",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Transformers",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Self-supervised learning",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Video understanding",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Object detection",
+            "target": "Video understanding",
+            "weight": 1
+          },
+          {
+            "source": "Pose estimation",
+            "target": "Video understanding",
+            "weight": 1
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Medical imaging",
+            "weight": 1
+          },
+          {
+            "source": "Medical imaging",
+            "target": "Object detection",
+            "weight": 1
+          },
+          {
+            "source": "Medical imaging",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Medical imaging",
+            "target": "Visual recognition",
+            "weight": 1
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Transformers",
+            "weight": 1
+          }
+        ]
+      },
+      "formula": "每篇每词计1次；占比=关键词命中论文数/该筛选条件样本论文数×100%。样本不代表会议全量。"
+    },
+    {
+      "year": 2023,
+      "total": 48,
+      "abstractCount": 48,
+      "keywordCoverage": 42,
+      "years": [
+        2023
+      ],
+      "conferences": [
+        {
+          "name": "CVPR",
+          "count": 24
+        },
+        {
+          "name": "ICCV",
+          "count": 24
+        },
+        {
+          "name": "ECCV",
+          "count": 0
+        }
+      ],
+      "topics": [
+        {
+          "name": "3D vision",
+          "count": 13,
+          "percent": 27.083333333333332
+        },
+        {
+          "name": "Transformers",
+          "count": 10,
+          "percent": 20.833333333333336
+        },
+        {
+          "name": "Video understanding",
+          "count": 10,
+          "percent": 20.833333333333336
+        },
+        {
+          "name": "Self-supervised learning",
+          "count": 8,
+          "percent": 16.666666666666664
+        },
+        {
+          "name": "Image segmentation",
+          "count": 7,
+          "percent": 14.583333333333334
+        },
+        {
+          "name": "Image generation",
+          "count": 6,
+          "percent": 12.5
+        },
+        {
+          "name": "Diffusion models",
+          "count": 5,
+          "percent": 10.416666666666668
+        },
+        {
+          "name": "Visual recognition",
+          "count": 5,
+          "percent": 10.416666666666668
+        },
+        {
+          "name": "Multimodal learning",
+          "count": 4,
+          "percent": 8.333333333333332
+        },
+        {
+          "name": "Vision-language",
+          "count": 4,
+          "percent": 8.333333333333332
+        },
+        {
+          "name": "Object detection",
+          "count": 3,
+          "percent": 6.25
+        },
+        {
+          "name": "Depth estimation",
+          "count": 2,
+          "percent": 4.166666666666666
+        },
+        {
+          "name": "Domain adaptation",
+          "count": 2,
+          "percent": 4.166666666666666
+        },
+        {
+          "name": "Few-shot learning",
+          "count": 2,
+          "percent": 4.166666666666666
+        },
+        {
+          "name": "Image restoration",
+          "count": 2,
+          "percent": 4.166666666666666
+        },
+        {
+          "name": "Pose estimation",
+          "count": 2,
+          "percent": 4.166666666666666
+        },
+        {
+          "name": "Tracking",
+          "count": 2,
+          "percent": 4.166666666666666
+        },
+        {
+          "name": "Autonomous driving",
+          "count": 1,
+          "percent": 2.083333333333333
+        },
+        {
+          "name": "Medical imaging",
+          "count": 1,
+          "percent": 2.083333333333333
+        },
+        {
+          "name": "Neural rendering",
+          "count": 1,
+          "percent": 2.083333333333333
+        }
+      ],
+      "top10": [
+        {
+          "name": "3D vision",
+          "count": 13,
+          "percent": 27.083333333333332
+        },
+        {
+          "name": "Transformers",
+          "count": 10,
+          "percent": 20.833333333333336
+        },
+        {
+          "name": "Video understanding",
+          "count": 10,
+          "percent": 20.833333333333336
+        },
+        {
+          "name": "Self-supervised learning",
+          "count": 8,
+          "percent": 16.666666666666664
+        },
+        {
+          "name": "Image segmentation",
+          "count": 7,
+          "percent": 14.583333333333334
+        },
+        {
+          "name": "Image generation",
+          "count": 6,
+          "percent": 12.5
+        },
+        {
+          "name": "Diffusion models",
+          "count": 5,
+          "percent": 10.416666666666668
+        },
+        {
+          "name": "Visual recognition",
+          "count": 5,
+          "percent": 10.416666666666668
+        },
+        {
+          "name": "Multimodal learning",
+          "count": 4,
+          "percent": 8.333333333333332
+        },
+        {
+          "name": "Vision-language",
+          "count": 4,
+          "percent": 8.333333333333332
+        }
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "name": "3D vision",
+            "count": 13,
+            "percent": 27.083333333333332
+          },
+          {
+            "name": "Transformers",
+            "count": 10,
+            "percent": 20.833333333333336
+          },
+          {
+            "name": "Video understanding",
+            "count": 10,
+            "percent": 20.833333333333336
+          },
+          {
+            "name": "Self-supervised learning",
+            "count": 8,
+            "percent": 16.666666666666664
+          },
+          {
+            "name": "Image segmentation",
+            "count": 7,
+            "percent": 14.583333333333334
+          },
+          {
+            "name": "Image generation",
+            "count": 6,
+            "percent": 12.5
+          },
+          {
+            "name": "Diffusion models",
+            "count": 5,
+            "percent": 10.416666666666668
+          },
+          {
+            "name": "Visual recognition",
+            "count": 5,
+            "percent": 10.416666666666668
+          },
+          {
+            "name": "Multimodal learning",
+            "count": 4,
+            "percent": 8.333333333333332
+          },
+          {
+            "name": "Vision-language",
+            "count": 4,
+            "percent": 8.333333333333332
+          },
+          {
+            "name": "Object detection",
+            "count": 3,
+            "percent": 6.25
+          },
+          {
+            "name": "Depth estimation",
+            "count": 2,
+            "percent": 4.166666666666666
+          },
+          {
+            "name": "Domain adaptation",
+            "count": 2,
+            "percent": 4.166666666666666
+          },
+          {
+            "name": "Few-shot learning",
+            "count": 2,
+            "percent": 4.166666666666666
+          },
+          {
+            "name": "Image restoration",
+            "count": 2,
+            "percent": 4.166666666666666
+          },
+          {
+            "name": "Pose estimation",
+            "count": 2,
+            "percent": 4.166666666666666
+          }
+        ],
+        "edges": [
+          {
+            "source": "Diffusion models",
+            "target": "Image generation",
+            "weight": 4
+          },
+          {
+            "source": "Self-supervised learning",
+            "target": "Transformers",
+            "weight": 3
+          },
+          {
+            "source": "3D vision",
+            "target": "Image generation",
+            "weight": 2
+          },
+          {
+            "source": "Image generation",
+            "target": "Image restoration",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Video understanding",
+            "weight": 2
+          },
+          {
+            "source": "Depth estimation",
+            "target": "Self-supervised learning",
+            "weight": 2
+          },
+          {
+            "source": "Depth estimation",
+            "target": "Transformers",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Image segmentation",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Self-supervised learning",
+            "weight": 2
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Vision-language",
+            "weight": 2
+          },
+          {
+            "source": "Self-supervised learning",
+            "target": "Video understanding",
+            "weight": 2
+          },
+          {
+            "source": "Transformers",
+            "target": "Video understanding",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Transformers",
+            "weight": 2
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Visual recognition",
+            "weight": 2
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Visual recognition",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Image restoration",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Pose estimation",
+            "weight": 1
+          },
+          {
+            "source": "Image generation",
+            "target": "Pose estimation",
+            "weight": 1
+          },
+          {
+            "source": "Image restoration",
+            "target": "Pose estimation",
+            "weight": 1
+          },
+          {
+            "source": "Image generation",
+            "target": "Video understanding",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Few-shot learning",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Image segmentation",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Self-supervised learning",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Object detection",
+            "weight": 1
+          },
+          {
+            "source": "Object detection",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Pose estimation",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "Multimodal learning",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "Multimodal learning",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Multimodal learning",
+            "target": "Video understanding",
+            "weight": 1
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Object detection",
+            "weight": 1
+          },
+          {
+            "source": "Object detection",
+            "target": "Visual recognition",
+            "weight": 1
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Image restoration",
+            "weight": 1
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Image segmentation",
+            "weight": 1
+          },
+          {
+            "source": "Image generation",
+            "target": "Image segmentation",
+            "weight": 1
+          },
+          {
+            "source": "Image generation",
+            "target": "Visual recognition",
+            "weight": 1
+          },
+          {
+            "source": "Image restoration",
+            "target": "Image segmentation",
+            "weight": 1
+          },
+          {
+            "source": "Image restoration",
+            "target": "Visual recognition",
+            "weight": 1
+          },
+          {
+            "source": "Multimodal learning",
+            "target": "Object detection",
+            "weight": 1
+          },
+          {
+            "source": "Video understanding",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Domain adaptation",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "Domain adaptation",
+            "target": "Visual recognition",
+            "weight": 1
+          }
+        ]
+      },
+      "formula": "每篇每词计1次；占比=关键词命中论文数/该筛选条件样本论文数×100%。样本不代表会议全量。"
+    },
+    {
+      "year": 2024,
+      "total": 47,
+      "abstractCount": 47,
+      "keywordCoverage": 41,
+      "years": [
+        2024
+      ],
+      "conferences": [
+        {
+          "name": "CVPR",
+          "count": 23
+        },
+        {
+          "name": "ICCV",
+          "count": 0
+        },
+        {
+          "name": "ECCV",
+          "count": 24
+        }
+      ],
+      "topics": [
+        {
+          "name": "3D vision",
+          "count": 12,
+          "percent": 25.53191489361702
+        },
+        {
+          "name": "Diffusion models",
+          "count": 10,
+          "percent": 21.27659574468085
+        },
+        {
+          "name": "Image restoration",
+          "count": 10,
+          "percent": 21.27659574468085
+        },
+        {
+          "name": "Image generation",
+          "count": 9,
+          "percent": 19.148936170212767
+        },
+        {
+          "name": "Video understanding",
+          "count": 7,
+          "percent": 14.893617021276595
+        },
+        {
+          "name": "Vision-language",
+          "count": 7,
+          "percent": 14.893617021276595
+        },
+        {
+          "name": "Few-shot learning",
+          "count": 6,
+          "percent": 12.76595744680851
+        },
+        {
+          "name": "Transformers",
+          "count": 6,
+          "percent": 12.76595744680851
+        },
+        {
+          "name": "Visual recognition",
+          "count": 5,
+          "percent": 10.638297872340425
+        },
+        {
+          "name": "Multimodal learning",
+          "count": 4,
+          "percent": 8.51063829787234
+        },
+        {
+          "name": "Image segmentation",
+          "count": 3,
+          "percent": 6.382978723404255
+        },
+        {
+          "name": "Neural rendering",
+          "count": 3,
+          "percent": 6.382978723404255
+        },
+        {
+          "name": "Self-supervised learning",
+          "count": 3,
+          "percent": 6.382978723404255
+        },
+        {
+          "name": "Object detection",
+          "count": 2,
+          "percent": 4.25531914893617
+        },
+        {
+          "name": "Autonomous driving",
+          "count": 1,
+          "percent": 2.127659574468085
+        },
+        {
+          "name": "Depth estimation",
+          "count": 1,
+          "percent": 2.127659574468085
+        },
+        {
+          "name": "Tracking",
+          "count": 1,
+          "percent": 2.127659574468085
+        }
+      ],
+      "top10": [
+        {
+          "name": "3D vision",
+          "count": 12,
+          "percent": 25.53191489361702
+        },
+        {
+          "name": "Diffusion models",
+          "count": 10,
+          "percent": 21.27659574468085
+        },
+        {
+          "name": "Image restoration",
+          "count": 10,
+          "percent": 21.27659574468085
+        },
+        {
+          "name": "Image generation",
+          "count": 9,
+          "percent": 19.148936170212767
+        },
+        {
+          "name": "Video understanding",
+          "count": 7,
+          "percent": 14.893617021276595
+        },
+        {
+          "name": "Vision-language",
+          "count": 7,
+          "percent": 14.893617021276595
+        },
+        {
+          "name": "Few-shot learning",
+          "count": 6,
+          "percent": 12.76595744680851
+        },
+        {
+          "name": "Transformers",
+          "count": 6,
+          "percent": 12.76595744680851
+        },
+        {
+          "name": "Visual recognition",
+          "count": 5,
+          "percent": 10.638297872340425
+        },
+        {
+          "name": "Multimodal learning",
+          "count": 4,
+          "percent": 8.51063829787234
+        }
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "name": "3D vision",
+            "count": 12,
+            "percent": 25.53191489361702
+          },
+          {
+            "name": "Diffusion models",
+            "count": 10,
+            "percent": 21.27659574468085
+          },
+          {
+            "name": "Image restoration",
+            "count": 10,
+            "percent": 21.27659574468085
+          },
+          {
+            "name": "Image generation",
+            "count": 9,
+            "percent": 19.148936170212767
+          },
+          {
+            "name": "Video understanding",
+            "count": 7,
+            "percent": 14.893617021276595
+          },
+          {
+            "name": "Vision-language",
+            "count": 7,
+            "percent": 14.893617021276595
+          },
+          {
+            "name": "Few-shot learning",
+            "count": 6,
+            "percent": 12.76595744680851
+          },
+          {
+            "name": "Transformers",
+            "count": 6,
+            "percent": 12.76595744680851
+          },
+          {
+            "name": "Visual recognition",
+            "count": 5,
+            "percent": 10.638297872340425
+          },
+          {
+            "name": "Multimodal learning",
+            "count": 4,
+            "percent": 8.51063829787234
+          },
+          {
+            "name": "Image segmentation",
+            "count": 3,
+            "percent": 6.382978723404255
+          },
+          {
+            "name": "Neural rendering",
+            "count": 3,
+            "percent": 6.382978723404255
+          },
+          {
+            "name": "Self-supervised learning",
+            "count": 3,
+            "percent": 6.382978723404255
+          },
+          {
+            "name": "Object detection",
+            "count": 2,
+            "percent": 4.25531914893617
+          },
+          {
+            "name": "Autonomous driving",
+            "count": 1,
+            "percent": 2.127659574468085
+          },
+          {
+            "name": "Depth estimation",
+            "count": 1,
+            "percent": 2.127659574468085
+          }
+        ],
+        "edges": [
+          {
+            "source": "Diffusion models",
+            "target": "Image generation",
+            "weight": 7
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Image restoration",
+            "weight": 7
+          },
+          {
+            "source": "Image generation",
+            "target": "Image restoration",
+            "weight": 5
+          },
+          {
+            "source": "Video understanding",
+            "target": "Vision-language",
+            "weight": 3
+          },
+          {
+            "source": "Vision-language",
+            "target": "Visual recognition",
+            "weight": 3
+          },
+          {
+            "source": "Image restoration",
+            "target": "Video understanding",
+            "weight": 3
+          },
+          {
+            "source": "Image restoration",
+            "target": "Transformers",
+            "weight": 2
+          },
+          {
+            "source": "Image restoration",
+            "target": "Multimodal learning",
+            "weight": 2
+          },
+          {
+            "source": "Image restoration",
+            "target": "Visual recognition",
+            "weight": 2
+          },
+          {
+            "source": "Multimodal learning",
+            "target": "Vision-language",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Transformers",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Neural rendering",
+            "weight": 2
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Video understanding",
+            "weight": 2
+          },
+          {
+            "source": "Image generation",
+            "target": "Video understanding",
+            "weight": 2
+          },
+          {
+            "source": "Video understanding",
+            "target": "Visual recognition",
+            "weight": 2
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "Image generation",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Image generation",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "Image restoration",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Self-supervised learning",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "Neural rendering",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Image generation",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Multimodal learning",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Object detection",
+            "weight": 1
+          },
+          {
+            "source": "Multimodal learning",
+            "target": "Object detection",
+            "weight": 1
+          },
+          {
+            "source": "Image restoration",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Multimodal learning",
+            "target": "Visual recognition",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Autonomous driving",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Object detection",
+            "weight": 1
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Object detection",
+            "weight": 1
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "Object detection",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "Multimodal learning",
+            "target": "Video understanding",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Video understanding",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Image segmentation",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Multimodal learning",
+            "weight": 1
+          },
+          {
+            "source": "Image generation",
+            "target": "Multimodal learning",
+            "weight": 1
+          },
+          {
+            "source": "Transformers",
+            "target": "Video understanding",
+            "weight": 1
+          },
+          {
+            "source": "Transformers",
+            "target": "Visual recognition",
+            "weight": 1
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Few-shot learning",
+            "weight": 1
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Image segmentation",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Image segmentation",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Visual recognition",
+            "weight": 1
+          }
+        ]
+      },
+      "formula": "每篇每词计1次；占比=关键词命中论文数/该筛选条件样本论文数×100%。样本不代表会议全量。"
+    },
+    {
+      "year": 2025,
+      "total": 46,
+      "abstractCount": 46,
+      "keywordCoverage": 40,
+      "years": [
+        2025
+      ],
+      "conferences": [
+        {
+          "name": "CVPR",
+          "count": 23
+        },
+        {
+          "name": "ICCV",
+          "count": 23
+        },
+        {
+          "name": "ECCV",
+          "count": 0
+        }
+      ],
+      "topics": [
+        {
+          "name": "3D vision",
+          "count": 12,
+          "percent": 26.08695652173913
+        },
+        {
+          "name": "Diffusion models",
+          "count": 9,
+          "percent": 19.565217391304348
+        },
+        {
+          "name": "Video understanding",
+          "count": 9,
+          "percent": 19.565217391304348
+        },
+        {
+          "name": "Few-shot learning",
+          "count": 6,
+          "percent": 13.043478260869565
+        },
+        {
+          "name": "Image generation",
+          "count": 6,
+          "percent": 13.043478260869565
+        },
+        {
+          "name": "Multimodal learning",
+          "count": 6,
+          "percent": 13.043478260869565
+        },
+        {
+          "name": "Vision-language",
+          "count": 6,
+          "percent": 13.043478260869565
+        },
+        {
+          "name": "Image restoration",
+          "count": 5,
+          "percent": 10.869565217391305
+        },
+        {
+          "name": "Self-supervised learning",
+          "count": 5,
+          "percent": 10.869565217391305
+        },
+        {
+          "name": "Autonomous driving",
+          "count": 4,
+          "percent": 8.695652173913043
+        },
+        {
+          "name": "Depth estimation",
+          "count": 3,
+          "percent": 6.521739130434782
+        },
+        {
+          "name": "Image segmentation",
+          "count": 3,
+          "percent": 6.521739130434782
+        },
+        {
+          "name": "Neural rendering",
+          "count": 3,
+          "percent": 6.521739130434782
+        },
+        {
+          "name": "Transformers",
+          "count": 3,
+          "percent": 6.521739130434782
+        },
+        {
+          "name": "Pose estimation",
+          "count": 2,
+          "percent": 4.3478260869565215
+        },
+        {
+          "name": "Visual recognition",
+          "count": 2,
+          "percent": 4.3478260869565215
+        },
+        {
+          "name": "Domain adaptation",
+          "count": 1,
+          "percent": 2.1739130434782608
+        }
+      ],
+      "top10": [
+        {
+          "name": "3D vision",
+          "count": 12,
+          "percent": 26.08695652173913
+        },
+        {
+          "name": "Diffusion models",
+          "count": 9,
+          "percent": 19.565217391304348
+        },
+        {
+          "name": "Video understanding",
+          "count": 9,
+          "percent": 19.565217391304348
+        },
+        {
+          "name": "Few-shot learning",
+          "count": 6,
+          "percent": 13.043478260869565
+        },
+        {
+          "name": "Image generation",
+          "count": 6,
+          "percent": 13.043478260869565
+        },
+        {
+          "name": "Multimodal learning",
+          "count": 6,
+          "percent": 13.043478260869565
+        },
+        {
+          "name": "Vision-language",
+          "count": 6,
+          "percent": 13.043478260869565
+        },
+        {
+          "name": "Image restoration",
+          "count": 5,
+          "percent": 10.869565217391305
+        },
+        {
+          "name": "Self-supervised learning",
+          "count": 5,
+          "percent": 10.869565217391305
+        },
+        {
+          "name": "Autonomous driving",
+          "count": 4,
+          "percent": 8.695652173913043
+        }
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "name": "3D vision",
+            "count": 12,
+            "percent": 26.08695652173913
+          },
+          {
+            "name": "Diffusion models",
+            "count": 9,
+            "percent": 19.565217391304348
+          },
+          {
+            "name": "Video understanding",
+            "count": 9,
+            "percent": 19.565217391304348
+          },
+          {
+            "name": "Few-shot learning",
+            "count": 6,
+            "percent": 13.043478260869565
+          },
+          {
+            "name": "Image generation",
+            "count": 6,
+            "percent": 13.043478260869565
+          },
+          {
+            "name": "Multimodal learning",
+            "count": 6,
+            "percent": 13.043478260869565
+          },
+          {
+            "name": "Vision-language",
+            "count": 6,
+            "percent": 13.043478260869565
+          },
+          {
+            "name": "Image restoration",
+            "count": 5,
+            "percent": 10.869565217391305
+          },
+          {
+            "name": "Self-supervised learning",
+            "count": 5,
+            "percent": 10.869565217391305
+          },
+          {
+            "name": "Autonomous driving",
+            "count": 4,
+            "percent": 8.695652173913043
+          },
+          {
+            "name": "Depth estimation",
+            "count": 3,
+            "percent": 6.521739130434782
+          },
+          {
+            "name": "Image segmentation",
+            "count": 3,
+            "percent": 6.521739130434782
+          },
+          {
+            "name": "Neural rendering",
+            "count": 3,
+            "percent": 6.521739130434782
+          },
+          {
+            "name": "Transformers",
+            "count": 3,
+            "percent": 6.521739130434782
+          },
+          {
+            "name": "Pose estimation",
+            "count": 2,
+            "percent": 4.3478260869565215
+          },
+          {
+            "name": "Visual recognition",
+            "count": 2,
+            "percent": 4.3478260869565215
+          }
+        ],
+        "edges": [
+          {
+            "source": "Diffusion models",
+            "target": "Image generation",
+            "weight": 4
+          },
+          {
+            "source": "3D vision",
+            "target": "Neural rendering",
+            "weight": 3
+          },
+          {
+            "source": "3D vision",
+            "target": "Self-supervised learning",
+            "weight": 3
+          },
+          {
+            "source": "Image generation",
+            "target": "Image restoration",
+            "weight": 2
+          },
+          {
+            "source": "Multimodal learning",
+            "target": "Vision-language",
+            "weight": 2
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Multimodal learning",
+            "weight": 2
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Video understanding",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Pose estimation",
+            "weight": 2
+          },
+          {
+            "source": "Neural rendering",
+            "target": "Self-supervised learning",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Autonomous driving",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Depth estimation",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Diffusion models",
+            "weight": 2
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Diffusion models",
+            "weight": 2
+          },
+          {
+            "source": "Depth estimation",
+            "target": "Diffusion models",
+            "weight": 2
+          },
+          {
+            "source": "Video understanding",
+            "target": "Visual recognition",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Few-shot learning",
+            "weight": 2
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Image restoration",
+            "weight": 2
+          },
+          {
+            "source": "3D vision",
+            "target": "Image segmentation",
+            "weight": 2
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Video understanding",
+            "weight": 1
+          },
+          {
+            "source": "Neural rendering",
+            "target": "Pose estimation",
+            "weight": 1
+          },
+          {
+            "source": "Pose estimation",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "Image restoration",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Multimodal learning",
+            "weight": 1
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Depth estimation",
+            "weight": 1
+          },
+          {
+            "source": "Depth estimation",
+            "target": "Multimodal learning",
+            "weight": 1
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Multimodal learning",
+            "weight": 1
+          },
+          {
+            "source": "Image generation",
+            "target": "Multimodal learning",
+            "weight": 1
+          },
+          {
+            "source": "Image generation",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Transformers",
+            "weight": 1
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Image restoration",
+            "weight": 1
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Video understanding",
+            "weight": 1
+          },
+          {
+            "source": "Image restoration",
+            "target": "Video understanding",
+            "weight": 1
+          },
+          {
+            "source": "3D vision",
+            "target": "Video understanding",
+            "weight": 1
+          },
+          {
+            "source": "Depth estimation",
+            "target": "Few-shot learning",
+            "weight": 1
+          },
+          {
+            "source": "Depth estimation",
+            "target": "Pose estimation",
+            "weight": 1
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Few-shot learning",
+            "weight": 1
+          },
+          {
+            "source": "Diffusion models",
+            "target": "Pose estimation",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Pose estimation",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Image segmentation",
+            "weight": 1
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Image segmentation",
+            "weight": 1
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Neural rendering",
+            "weight": 1
+          },
+          {
+            "source": "Autonomous driving",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Neural rendering",
+            "weight": 1
+          },
+          {
+            "source": "Image segmentation",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Few-shot learning",
+            "target": "Vision-language",
+            "weight": 1
+          },
+          {
+            "source": "Depth estimation",
+            "target": "Self-supervised learning",
+            "weight": 1
+          },
+          {
+            "source": "Multimodal learning",
+            "target": "Video understanding",
+            "weight": 1
+          }
+        ]
+      },
+      "formula": "每篇每词计1次；占比=关键词命中论文数/该筛选条件样本论文数×100%。样本不代表会议全量。"
+    }
+  ]
+}

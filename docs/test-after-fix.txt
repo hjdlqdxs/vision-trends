@@ -1,0 +1,111 @@
+TAP version 13
+(node:34324) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: extracts phrase variants once and respects word boundaries
+ok 1 - extracts phrase variants once and respects word boundaries
+  ---
+  duration_ms: 1.7793
+  type: 'test'
+  ...
+# Subtest: rejects wrong conference, year parity and dangerous links
+ok 2 - rejects wrong conference, year parity and dangerous links
+  ---
+  duration_ms: 1.4513
+  type: 'test'
+  ...
+# Subtest: CRUD persists, deduplicates variants and retains manual edits on reimport
+ok 3 - CRUD persists, deduplicates variants and retains manual edits on reimport
+  ---
+  duration_ms: 1.6628
+  type: 'test'
+  ...
+# Subtest: same title in different editions remains distinct
+ok 4 - same title in different editions remains distinct
+  ---
+  duration_ms: 0.5352
+  type: 'test'
+  ...
+# Subtest: SQLite persists across reopen
+ok 5 - SQLite persists across reopen
+  ---
+  duration_ms: 16.3959
+  type: 'test'
+  ...
+# Subtest: ranking counts documents, co-occurrence is undirected
+ok 6 - ranking counts documents, co-occurrence is undirected
+  ---
+  duration_ms: 0.4523
+  type: 'test'
+  ...
+# Subtest: trends distinguish zero hits, absent data and non-held conference years
+ok 7 - trends distinguish zero hits, absent data and non-held conference years
+  ---
+  duration_ms: 0.2419
+  type: 'test'
+  ...
+# Subtest: CSV round-trip handles commas, newlines, quotes and formula neutralization
+ok 8 - CSV round-trip handles commas, newlines, quotes and formula neutralization
+  ---
+  duration_ms: 0.6332
+  type: 'test'
+  ...
+# Subtest: official parser supports quoted CVF and unquoted ECVA links
+ok 9 - official parser supports quoted CVF and unquoted ECVA links
+  ---
+  duration_ms: 1.1571
+  type: 'test'
+  ...
+# Subtest: detail parser extracts official abstract and PDF without fabricating missing text
+ok 10 - detail parser extracts official abstract and PDF without fabricating missing text
+  ---
+  duration_ms: 1.1525
+  type: 'test'
+  ...
+# Subtest: crawler rejects arbitrary hosts, credentials, ports and non-HTTPS
+ok 11 - crawler rejects arbitrary hosts, credentials, ports and non-HTTPS
+  ---
+  duration_ms: 0.2014
+  type: 'test'
+  ...
+# Subtest: crawler reports anti-bot challenge rather than caching it as valid data
+ok 12 - crawler reports anti-bot challenge rather than caching it as valid data
+  ---
+  duration_ms: 8.2944
+  type: 'test'
+  ...
+POST /api/papers: 论文标题需为3至600字符
+# Subtest: API CRUD, duplicate edits and malformed input return expected statuses
+ok 13 - API CRUD, duplicate edits and malformed input return expected statuses
+  ---
+  duration_ms: 44.3756
+  type: 'test'
+  ...
+POST /api/papers: 需要管理员口令：点击左下角管理权限设置
+POST /api/papers: 拒绝跨站写入
+# Subtest: cloud reads are public, writes need token and cross-site writes are rejected
+ok 14 - cloud reads are public, writes need token and cross-site writes are rejected
+  ---
+  duration_ms: 10.4633
+  type: 'test'
+  ...
+# Subtest: online fallback imports results and batch continues after missing title
+ok 15 - online fallback imports results and batch continues after missing title
+  ---
+  duration_ms: 8.563
+  type: 'test'
+  ...
+# Subtest: clearing edited keywords regenerates labels from updated title and abstract
+ok 16 - clearing edited keywords regenerates labels from updated title and abstract
+  ---
+  duration_ms: 5.3356
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 138.3894

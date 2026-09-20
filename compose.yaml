@@ -1,0 +1,16 @@
+services:
+  vision-trends:
+    build: .
+    restart: unless-stopped
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+      ADMIN_TOKEN: ${ADMIN_TOKEN:?Set ADMIN_TOKEN in .env with at least 16 characters}
+    ports:
+      - "80:3000"
+    volumes:
+      - papers:/app/var
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  papers:

@@ -1,0 +1,9 @@
+{
+  "name": "Vision Trends Course Prototype",
+  "id": "vision-trends-course-local",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": { "allowedDomains": ["none"] }
+}
