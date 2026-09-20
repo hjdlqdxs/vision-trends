@@ -1,4 +1,4 @@
-import { escapeHtml as esc, graphSvg, rankRows, lineSvg, COLORS } from './charts.js';
+import { escapeHtml as esc, graphSvg, rankRows, lineSvg, COLORS, keywordLink, researchBackLink, librarySearchParams, clearKeywordLink } from './charts.js';
 import { mountImport } from './import.js';
 
 const app = document.querySelector('#app');
@@ -35,7 +35,7 @@ function bindFilters(params, page) {
 }
 function bindKeywords(params = new URLSearchParams()) {
   app.querySelectorAll('[data-keyword]').forEach(element => {
-    const navigate = () => { const p = new URLSearchParams(); for (const k of ['conference', 'year']) if (params.get(k)) p.set(k, params.get(k)); p.set('keyword', element.dataset.keyword); location.hash = `#/papers?${p}`; };
+    const navigate = () => { const sourcePage = location.hash.slice(1).split('?')[0].split('/')[1] || 'overview'; location.hash = keywordLink(element.dataset.keyword, params, sourcePage); };
     element.addEventListener('click', navigate);
     element.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(); } });
   });
@@ -90,15 +90,16 @@ async function overview(params, version) {
 async function papers(params, version) {
   const result = await api(`/api/papers?${params}`);
   if (version !== routeVersion) return;
-  app.innerHTML = heading('YOUR RESEARCH LIBRARY', '论文资料库', '将感兴趣的研究，整理成自己的知识地图。', '<button id="add-paper" class="primary">＋ 新增论文</button><a class="subtle-link" href="#/import">采集论文 ↗</a>') +
+  const back = researchBackLink(params);
+  app.innerHTML = `<a id="research-back" class="research-back" href="${esc(back.href)}">← ${esc(back.label)}</a>` + heading('YOUR RESEARCH LIBRARY', '论文资料库', '将感兴趣的研究，整理成自己的知识地图。', '<button id="add-paper" class="primary">＋ 新增论文</button><a class="subtle-link" href="#/import">采集论文 ↗</a>') +
     `<form id="search-form" class="toolbar"><input type="search" name="q" placeholder="搜索论文标题、编号、关键词或摘要…" aria-label="搜索论文" value="${esc(params.get('q') || '')}"><select name="conference" aria-label="筛选会议">${conferenceOptions(params.get('conference'))}</select><select name="year" aria-label="筛选年份">${yearOptions(params.get('year'))}</select><label><input type="checkbox" name="exact" ${params.get('exact') === 'true' ? 'checked' : ''}> 精确标题</label><button type="submit" class="primary">搜索</button></form>` +
-    `<div class="list-meta"><span>共 ${result.total} 篇论文 ${params.get('keyword') ? `· 方向：<span class="pill">${esc(params.get('keyword'))}</span> <a href="#/papers">清除 ×</a>` : ''}</span><a href="/api/export?${params}" download>↓ 导出 CSV</a></div>` +
+    `<div class="list-meta"><span>共 ${result.total} 篇论文 ${params.get('keyword') ? `· 方向：<span class="pill">${esc(params.get('keyword'))}</span> <a href="${esc(clearKeywordLink(params))}">清除 ×</a>` : ''}</span><a href="/api/export?${params}" download>↓ 导出 CSV</a></div>` +
     (result.total ? `<section class="panel">${paperTable(result.papers, true)}</section><div class="pagination"><button id="prev-page" ${result.page <= 1 ? 'disabled' : ''}>← 上一页</button><span>${result.page} / ${Math.ceil(result.total / result.pageSize)}</span><button id="next-page" ${result.page * result.pageSize >= result.total ? 'disabled' : ''}>下一页 →</button></div>` : `<section class="panel empty"><strong>还没有找到这篇论文</strong><p>本地资料库暂无匹配结果，可到官方会议目录继续查找。</p>${params.get('q') ? '<button id="online-search" class="primary">联网查找并入库</button><div id="online-status" class="prose spaced"></div>' : '<a href="#/import" class="subtle-link">前往采集工作台 →</a>'}</section>`) +
     '<div class="note">本地搜索支持标题、编号、摘要和关键词；未命中时自动尝试联网。精确标题查询只匹配完整标题。线上写入需管理员口令。</div>';
   document.querySelector('#add-paper').onclick = () => editPaper();
   document.querySelector('#search-form').onsubmit = event => {
-    event.preventDefault(); const p = new URLSearchParams(new FormData(event.target));
-    if (p.has('exact')) p.set('exact', 'true'); location.hash = `#/papers?${p}`;
+    event.preventDefault(); const p = librarySearchParams(new FormData(event.target), params);
+    location.hash = `#/papers?${p}`;
   };
   for (const [id, delta] of [['prev-page', -1], ['next-page', 1]]) document.querySelector(`#${id}`)?.addEventListener('click', () => { const p = new URLSearchParams(params); p.set('page', result.page + delta); location.hash = `#/papers?${p}`; });
   const online = document.querySelector('#online-search');

@@ -1,6 +1,42 @@
 export const COLORS = ['#315f48', '#9581b5', '#d29770'];
 export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
+// Chart drilldowns carry their origin in the URL, so reloads retain the way back.
+export function researchBackLink(params) {
+  const match = (params.get('returnTo') || '').match(/^#\/(overview|evolution)(?:\?([^#]*))?$/);
+  const page = match?.[1] || 'overview';
+  const source = match ? new URLSearchParams(match[2] || '') : params;
+  const scope = new URLSearchParams();
+  if (['CVPR', 'ICCV', 'ECCV'].includes(source.get('conference'))) scope.set('conference', source.get('conference'));
+  if (/^\d{4}$/.test(source.get('year') || '')) scope.set('year', source.get('year'));
+  return { href: `#/${page}${scope.size ? `?${scope}` : ''}`,
+    label: page === 'evolution' ? '返回年度演变' : '返回研究总览' };
+}
+
+export function keywordLink(keyword, params, sourcePage) {
+  const target = new URLSearchParams();
+  for (const key of ['conference', 'year']) if (params.get(key)) target.set(key, params.get(key));
+  target.set('keyword', keyword);
+  const source = new URLSearchParams(params);
+  if (['overview', 'evolution'].includes(sourcePage)) source.set('returnTo', `#/${sourcePage}?${params}`);
+  target.set('returnTo', researchBackLink(source).href);
+  return `#/papers?${target}`;
+}
+
+export function librarySearchParams(formParams, previous) {
+  const next = new URLSearchParams(formParams);
+  if (next.has('exact')) next.set('exact', 'true');
+  if (previous.has('keyword')) next.set('keyword', previous.get('keyword'));
+  if (previous.has('returnTo')) next.set('returnTo', researchBackLink(previous).href);
+  return next;
+}
+
+export function clearKeywordLink(params) {
+  const next = new URLSearchParams(params);
+  next.delete('keyword'); next.delete('page');
+  return `#/papers${next.size ? `?${next}` : ''}`;
+}
+
 export function graphSvg(graph) {
   const positions = graph.nodes.map((n, i) => {
     const angle = i * 2.39996 - 1.1;
