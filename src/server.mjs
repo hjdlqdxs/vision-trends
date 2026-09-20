@@ -86,7 +86,10 @@ export function createApp({ database = openDatabase(process.env.DB_PATH || resol
           const id = Number(match[1]);
           const old = database.get(id);
           if (!old) return send(res, 404, { error: '论文不存在' });
-          const result = database.save({ ...old, ...body }, id);
+          const merged = { ...old, ...body };
+          // An explicit switch to automatic extraction must discard stale tags.
+          if (body.keywordMethod === 'controlled-vocabulary-v1' && body.keywords === undefined) delete merged.keywords;
+          const result = database.save(merged, id);
           return send(res, result.duplicate ? 409 : 200, result.duplicate ? { error: '修改后与已有论文重复' } : result);
         }
         if (req.method === 'POST' && ['/api/crawl', '/api/search-online', '/api/crawl-edition'].includes(path)) {
