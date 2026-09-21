@@ -16,53 +16,126 @@ function recoverLinks(frames) {
     const frame = frames[index];
     for (const node of frame.findAll(n => n.type === 'FRAME' || n.type === 'TEXT')) {
       const saved = node.getPluginData('visionTrendsTarget');
-      if (/^\d$/.test(saved)) { links.push([node, Number(saved)]); continue; }
       if (node.type === 'FRAME') {
         const label = node.children.find(child => child.type === 'TEXT')?.characters;
         const nav = PAGE_NAMES.indexOf(label);
-        if (node.parent === frame && node.x === 20 && nav >= 0 && nav < 6) links.push([node, nav]);
+        if (node.width <= 260 && node.height <= 64 && nav >= 0 && nav < 6) links.push([node, nav]);
+        else if (label && /^(?:←\s*)?返回研究总览$/.test(label.trim())) links.push([node, 0]);
         else if (['编辑', '新增论文', '编辑论文'].includes(label)) links.push([node, 7]);
         else if (label === '删除') links.push([node, 8]);
         else if (['保存论文', '确认删除', '取消', '返回论文库', '开始采集'].includes(label)) links.push([node, 1]);
         else if (label === '搜索') links.push([node, 9]);
         else if (label === '▶ 播放 / 暂停') links.push([node, 4]);
         else if (label === '▶ 播放演变') links.push([node, 3]);
-        else if (index === 0 && node.parent.name === 'Frame' && node.width === 145 && node.height === 40) links.push([node, 9]);
+        else if (index === 0 && node.width === 145 && node.height === 40) links.push([node, 9]);
+        else if (/^\d$/.test(saved)) links.push([node, Number(saved)]);
       } else if (node.type === 'TEXT') {
         // Original generator has no metadata: recover only recognisable positions.
         if (index === 0 && /^\d{2}   /.test(node.characters)) links.push([node, 9]);
         if (index === 4 && node.x === 50 && node.y >= 100 && node.y <= 496) links.push([node, 9]);
         if ([1, 9].includes(index) && node.x === 25 && [100, 200, 300, 400].includes(node.y)) links.push([node, 6]);
+        if (/^(?:←\s*)?返回研究总览$/.test(node.characters.trim()) && node.parent === frame) links.push([node, 0]);
+        if (/^\d$/.test(saved) && !links.some(([item]) => item === node)) links.push([node, Number(saved)]);
+      } else if (/^\d$/.test(saved)) {
+        links.push([node, Number(saved)]);
       }
     }
   }
   return links;
 }
+function navigationActions(reaction) {
+  return reaction.actions || (reaction.action ? [reaction.action] : []);
+}
+function validClick(node, destinationId) {
+  const clicks = (node.reactions || []).filter(r => r.trigger && r.trigger.type === 'ON_CLICK');
+  return clicks.length === 1 && navigationActions(clicks[0]).length === 1 &&
+    navigationActions(clicks[0])[0].type === 'NODE' && navigationActions(clicks[0])[0].navigation === 'NAVIGATE' &&
+    navigationActions(clicks[0])[0].destinationId === destinationId;
+}
+async function addReturnEntrances(frames) {
+  for (const index of [1, 9]) {
+    const frame = frames[index];
+    if (frame.findAll(n => n.type === 'TEXT' && /^(?:←\s*)?返回研究总览$/.test(n.characters.trim())).length) continue;
+    await withDeadline(figma.loadFontAsync({ family: 'Inter', style: 'Regular' }), '加载返回按钮字体');
+    const button = figma.createFrame(); frame.appendChild(button);
+    button.name = '返回研究总览 · 整块可点击'; button.x = 1130; button.y = 82; button.resize(260, 42);
+    button.cornerRadius = 8; button.fills = [{ type: 'SOLID', color: { r: .87, g: .91, b: .81 } }];
+    button.setPluginData('visionTrendsTarget', '0');
+    const label = figma.createText(); button.appendChild(label);
+    label.fontName = { family: 'Inter', style: 'Regular' }; label.fontSize = 16;
+    label.characters = '← 返回研究总览'; label.x = 16; label.y = 11;
+    label.fills = [{ type: 'SOLID', color: { r: .12, g: .30, b: .25 } }];
+  }
+}
+function expandTextTargets(links) {
+  const expanded = [...links];
+  for (const [node, target] of links) {
+    if (node.type !== 'TEXT') continue;
+    const parent = node.parent;
+    // Standalone list text receives an invisible, padded click area. Reuse it on reruns.
+    const key = node.id;
+    let hit = parent.children.find(n => n.getPluginData('visionTrendsHitFor') === key);
+    if (!hit) { hit = figma.createRectangle(); parent.appendChild(hit); hit.setPluginData('visionTrendsHitFor', key); }
+    hit.name = `点击区域 · ${node.characters.slice(0, 45)}`;
+    hit.x = Math.max(0, node.x - 6); hit.y = Math.max(0, node.y - 5);
+    const rowWidth = /^\d{2}   /.test(node.characters) ? parent.width - hit.x - 20 : node.width + 16;
+    hit.resize(Math.max(44, rowWidth), Math.max(28, node.height + 10));
+    hit.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 }, opacity: .001 }];
+    hit.setPluginData('visionTrendsTarget', String(target));
+    expanded.push([hit, target]);
+  }
+  return [...new Map(expanded.map(([node, target]) => [node.id, [node, target]])).values()];
+}
+function showRepairPanel() {
+  figma.showUI(`<html><meta charset="utf-8"><style>body{font:13px system-ui;padding:18px;color:#263d35}h2{font-size:17px}pre{white-space:pre-wrap;max-height:240px;overflow:auto;background:#f2f5eb;padding:10px}button{padding:9px 18px;background:#1f4c40;color:white;border:0;border-radius:6px}</style><h2>视界 · 批量修复页面跳转</h2><p id="status">正在识别已有画板…</p><pre id="detail">保留画板和视觉设计，检查已知按钮的目标。</pre><button onclick="parent.postMessage({pluginMessage:{type:'close'}},'*')">关闭</button><script>onmessage=e=>{const m=e.data.pluginMessage;if(!m)return;document.getElementById('status').textContent=m.status;document.getElementById('detail').textContent=m.detail||''}</script></html>`, { width: 430, height: 400 });
+  figma.ui.onmessage = message => { if (message.type === 'close') figma.closePlugin(); };
+}
 async function connectFrames(frames, links) {
-  for (const [node, target] of links) node.setPluginData('visionTrendsTarget', String(target));
+  showRepairPanel();
   let completed = 0;
-  const progress = figma.notify(`正在设置页面跳转：0/${links.length}；不会重复创建画板`, { timeout: Infinity });
-  try {
-    // Each API call and the whole connection phase have a deadline.
-    await withDeadline((async () => {
-      for (let i = 0; i < links.length; i += 8) {
-        await Promise.all(links.slice(i, i + 8).map(async ([node, target]) => {
-          if (node.reactions && node.reactions.length) return; // Preserve existing/user-edited interactions.
-          await withDeadline(node.setReactionsAsync([{ trigger: { type: 'ON_CLICK' }, actions: [{ type: 'NODE', destinationId: frames[target].id, navigation: 'NAVIGATE', transition: null, preserveScrollPosition: false }] }]), `设置“${node.name}”跳转`);
-        }));
-        completed = Math.min(i + 8, links.length);
-        console.log(`Vision Trends: ${completed}/${links.length}`);
-      }
-    })(), '设置页面跳转', 25000);
-  } finally { progress.cancel(); }
+  let changed = 0;
+  const failures = [];
+  const startedAt = Date.now();
+  for (const [node, target] of links) node.setPluginData('visionTrendsTarget', String(target));
+  for (let i = 0; i < links.length; i += 6) {
+    if (Date.now() - startedAt > 90000) { failures.push(`仍有${links.length - i}个位置未处理：已达到90秒运行上限，可再次运行继续。`); break; }
+    await Promise.all(links.slice(i, i + 6).map(async ([node, target]) => {
+      try {
+        const destinationId = frames[target].id;
+        if (!validClick(node, destinationId)) {
+          const other = (node.reactions || []).filter(r => !r.trigger || r.trigger.type !== 'ON_CLICK');
+          await withDeadline(node.setReactionsAsync([...other, { trigger: { type: 'ON_CLICK' }, actions: [{ type: 'NODE', destinationId, navigation: 'NAVIGATE', transition: null, preserveScrollPosition: false }] }]), `设置“${node.name}”跳转`, 5000);
+          if (!validClick(node, destinationId)) throw new Error('写入后未读回正确目标');
+          changed++;
+        }
+        // Child text can intercept a click on an otherwise-correct full button.
+        if (node.type === 'FRAME') {
+          for (const child of node.children.filter(n => n.type === 'TEXT' && (n.reactions || []).some(r => r.trigger && r.trigger.type === 'ON_CLICK'))) {
+            await withDeadline(child.setReactionsAsync(child.reactions.filter(r => !r.trigger || r.trigger.type !== 'ON_CLICK')), '移除文字上的重复点击', 5000);
+          }
+        }
+        completed++;
+      } catch (error) { failures.push(`${node.name}: ${error.message}`); }
+    }));
+    figma.ui.postMessage({ status: `已检查 ${Math.min(i + 6, links.length)}/${links.length}；成功 ${completed}；失败 ${failures.length}`, detail: failures.join('\n') || '正在设置整块按钮点击与返回路径，请稍候…' });
+  }
   figma.currentPage.name = 'Vision Trends · 全页面可编辑原型';
+  try {
+    if (!(figma.currentPage.flowStartingPoints || []).some(flow => flow.nodeId === frames[0].id)) {
+      figma.currentPage.flowStartingPoints = [...(figma.currentPage.flowStartingPoints || []), { nodeId: frames[0].id, name: '视界演示' }];
+    }
+  } catch (error) { failures.push(`设置演示起点：${error.message}`); }
   figma.viewport.scrollAndZoomIntoView([frames[0]]);
-  figma.closePlugin(`10张画板已保留，${completed}个交互位置已检查。请点击右上角播放按钮验收。`);
+  const report = { checked: links.length, completed, changed, failures, timestamp: new Date().toISOString() };
+  figma.currentPage.setPluginData('visionTrendsRepairReport', JSON.stringify(report));
+  figma.ui.postMessage({ status: failures.length ? '修复结束，但有未完成项，请截取此窗口。' : `修复完成：${completed}个位置检查通过，更新${changed}个跳转。`, detail: failures.join('\n') || '请点击“关闭”，关闭旧预览标签，从01研究总览重新播放。\n\n已检查：侧栏、热门方向、论文标题、编辑/删除、保存/取消、返回入口。\n\n这只是原型导航，不等于搜索、导入或趋势动画引擎。' });
+  return report;
 }
 async function main() {
   const existing = existingFrames();
   if (existing.every(Boolean)) {
-    await connectFrames(existing, recoverLinks(existing));
+    await addReturnEntrances(existing);
+    await connectFrames(existing, expandTextTargets(recoverLinks(existing)));
     return;
   }
   if (existing.some(Boolean)) throw new Error('检测到部分原型画板，已停止以避免重复创建。请提供截图检查，不要删除现有设计。');
@@ -160,6 +233,7 @@ async function main() {
     links.push([button(dialog, i === 7 ? '保存论文' : '确认删除', 490, 473, 160), 1]);
     links.push([button(dialog, '取消', 305, 473, 160, false), 1]);
   }
-  await connectFrames(frames, [...navs, ...links]);
+  await addReturnEntrances(frames);
+  await connectFrames(frames, expandTextTargets(recoverLinks(frames)));
 }
 main().catch(error => { console.error(error); figma.closePlugin(`原型未全部完成：${error.message}`); });
