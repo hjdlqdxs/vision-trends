@@ -1,8 +1,73 @@
 // Figma development plugin: creates editable native frames, not application code.
-// Import manifest.json in Figma desktop, run once in a blank design file.
+// Re-running repairs known links in existing frames without recreating the design.
+const PAGE_NAMES = ['研究总览', '论文资料库', '采集工作台', '热度走势', '年度演变', '关于与数据', '论文详情', '编辑论文', '删除确认', '关键词查询结果'];
+function withDeadline(promise, label, milliseconds = 8000) {
+  return new Promise((resolve, reject) => {
+    const timeout = setTimeout(() => reject(new Error(`${label}超时。画板已保留，请先手动检查 Prototype 连线。`)), milliseconds);
+    Promise.resolve(promise).then(value => { clearTimeout(timeout); resolve(value); }, error => { clearTimeout(timeout); reject(error); });
+  });
+}
+function existingFrames() {
+  return PAGE_NAMES.map((name, index) => figma.currentPage.children.find(node => node.type === 'FRAME' && node.name === `${String(index + 1).padStart(2, '0')} ${name}`));
+}
+function recoverLinks(frames) {
+  const links = [];
+  for (let index = 0; index < frames.length; index++) {
+    const frame = frames[index];
+    for (const node of frame.findAll(n => n.type === 'FRAME' || n.type === 'TEXT')) {
+      const saved = node.getPluginData('visionTrendsTarget');
+      if (/^\d$/.test(saved)) { links.push([node, Number(saved)]); continue; }
+      if (node.type === 'FRAME') {
+        const label = node.children.find(child => child.type === 'TEXT')?.characters;
+        const nav = PAGE_NAMES.indexOf(label);
+        if (node.parent === frame && node.x === 20 && nav >= 0 && nav < 6) links.push([node, nav]);
+        else if (['编辑', '新增论文', '编辑论文'].includes(label)) links.push([node, 7]);
+        else if (label === '删除') links.push([node, 8]);
+        else if (['保存论文', '确认删除', '取消', '返回论文库', '开始采集'].includes(label)) links.push([node, 1]);
+        else if (label === '搜索') links.push([node, 9]);
+        else if (label === '▶ 播放 / 暂停') links.push([node, 4]);
+        else if (label === '▶ 播放演变') links.push([node, 3]);
+        else if (index === 0 && node.parent.name === 'Frame' && node.width === 145 && node.height === 40) links.push([node, 9]);
+      } else if (node.type === 'TEXT') {
+        // Original generator has no metadata: recover only recognisable positions.
+        if (index === 0 && /^\d{2}   /.test(node.characters)) links.push([node, 9]);
+        if (index === 4 && node.x === 50 && node.y >= 100 && node.y <= 496) links.push([node, 9]);
+        if ([1, 9].includes(index) && node.x === 25 && [100, 200, 300, 400].includes(node.y)) links.push([node, 6]);
+      }
+    }
+  }
+  return links;
+}
+async function connectFrames(frames, links) {
+  for (const [node, target] of links) node.setPluginData('visionTrendsTarget', String(target));
+  let completed = 0;
+  const progress = figma.notify(`正在设置页面跳转：0/${links.length}；不会重复创建画板`, { timeout: Infinity });
+  try {
+    // Each API call and the whole connection phase have a deadline.
+    await withDeadline((async () => {
+      for (let i = 0; i < links.length; i += 8) {
+        await Promise.all(links.slice(i, i + 8).map(async ([node, target]) => {
+          if (node.reactions && node.reactions.length) return; // Preserve existing/user-edited interactions.
+          await withDeadline(node.setReactionsAsync([{ trigger: { type: 'ON_CLICK' }, actions: [{ type: 'NODE', destinationId: frames[target].id, navigation: 'NAVIGATE', transition: null, preserveScrollPosition: false }] }]), `设置“${node.name}”跳转`);
+        }));
+        completed = Math.min(i + 8, links.length);
+        console.log(`Vision Trends: ${completed}/${links.length}`);
+      }
+    })(), '设置页面跳转', 25000);
+  } finally { progress.cancel(); }
+  figma.currentPage.name = 'Vision Trends · 全页面可编辑原型';
+  figma.viewport.scrollAndZoomIntoView([frames[0]]);
+  figma.closePlugin(`10张画板已保留，${completed}个交互位置已检查。请点击右上角播放按钮验收。`);
+}
 async function main() {
-  await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
-  await figma.loadFontAsync({ family: 'Inter', style: 'Semi Bold' });
+  const existing = existingFrames();
+  if (existing.every(Boolean)) {
+    await connectFrames(existing, recoverLinks(existing));
+    return;
+  }
+  if (existing.some(Boolean)) throw new Error('检测到部分原型画板，已停止以避免重复创建。请提供截图检查，不要删除现有设计。');
+  await withDeadline(figma.loadFontAsync({ family: 'Inter', style: 'Regular' }), '加载常规字体');
+  await withDeadline(figma.loadFontAsync({ family: 'Inter', style: 'Semi Bold' }), '加载粗体字体');
   const rgb = hex => ({ r: parseInt(hex.slice(1, 3), 16) / 255, g: parseInt(hex.slice(3, 5), 16) / 255, b: parseInt(hex.slice(5, 7), 16) / 255 });
   const ink = '#263d35', green = '#1f4c40', muted = '#83917b', line = '#e4e8e0';
   function rect(parent, x, y, w, h, fill, radius = 0) {
@@ -95,10 +160,6 @@ async function main() {
     links.push([button(dialog, i === 7 ? '保存论文' : '确认删除', 490, 473, 160), 1]);
     links.push([button(dialog, '取消', 305, 473, 160, false), 1]);
   }
-  for (const [node, target] of [...navs, ...links]) await node.setReactionsAsync([{ trigger: { type: 'ON_CLICK' }, actions: [{ type: 'NODE', destinationId: frames[target].id, navigation: 'NAVIGATE', transition: null, preserveScrollPosition: false }] }]);
-  figma.currentPage.name = 'Vision Trends · 全页面可编辑原型';
-  figma.viewport.scrollAndZoomIntoView([frames[0]]);
-  figma.notify('已创建10个可编辑原型画板及点击跳转。请人工复核并设置展示起点、分享权限。');
-  figma.closePlugin();
+  await connectFrames(frames, [...navs, ...links]);
 }
-main().catch(error => { figma.notify(error.message, { error: true }); figma.closePlugin(); });
+main().catch(error => { console.error(error); figma.closePlugin(`原型未全部完成：${error.message}`); });
