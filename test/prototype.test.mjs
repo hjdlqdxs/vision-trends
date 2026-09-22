@@ -90,7 +90,7 @@ test('text click targets are removed from button children so the entire parent h
   assert.equal(destination(button), h.page.children[0].id);
 });
 
-test('a stalled Figma call reports an incomplete repair but other links still complete', async () => {
+test('a stalled async Figma call falls back to the writable reactions property', async () => {
   const h = harness(); await h.main();
   const first = h.page.children[0].children.find(n => n.type === 'FRAME' && n.x === 20);
   first.reactions = [];
@@ -99,10 +99,9 @@ test('a stalled Figma call reports an incomplete repair but other links still co
   other.reactions = [];
   await h.main();
   const report = JSON.parse(h.page.getPluginData('visionTrendsRepairReport'));
-  assert.equal(report.failures.length, 1);
-  assert.match(report.failures[0], /超时/);
+  assert.equal(report.failures.length, 0);
   assert.equal(destination(other), h.page.children[0].id);
-  assert.match(h.messages.at(-1).status, /有未完成项/);
+  assert.match(h.messages.at(-1).status, /修复完成/);
 });
 
 test('partial designs are left untouched rather than duplicated', async () => {

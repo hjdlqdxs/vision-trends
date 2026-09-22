@@ -46,6 +46,14 @@ function recoverLinks(frames) {
 function navigationActions(reaction) {
   return reaction.actions || (reaction.action ? [reaction.action] : []);
 }
+function errorText(error) {
+  if (error instanceof Error && error.message) return error.message;
+  if (typeof error === 'string' && error) return error;
+  try {
+    const json = JSON.stringify(error);
+    return json && json !== '{}' ? json : 'Figma 未返回具体错误信息';
+  } catch { return 'Figma 未返回具体错误信息'; }
+}
 function validClick(node, destinationId) {
   const clicks = (node.reactions || []).filter(r => r.trigger && r.trigger.type === 'ON_CLICK');
   return clicks.length === 1 && navigationActions(clicks[0]).length === 1 &&
@@ -102,20 +110,34 @@ async function connectFrames(frames, links) {
     await Promise.all(links.slice(i, i + 6).map(async ([node, target]) => {
       try {
         const destinationId = frames[target].id;
+        if (!destinationId) throw new Error(`目标画板不存在（索引 ${target}）`);
         if (!validClick(node, destinationId)) {
           const other = (node.reactions || []).filter(r => !r.trigger || r.trigger.type !== 'ON_CLICK');
-          await withDeadline(node.setReactionsAsync([...other, { trigger: { type: 'ON_CLICK' }, actions: [{ type: 'NODE', destinationId, navigation: 'NAVIGATE', transition: null, preserveScrollPosition: false }] }]), `设置“${node.name}”跳转`, 5000);
+          const reactions = [...other, { trigger: { type: 'ON_CLICK' }, actions: [{ type: 'NODE', destinationId, navigation: 'NAVIGATE', transition: null, preserveScrollPosition: false }] }];
+          try {
+            if (typeof node.setReactionsAsync === 'function') await withDeadline(node.setReactionsAsync(reactions), `设置“${node.name || node.type}”跳转`, 5000);
+            else node.reactions = reactions;
+          } catch (firstError) {
+            // Older Figma desktop builds expose reactions as a writable property but reject the async method.
+            try { node.reactions = reactions; } catch { throw new Error(`异步接口失败：${errorText(firstError)}`); }
+          }
           if (!validClick(node, destinationId)) throw new Error('写入后未读回正确目标');
           changed++;
         }
         // Child text can intercept a click on an otherwise-correct full button.
         if (node.type === 'FRAME') {
           for (const child of node.children.filter(n => n.type === 'TEXT' && (n.reactions || []).some(r => r.trigger && r.trigger.type === 'ON_CLICK'))) {
-            await withDeadline(child.setReactionsAsync(child.reactions.filter(r => !r.trigger || r.trigger.type !== 'ON_CLICK')), '移除文字上的重复点击', 5000);
+            const cleaned = child.reactions.filter(r => !r.trigger || r.trigger.type !== 'ON_CLICK');
+            try {
+              if (typeof child.setReactionsAsync === 'function') await withDeadline(child.setReactionsAsync(cleaned), '移除文字上的重复点击', 5000);
+              else child.reactions = cleaned;
+            } catch (firstError) {
+              try { child.reactions = cleaned; } catch { throw new Error(`移除文字重复点击失败：${errorText(firstError)}`); }
+            }
           }
         }
         completed++;
-      } catch (error) { failures.push(`${node.name}: ${error.message}`); }
+      } catch (error) { failures.push(`${node.name || node.type || '未知图层'}: ${errorText(error)}`); }
     }));
     figma.ui.postMessage({ status: `已检查 ${Math.min(i + 6, links.length)}/${links.length}；成功 ${completed}；失败 ${failures.length}`, detail: failures.join('\n') || '正在设置整块按钮点击与返回路径，请稍候…' });
   }
@@ -124,7 +146,7 @@ async function connectFrames(frames, links) {
     if (!(figma.currentPage.flowStartingPoints || []).some(flow => flow.nodeId === frames[0].id)) {
       figma.currentPage.flowStartingPoints = [...(figma.currentPage.flowStartingPoints || []), { nodeId: frames[0].id, name: '视界演示' }];
     }
-  } catch (error) { failures.push(`设置演示起点：${error.message}`); }
+  } catch (error) { failures.push(`设置演示起点：${errorText(error)}`); }
   figma.viewport.scrollAndZoomIntoView([frames[0]]);
   const report = { checked: links.length, completed, changed, failures, timestamp: new Date().toISOString() };
   figma.currentPage.setPluginData('visionTrendsRepairReport', JSON.stringify(report));
