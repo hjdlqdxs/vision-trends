@@ -2,6 +2,16 @@
 
 当前状态：本地实现与验证，不等于已部署华为云。需要学生提供实际 CodeArts 项目与 ECS 访问条件，再执行这些步骤。不要在博客中把 localhost 当作云端访问地址。
 
+## 免费 Render 部署（本次个人作业推荐）
+
+老师已说明个人练习无需强制使用华为云。项目根目录的 `render.yaml` 已配置免费 Docker Web Service。Render 免费实例会休眠，首次访问可能等待几十秒；免费实例没有持久磁盘，SQLite 写入在实例重启或重新部署后可能恢复为种子数据，适合课程演示，不适合作为生产服务。
+
+1. 将本仓库同步到自己的 GitHub **公开仓库**，不要提交 `.env`、密码或私钥。
+2. 注册/登录 [Render](https://render.com/)，选择 **New → Blueprint**，连接 GitHub 并选择该仓库。
+3. Render 读取 `render.yaml`，确认服务名 `vision-trends`、计划 `Free`，点击 **Apply**。配置会自动生成 `ADMIN_TOKEN`，不要把它写入博客或截图。
+4. 等待部署完成，在 Render 的服务页打开 `https://你的服务名.onrender.com`，先访问 `/api/health`，应返回 `{"ok":true,"version":"1.0.0"}`，再检查总览、论文库、图谱和趋势页面。
+5. 将真实 Render URL 填入博客，并截图部署日志、健康检查和网页访问结果。首次唤醒较慢属于免费实例限制。
+
 ## 1. CodeArts 项目与仓库
 
 1. 在 CodeArts 新建项目，项目名称使用**本人学号**，创建空仓库，不勾选自动 README。
