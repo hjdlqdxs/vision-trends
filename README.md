@@ -6,7 +6,8 @@
 
 - 学号 / 姓名：**待学生填写**
 - 课程地址 / 作业地址：**待学生填写**
-- CodeArts 项目地址：**待创建以学号命名的项目并填写**
+- CodeArts 项目：[102400409](https://devcloud.cn-north-4.huaweicloud.com/projectman/scrum/3c8a2a500474485cb17c62c02c96db74/workitem/backlog)
+- CodeArts 仓库：[vision-trends](https://devcloud.cn-north-4.huaweicloud.com/codehub/project/3c8a2a500474485cb17c62c02c96db74/codehub/3089334/home)
 - AI 编程助手：Codex，本会话系统标识 GPT-6；负责需求草稿、代码、测试和文档初稿。学生审阅、修改和理解记录待本人补充。
 - 截止时间：2026-09-24 23:59（以课程通知为准）。
 

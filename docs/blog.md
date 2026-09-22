@@ -9,7 +9,7 @@
 | 这个作业的目标 | 与AI结对完成需求分析、专用工具原型、顶会论文管理与热点分析、测试及华为云部署，并反思人机协作 |
 | 其他参考文献 | 《构建之法》第3/4/8章；CVF Open Access；ECVA；DBLP API；Node.js文档；Google JavaScript Style Guide |
 
-**CodeArts 项目地址：待创建以本人学号命名的项目并填写实际链接。**
+**CodeArts 项目地址：[102400409](https://devcloud.cn-north-4.huaweicloud.com/projectman/scrum/3c8a2a500474485cb17c62c02c96db74/workitem/backlog)。**
 
 **AI 编程助手：Codex 桌面会话，本次系统标识 GPT-6，主要用于需求草稿、实现、测试、修复与文档。界面显示的具体版本以实际截图为准。**
 
@@ -35,9 +35,9 @@
 
 | 入口 | 实际地址/状态 |
 |---|---|
-| CodeArts 仓库 | 待本人填写 |
+| CodeArts 仓库 | [vision-trends](https://devcloud.cn-north-4.huaweicloud.com/codehub/project/3c8a2a500474485cb17c62c02c96db74/codehub/3089334/home)（已创建，代码推送待验证） |
 | 代码规范 | 仓库 `codestyle.md`，待替换为CodeArts可点击URL |
-| 原型网页 | [视界 · Figma交互原型](https://www.figma.com/proto/bzD97C7vaq4mSYRu66Gi5t/%E8%A7%86%E7%95%8C%E2%80%94%E2%80%94%E9%A1%B6%E4%BC%9A%E7%83%AD%E8%AF%8D%E7%BB%9F%E8%AE%A1%E5%B9%B3%E5%8F%B0%E5%8E%9F%E5%9E%8B?page-id=0%3A1&node-id=2-2&viewport=40%2C307%2C0.19&t=Jn46pMajG0sacE0l-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2%3A2)（无痕访问待验证） |
+| 原型网页 | [视界 · Figma交互原型](https://www.figma.com/proto/bzD97C7vaq4mSYRu66Gi5t/%E8%A7%86%E7%95%8C%E2%80%94%E2%80%94%E9%A1%B6%E4%BC%9A%E7%83%AD%E8%AF%8D%E7%BB%9F%E8%AE%A1%E5%B9%B3%E5%8F%B0%E5%8E%9F%E5%9E%8B?page-id=0%3A1&node-id=2-2&viewport=40%2C307%2C0.19&t=Jn46pMajG0sacE0l-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2%3A2)（用户已确认无痕访问成功） |
 | 华为云部署地址 | 待实际部署并外网验收后填写 |
 | 本地启动 | `node scripts/seed.mjs` → `node src/server.mjs` → http://127.0.0.1:3000 |
 | 版本 | 本地1.0.0；远端Release状态待核对 |
@@ -121,7 +121,7 @@ AI工作区实际时间区间可从 `git log --format="%h %cI %s" --reverse` 核
 
 插件与说明见 `prototype/`。它生成的是可编辑设计稿，应用由 `src/` 与 `public/` 独立实现，未使用原型生成代码。
 
-**原型网页：[视界 · Figma交互原型](https://www.figma.com/proto/bzD97C7vaq4mSYRu66Gi5t/%E8%A7%86%E7%95%8C%E2%80%94%E2%80%94%E9%A1%B6%E4%BC%9A%E7%83%AD%E8%AF%8D%E7%BB%9F%E8%AE%A1%E5%B9%B3%E5%8F%B0%E5%8E%9F%E5%9E%8B?page-id=0%3A1&node-id=2-2&viewport=40%2C307%2C0.19&t=Jn46pMajG0sacE0l-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2%3A2)。用户已提供分享链接；尚未确认未登录访客可访问。**
+**原型网页：[视界 · Figma交互原型](https://www.figma.com/proto/bzD97C7vaq4mSYRu66Gi5t/%E8%A7%86%E7%95%8C%E2%80%94%E2%80%94%E9%A1%B6%E4%BC%9A%E7%83%AD%E8%AF%8D%E7%BB%9F%E8%AE%A1%E5%B9%B3%E5%8F%B0%E5%8E%9F%E5%9E%8B?page-id=0%3A1&node-id=2-2&viewport=40%2C307%2C0.19&t=Jn46pMajG0sacE0l-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2%3A2)。用户已提供分享链接，并确认无痕窗口访问成功。**
 
 用户截图显示插件154个位置检查通过，6个当前栏目保持本页；调整预览缩放后，用户确认论文资料库可以返回研究总览。这不代表所有交互已人工验收。热门词仍指向统一示例结果，图谱与趋势原型仍有简化，真实统计和动画由独立应用实现。修复过程见 `prototype-repair.md`。
 
@@ -639,7 +639,7 @@ export function toCsv(papers) {
 
 Node默认测试子进程受当前Windows管理环境限制，测试命令使用非隔离模式；测试数据库仍分别创建。运行时不用Python，Python仅用于可选图表导出。
 
-自动浏览器截图受Windows IPC限制，不能把HTTP测试或统计图视为真实浏览器验收。用户已手动浏览本地网站并确认返回导航可用；Figma插件执行有成功截图，原型返回路径已由用户确认，分享链接的未登录访问待验证。华为云尚未部署。
+自动浏览器截图受Windows IPC限制，不能把HTTP测试或统计图视为真实浏览器验收。用户已手动浏览本地网站并确认返回导航可用；Figma插件执行有成功截图，原型返回路径已由用户确认，分享链接已由用户通过无痕窗口验证可访问。华为云尚未部署。
 
 <a id="reflection"></a>
 ## 十、心路历程、收获（必须本人写）
@@ -667,7 +667,7 @@ Node默认测试子进程受当前Windows管理环境限制，测试命令使用
 ## 十二、发布与提交核对
 
 - 在CodeArts以学号命名项目，推送真实历史，核对dev→main、15次以上commit、Issue/PR和1.0.0 Release。
-- 用无痕窗口验证原型分享链接，整理设计过程与本人修改证据，补充尚未完成的原型交互。
+- 整理设计过程与本人修改证据，补充尚未完成的原型交互。
 - 部署到华为云，给出真实公网URL和访问截图。
 - 补真实界面展示、对话截图、个人PSP与感想，不把占位内容当完成。
 - 发布博客后测试目录、图床、GIF和外部链接；在2026-09-24 23:59前通过课程页面提交，留意审核及班级群额外通知。
