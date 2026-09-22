@@ -7,9 +7,11 @@ const source = readFileSync(new URL('../prototype/code.js', import.meta.url), 'u
 function harness() {
   let serial = 0;
   let writes = 0;
+  let rejectedSelfLinks = 0;
   const messages = [];
   const makeNode = type => {
     const data = new Map();
+    let storedReactions = [];
     const node = { type, id: String(++serial), name: type === 'FRAME' ? 'Frame' : type,
       x: 0, y: 0, width: type === 'TEXT' ? 160 : 100, height: type === 'TEXT' ? 20 : 100,
       children: [], reactions: [], characters: '', parent: null,
@@ -23,7 +25,24 @@ function harness() {
         return this.children.flatMap(child => [...(predicate(child) ? [child] : []), ...child.findAll(predicate)]);
       },
       async setReactionsAsync(value) { writes++; this.reactions = value; },
+      seedReactions(value) { storedReactions = value; },
     };
+    Object.defineProperty(node, 'reactions', {
+      get: () => storedReactions,
+      set(value) {
+        let root = node;
+        while (root.parent && root.parent.type !== 'PAGE') root = root.parent;
+        for (const reaction of value) {
+          for (const action of reaction.actions || (reaction.action ? [reaction.action] : [])) {
+            if (action.type === 'NODE' && action.navigation === 'NAVIGATE' && action.destinationId === root.id) {
+              rejectedSelfLinks++;
+              throw 'for NAVIGATE actions, destinations must be a different top-level frame on the same page';
+            }
+          }
+        }
+        storedReactions = value;
+      },
+    });
     return node;
   };
   const page = makeNode('PAGE');
@@ -35,18 +54,18 @@ function harness() {
   const context = { figma, console: { log() {}, error() {} },
     setTimeout: (callback, ms) => setTimeout(callback, Math.min(ms, 30)), clearTimeout };
   runInNewContext(source + '\nglobalThis.api = { main, recoverLinks, expandTextTargets, validClick, connectFrames };', context);
-  return { ...context.api, figma, page, messages, makeNode, writes: () => writes };
+  return { ...context.api, figma, page, messages, makeNode, writes: () => writes, rejectedSelfLinks: () => rejectedSelfLinks };
 }
 const destination = node => node.reactions.find(r => r.trigger?.type === 'ON_CLICK')?.actions[0].destinationId;
 
-test('full prototype generation connects all sixty sidebar buttons and adds two whole return buttons', async () => {
+test('full prototype generation connects other pages and leaves six active sidebar items on their own page', async () => {
   const h = harness(); await h.main();
   assert.equal(h.page.children.length, 10);
   const frames = h.page.children;
   for (const frame of frames) {
     const sidebar = frame.children.filter(n => n.type === 'FRAME' && n.x === 20);
     assert.equal(sidebar.length, 6);
-    sidebar.forEach((button, i) => assert.equal(destination(button), frames[i].id));
+    sidebar.forEach((button, i) => assert.equal(destination(button), frames[i] === frame ? undefined : frames[i].id));
   }
   for (const index of [1, 9]) {
     const back = frames[index].children.find(n => n.name === '返回研究总览 · 整块可点击');
@@ -54,6 +73,8 @@ test('full prototype generation connects all sixty sidebar buttons and adds two 
     assert.equal(back.width, 260);
   }
   assert.equal(JSON.parse(h.page.getPluginData('visionTrendsRepairReport')).failures.length, 0);
+  assert.equal(JSON.parse(h.page.getPluginData('visionTrendsRepairReport')).samePage, 6);
+  assert.equal(h.rejectedSelfLinks(), 0);
   assert.equal(h.page.flowStartingPoints[0].nodeId, frames[0].id);
 });
 
@@ -92,7 +113,7 @@ test('text click targets are removed from button children so the entire parent h
 
 test('a stalled async Figma call falls back to the writable reactions property', async () => {
   const h = harness(); await h.main();
-  const first = h.page.children[0].children.find(n => n.type === 'FRAME' && n.x === 20);
+  const first = h.page.children[2].children.find(n => n.type === 'FRAME' && n.x === 20);
   first.reactions = [];
   first.setReactionsAsync = () => new Promise(() => {});
   const other = h.page.children[1].children.find(n => n.type === 'FRAME' && n.x === 20);
@@ -102,6 +123,21 @@ test('a stalled async Figma call falls back to the writable reactions property',
   assert.equal(report.failures.length, 0);
   assert.equal(destination(other), h.page.children[0].id);
   assert.match(h.messages.at(-1).status, /修复完成/);
+});
+
+test('repair removes stale clicks on the active parent and text while keeping unrelated events', async () => {
+  const h = harness(); await h.main();
+  const overview = h.page.children[0];
+  const active = overview.children.find(n => n.type === 'FRAME' && n.x === 20);
+  active.seedReactions([{ trigger: { type: 'ON_CLICK' }, actions: [{ type: 'NODE', navigation: 'NAVIGATE', destinationId: overview.id }] },
+    { trigger: { type: 'ON_HOVER' }, actions: [] }]);
+  active.children[0].reactions = [{ trigger: { type: 'ON_CLICK' }, actions: [{ type: 'NODE', navigation: 'NAVIGATE', destinationId: h.page.children[1].id }] }];
+  await h.main();
+  assert.equal(destination(active), undefined);
+  assert.equal(active.reactions[0].trigger.type, 'ON_HOVER');
+  assert.equal(active.children[0].reactions.length, 0);
+  assert.equal(h.rejectedSelfLinks(), 0);
+  assert.equal(JSON.parse(h.page.getPluginData('visionTrendsRepairReport')).failures.length, 0);
 });
 
 test('partial designs are left untouched rather than duplicated', async () => {

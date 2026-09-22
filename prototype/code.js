@@ -102,6 +102,7 @@ async function connectFrames(frames, links) {
   showRepairPanel();
   let completed = 0;
   let changed = 0;
+  let samePage = 0;
   const failures = [];
   const startedAt = Date.now();
   for (const [node, target] of links) node.setPluginData('visionTrendsTarget', String(target));
@@ -109,11 +110,18 @@ async function connectFrames(frames, links) {
     if (Date.now() - startedAt > 90000) { failures.push(`仍有${links.length - i}个位置未处理：已达到90秒运行上限，可再次运行继续。`); break; }
     await Promise.all(links.slice(i, i + 6).map(async ([node, target]) => {
       try {
-        const destinationId = frames[target].id;
+        const destinationId = frames[target]?.id;
         if (!destinationId) throw new Error(`目标画板不存在（索引 ${target}）`);
-        if (!validClick(node, destinationId)) {
+        let owner = node;
+        while (owner.parent && owner.parent !== figma.currentPage) owner = owner.parent;
+        const staysHere = owner.id === destinationId;
+        const clickIsCorrect = () => staysHere
+          ? !(node.reactions || []).some(r => r.trigger && r.trigger.type === 'ON_CLICK')
+          : validClick(node, destinationId);
+        if (!clickIsCorrect()) {
           const other = (node.reactions || []).filter(r => !r.trigger || r.trigger.type !== 'ON_CLICK');
-          const reactions = [...other, { trigger: { type: 'ON_CLICK' }, actions: [{ type: 'NODE', destinationId, navigation: 'NAVIGATE', transition: null, preserveScrollPosition: false }] }];
+          // Figma rejects NAVIGATE to the source's own top-level frame.
+          const reactions = staysHere ? other : [...other, { trigger: { type: 'ON_CLICK' }, actions: [{ type: 'NODE', destinationId, navigation: 'NAVIGATE', transition: null, preserveScrollPosition: false }] }];
           try {
             if (typeof node.setReactionsAsync === 'function') await withDeadline(node.setReactionsAsync(reactions), `设置“${node.name || node.type}”跳转`, 5000);
             else node.reactions = reactions;
@@ -121,7 +129,7 @@ async function connectFrames(frames, links) {
             // Older Figma desktop builds expose reactions as a writable property but reject the async method.
             try { node.reactions = reactions; } catch { throw new Error(`异步接口失败：${errorText(firstError)}`); }
           }
-          if (!validClick(node, destinationId)) throw new Error('写入后未读回正确目标');
+          if (!clickIsCorrect()) throw new Error('写入后未读回正确点击设置');
           changed++;
         }
         // Child text can intercept a click on an otherwise-correct full button.
@@ -136,6 +144,7 @@ async function connectFrames(frames, links) {
             }
           }
         }
+        if (staysHere) samePage++;
         completed++;
       } catch (error) { failures.push(`${node.name || node.type || '未知图层'}: ${errorText(error)}`); }
     }));
@@ -148,9 +157,9 @@ async function connectFrames(frames, links) {
     }
   } catch (error) { failures.push(`设置演示起点：${errorText(error)}`); }
   figma.viewport.scrollAndZoomIntoView([frames[0]]);
-  const report = { checked: links.length, completed, changed, failures, timestamp: new Date().toISOString() };
+  const report = { checked: links.length, completed, changed, samePage, failures, timestamp: new Date().toISOString() };
   figma.currentPage.setPluginData('visionTrendsRepairReport', JSON.stringify(report));
-  figma.ui.postMessage({ status: failures.length ? '修复结束，但有未完成项，请截取此窗口。' : `修复完成：${completed}个位置检查通过，更新${changed}个跳转。`, detail: failures.join('\n') || '请点击“关闭”，关闭旧预览标签，从01研究总览重新播放。\n\n已检查：侧栏、热门方向、论文标题、编辑/删除、保存/取消、返回入口。\n\n这只是原型导航，不等于搜索、导入或趋势动画引擎。' });
+  figma.ui.postMessage({ status: failures.length ? '修复结束，但有未完成项，请截取此窗口。' : `修复完成：${completed}个位置检查通过，更新${changed}个点击设置。`, detail: failures.join('\n') || `当前栏目保持本页：${samePage}处。\n\n请点击“关闭”，关闭旧预览标签，从01研究总览重新播放。\n\n已检查：侧栏、热门方向、论文标题、编辑/删除、保存/取消、返回入口。\n\n这只是原型导航，不等于搜索、导入或趋势动画引擎。` });
   return report;
 }
 async function main() {
