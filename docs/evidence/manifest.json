@@ -96,5 +96,12 @@
     "description": "用户提供：CVF官方ICCV2023来源页面正常打开",
     "transformation": "none; original screenshot bytes",
     "sha256": "aa4900705108e025a6a4594833c3d38e1138ea8b919bc43115a7f46fdf43ab4d"
+  },
+  {
+    "file": "batch-import-success.png",
+    "sourceAttachment": "codex-clipboard-a663e12b-1940-46ac-84c8-5d2ca2927487.png",
+    "description": "用户提供：TXT识别2个不同标题，ICCV2023批量采集成功2/2；可见Segment Anything已存在、未覆盖。第二条详情位于截图外。",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "b4d853ad8a40c6c32af30c41e5a24fd47996e6f98a9487acd24190b6e6326d26"
   }
 ]
