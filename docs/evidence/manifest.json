@@ -61,5 +61,40 @@
     "description": "用户提供：5e5e647构建失败及Dockerfile第12行定位",
     "transformation": "none; original screenshot bytes",
     "sha256": "ef6c3782f0d7a1fcda9ede06658eb40d337e17372a51540bb74ecd71b48712e4"
+  },
+  {
+    "file": "single-crawl-success.png",
+    "sourceAttachment": "777a25e2295e7b729f7ee903d132828a.png",
+    "description": "用户提供：ICCV2023 Segment Anything采集成功1/1，已新增，摘要已获取，2个标签",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "d9c13154a6f73dee63215cdb1affa70dcb9058d60ba3a818e1a6851f29ccbec7"
+  },
+  {
+    "file": "exact-title-result.png",
+    "sourceAttachment": "e244740a7b5e6b9ad923e7cbfdd36dbf.png",
+    "description": "用户提供：完整标题精确查询仅命中1篇，编号190",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "0d4ac624fb81cd2df909adde4ed7db94615f7443e895cd617debf6a4615ddf4f"
+  },
+  {
+    "file": "segment-anything-detail.png",
+    "sourceAttachment": "80e3d7fa384f357759a6da1d935e01d5.png",
+    "description": "用户提供：详情显示官方摘要、作者、标签、来源及采集时间",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "e7b6377d346ce90c737afb1b7dc97bb3a10e0c2a75f300aaddd023fe126e5c51"
+  },
+  {
+    "file": "segment-anything-pdf.png",
+    "sourceAttachment": "ac86c35a60bfdc36f127f25dd9612acf.png",
+    "description": "用户提供：原文PDF打开并显示Segment Anything首页",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "9a9b406cb0f3745f2437855e88d295630ce03c2d5ed668096d264ad1298f6851"
+  },
+  {
+    "file": "segment-anything-official.png",
+    "sourceAttachment": "e656ec9af581a0c9e8e4073330d8174d.png",
+    "description": "用户提供：CVF官方ICCV2023来源页面正常打开",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "aa4900705108e025a6a4594833c3d38e1138ea8b919bc43115a7f46fdf43ab4d"
   }
 ]
