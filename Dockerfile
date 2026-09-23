@@ -9,5 +9,5 @@ RUN mkdir -p /app/var && chown node:node /app/var
 USER node
 ENV HOST=0.0.0.0 PORT=3000 DB_PATH=/app/var/papers.sqlite
 EXPOSE 3000
-HEALTHCHECK --interval=30s --timeout=5s --start-period=15s CMD-SHELL node -e "const p=process.env.PORT||3000; fetch('http://127.0.0.1:'+p+'/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s CMD node -e "const p=process.env.PORT||3000; fetch('http://127.0.0.1:'+p+'/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
 CMD ["sh", "-c", "node scripts/seed.mjs && exec node src/server.mjs"]
