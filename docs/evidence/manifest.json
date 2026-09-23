@@ -124,5 +124,19 @@
     "description": "用户截图：切换为论文数量，截至2025年；用户另以文字确认播放、暂停、拖动、切换指标均正常",
     "transformation": "none; original screenshot bytes",
     "sha256": "7d59a650da893da6981fc43371417854e17be0f4c6cd726ca7e45bab8210d3f3"
+  },
+  {
+    "file": "graph-overview.png",
+    "sourceAttachment": "codex-clipboard-23d79c1a-72d5-44fa-9618-f091c1f54b61.png",
+    "description": "用户截图：研究总览显示热门研究方向与关键词共现图谱",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "cb93f3d44e2c340e051ddb3fffef9bde1b6af1277845f568660daa40f6d7e570"
+  },
+  {
+    "file": "graph-keyword-filter.png",
+    "sourceAttachment": "codex-clipboard-7b9d13d2-a81b-4b9e-afec-5c2b6dbf2f83.png",
+    "description": "用户截图：点击图谱节点后进入论文资料库，按3D vision筛选并显示1篇结果，同时可返回研究总览",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "7feacbc2af5260f1efe3307f46b64427c3474615c241da0f9172b23ac1a0c2c4"
   }
 ]
