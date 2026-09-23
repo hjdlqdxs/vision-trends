@@ -1,6 +1,6 @@
 # 华为云 ECS / CodeArts 部署与发布
 
-当前状态：本地实现与验证，不等于已部署华为云。需要学生提供实际 CodeArts 项目与 ECS 访问条件，再执行这些步骤。不要在博客中把 localhost 当作云端访问地址。
+当前状态：已在Render Free部署 https://vision-trends.onrender.com/ ，用户提供成功与无痕访问截图；4项公网只读API检查通过。CodeArts已上传首批历史和源码包，后续修复仍需同步。老师已允许个人作业使用其他免费平台，下面ECS方案仅作可选资料。
 
 ## 免费 Render 部署（本次个人作业推荐）
 
@@ -26,7 +26,7 @@ git push origin v1.0.0
 
 3. 学生实际审阅并修改后，在 dev 分支提交自己的修改；使用本人 Git 身份，准确说明修改原因。
 4. CodeArts 新建 Issue，例如“人工复核领域词典和样本覆盖”；完成后用真实 PR 将 dev 合并 main。不要创建虚构的评审记录。
-5. 在仓库发布页创建 Release，版本 **1.0.0**，标签 `v1.0.0`，上传源码 release zip，粘贴 `docs/release-notes.md`。本地 tag 和 zip 不等于远端 Release 已发布。
+5. 本账号CodeArts仓库界面没有独立Release入口；实际使用仓库v1.0.0标签，加“制品仓库→软件发布库”上传vision-trends-1.0.0.zip，发布版本设为1.0.0。用户已提供上传截图并确认版本字段修改；不要把它描述为未出现的GitHub式Release页面。
 
 ## 2. ECS 容器部署
 

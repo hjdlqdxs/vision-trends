@@ -1,12 +1,12 @@
 # 视界：与 AI 结对构建计算机视觉顶会热词平台
 
-> **提交前状态说明**：这是依据真实项目生成的博客草稿。文中“待本人填写/待完成”必须在实际操作后补齐。尚未部署的云地址、尚未发布的原型、未发生的人工审阅和个人感想不能改写为完成。
+> **提交前状态说明**：这是依据真实项目生成的博客草稿。文中“待本人填写/待完成”必须在实际操作后补齐。真实部署与原型链接已补齐；个人工时、阅读反思、未发生的人工审阅仍须本人填写。
 
-| 这个作业属于哪个课程 | 待本人填写课程班级链接 |
+| 这个作业属于哪个课程 | [福州大学软件工程实践2026](https://bbs.csdn.net/forums/FZU_university_2026) |
 |---|---|
-| 学号-姓名 | 待本人填写 |
-| 这个作业要求在哪里 | 待本人填写作业原文链接 |
-| 这个作业的目标 | 与AI结对完成需求分析、专用工具原型、顶会论文管理与热点分析、测试及华为云部署，并反思人机协作 |
+| 学号-姓名 | 102400409-郑雯心 |
+| 这个作业要求在哪里 | [第二次作业——与AI结对编程](https://bbs.csdn.net/topics/620526370) |
+| 这个作业的目标 | 与AI结对完成需求分析、专用工具原型、顶会论文管理与热点分析、测试及云端部署（依老师通知使用免费Render），并反思人机协作 |
 | 其他参考文献 | 《构建之法》第3/4/8章；CVF Open Access；ECVA；DBLP API；Node.js文档；Google JavaScript Style Guide |
 
 **CodeArts 项目地址：[102400409](https://devcloud.cn-north-4.huaweicloud.com/projectman/scrum/3c8a2a500474485cb17c62c02c96db74/workitem/backlog)。**
@@ -35,12 +35,13 @@
 
 | 入口 | 实际地址/状态 |
 |---|---|
-| CodeArts 仓库 | [vision-trends](https://devcloud.cn-north-4.huaweicloud.com/codehub/project/3c8a2a500474485cb17c62c02c96db74/codehub/3089334/home)（已创建，代码推送待验证） |
-| 代码规范 | 仓库 `codestyle.md`，待替换为CodeArts可点击URL |
+| CodeArts 仓库 | [vision-trends](https://devcloud.cn-north-4.huaweicloud.com/codehub/project/3c8a2a500474485cb17c62c02c96db74/codehub/3089334/home)（用户截图确认27次提交、2分支、1标签；后续部署修复待同步） |
+| 代码规范 | [codestyle.md（GitHub同步仓库）](https://github.com/hjdlqdxs/vision-trends/blob/main/codestyle.md) |
 | 原型网页 | [视界 · Figma交互原型](https://www.figma.com/proto/bzD97C7vaq4mSYRu66Gi5t/%E8%A7%86%E7%95%8C%E2%80%94%E2%80%94%E9%A1%B6%E4%BC%9A%E7%83%AD%E8%AF%8D%E7%BB%9F%E8%AE%A1%E5%B9%B3%E5%8F%B0%E5%8E%9F%E5%9E%8B?page-id=0%3A1&node-id=2-2&viewport=40%2C307%2C0.19&t=Jn46pMajG0sacE0l-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2%3A2)（用户已确认无痕访问成功） |
-| 华为云部署地址 | 待实际部署并外网验收后填写 |
+| 公网部署地址 | [Render免费实例](https://vision-trends.onrender.com/)；[健康检查](https://vision-trends.onrender.com/api/health) |
+| GitHub同步仓库 | [hjdlqdxs/vision-trends](https://github.com/hjdlqdxs/vision-trends) |
 | 本地启动 | `node scripts/seed.mjs` → `node src/server.mjs` → http://127.0.0.1:3000 |
-| 版本 | 本地1.0.0；远端Release状态待核对 |
+| 版本 | CodeArts已有v1.0.0标签与1.0.0源码包；Render运行后续修复提交a9671ee，首版标签保留不改写 |
 
 代码规范来源为 [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)、[Node.js官方文档](https://nodejs.org/docs/latest-v22.x/api/) 和 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript)。
 
@@ -79,18 +80,28 @@ AI工作区实际时间区间可从 `git log --format="%h %cI %s" --reverse` 核
 
 | 人工检查项 | 初稿问题 | 我的调整 | 原因与截图 |
 |---|---|---|---|
-| 图谱标签与布局 | 待本人实际检查 | 待填写 | 待填写 |
-| 手机视口信息层级 | 待本人实际检查 | 待填写 | 待填写 |
-| 查询空态/部分导入失败 | 待本人实际检查 | 待填写 | 待填写 |
+| 侧栏按钮点击范围 | 只有文字可点击 | 用户手工调整整块Frame，随后反馈其他跳转问题 | 扩大可点击区域；具体操作前后截图仍待整理 |
+| 原型跳转失败 | 当前栏目导航回自身画板被Figma拒绝 | 用户提供完整报错，AI修复插件，用户重新执行 | 同画板保持原位，跨画板导航；见下面真实结果截图 |
+| 预览裁切 | 放大后右侧返回按钮不可见 | 用户按指导切换适应屏幕并确认返回可用 | 展示整张画板，避免把裁切误认成缺失 |
 
-需补：工具画板截图、交互连线截图、修改前后截图、发布链接与独立访问验证。不能把下面的统计配图当成原型截图。
+以下为用户提供的真实原型截图；分享链接已由用户无痕验证。操作前后与聊天对话证据仍需整理，不能把统计配图当成原型截图。
+
+![Figma总览预览](evidence/figma-overview.png)
+
+![Figma画板与交互连线](evidence/figma-connections.png)
+
+![Figma修复结果](evidence/figma-repair-passed.png)
 
 <a id="demo"></a>
 ## 五、成品展示
 
 应用实现论文采集、论文管理、Top10、关键词图谱和多年度三会动画，并扩展年度榜单、CSV导出、会议介绍和来源审计。
 
-以下素材直接使用应用统计模块导出的真实数据制作，是**统计结果图/GIF，不是浏览器界面截图**。189篇样本来自官方页面，目标192篇中的3次网络失败单独留痕。请在发布博客时上传图片/GIF到博客平台，调整地址，测试动图可播放。
+下图是用户提供的公网网站无痕访问截图，确认热度走势界面可显示。截图不单独证明播放动画或云端写入已验收。
+
+![Render公网网站热度走势](evidence/cloud-trends-incognito.png)
+
+其余以下素材直接使用应用统计模块导出的真实数据制作，是**统计结果图/GIF，不是浏览器界面截图**。189篇样本来自官方页面，目标192篇中的3次网络失败单独留痕。请在发布博客时上传图片/GIF到博客平台，调整地址，测试动图可播放。
 
 ### 5.1 Top10：从方向进入论文
 
@@ -199,6 +210,16 @@ AI把功能映射为六个导航页面与详情弹窗，给出NABCD和验收标�
 
 完整事实记录、真实输出摘要和待执行提示词建议见 `docs/ai-collaboration.md`。所有对话截图都应从实际Codex界面截取，不制作仿对话图片。
 
+### 补充案例：AI部署配置错误与修复
+
+部署时用户提供Render失败截图。AI检查发现自己在提交5e5e647中把Dockerfile健康检查指令写成CMD-SHELL，实际应使用CMD。此前JavaScript语法检查与原型测试都不能验证Dockerfile语法，因此没有发现该错误。本地Docker引擎未启动，AI也未完成容器构建验证。
+
+修复提交为a9671ee。用户第一次仍查看旧部署5e5e647的失败记录，AI根据SOURCE字段指出版本不同，随后用户推送新代码。Render自动构建成功，用户在无痕窗口打开公网走势页面。这个过程表明，必须对照实际部署的提交编号，并验证与变更类型相关的构建，而不能仅凭其他测试通过认定部署可用。
+
+![Render旧配置构建失败](evidence/render-build-failure.png)
+
+修复后的真实上线截图见文末，完整记录见 `deployment-review.md`。学生贡献为实际执行、提供失败及成功证据；AI贡献为定位自己的错误、修正和后续公网只读验证。
+
 <a id="architecture"></a>
 ## 七、设计实现过程
 
@@ -244,7 +265,7 @@ flowchart TB
 
 ### 7.5 部署设计
 
-Docker以非root用户运行，SQLite保存在具名卷；容器启动幂等导入样本。公网监听要求至少16字符管理员口令，读接口公开，写接口验证Bearer token。默认本地监听127.0.0.1。服务器部署、端口和HTTPS按真实云环境设置，详见 `deploy/README.md`。
+老师后续群通知允许个人练习使用其他免费平台，本次选择Render Free Docker服务，CodeArts继续保存课程代码。Docker以非root用户运行，容器启动导入189篇样本；Render设置PORT，应用监听0.0.0.0，公网写接口使用自动生成的ADMIN_TOKEN。免费实例空闲休眠，SQLite没有持久磁盘，重启或重新部署可能丢失用户修改并恢复种子数据。项目另有Compose具名卷方案，但本次Render未使用该方案。详见 `deploy/README.md` 和 `deployment-review.md`。
 
 <a id="code"></a>
 ## 八、关键代码与解释
@@ -258,13 +279,13 @@ Docker以非root用户运行，SQLite保存在具名卷；容器启动幂等导�
 <a id="tests"></a>
 ## 九、测试与修复
 
-当前16项自动化测试通过，覆盖CRUD、持久化、去重、关键词边界、统计、缺失年份、CSV、官网解析、错误响应、访问权限和在线回退。`docs/test-before-fix.txt`与`docs/test-after-fix.txt`保留真实前后结果。
+当前30项自动化测试曾通过（16项核心、6项导航、8项原型模拟），覆盖CRUD、持久化、去重、关键词边界、统计、缺失年份、CSV、官网解析、错误响应、访问权限和在线回退。`docs/test-before-fix.txt`与`docs/test-after-fix.txt`保留真实前后结果。
 
 另外通过真实HTTP接口采集ICCV 2023《Segment Anything》，取得866字符官方摘要、关键词和PDF链接，随后精确查询命中。使用临时内存库，不修改正式样本；结果见 `docs/live-smoke.json`。首页与前端资源返回200，但资源可访问不等于浏览器交互已验收。
 
 Node默认测试子进程受当前Windows管理环境限制，测试命令使用非隔离模式；测试数据库仍分别创建。运行时不用Python，Python仅用于可选图表导出。
 
-自动浏览器截图受Windows IPC限制，不能把HTTP测试或统计图视为真实浏览器验收。用户已手动浏览本地网站并确认返回导航可用；Figma插件执行有成功截图，原型返回路径已由用户确认，分享链接已由用户通过无痕窗口验证可访问。华为云尚未部署。
+自动浏览器截图受Windows IPC限制，不能把HTTP测试或统计图视为真实浏览器验收。用户已手动浏览本地网站并确认返回导航可用；Figma插件执行有成功截图，原型返回路径已由用户确认，分享链接已由用户通过无痕窗口验证可访问。现已在Render部署；用户无痕窗口截图证明公网走势页可见。AI只读检查健康、论文列表、趋势和权限配置4个接口均返回200，论文总数189，详见 `cloud-readonly-check.json`；云端CRUD及采集仍待管理权限下的实际验证。
 
 <a id="reflection"></a>
 ## 十、心路历程、收获（必须本人写）
@@ -291,10 +312,20 @@ Node默认测试子进程受当前Windows管理环境限制，测试命令使用
 <a id="submission"></a>
 ## 十二、发布与提交核对
 
-- 在CodeArts以学号命名项目，推送真实历史，核对dev→main、15次以上commit、Issue/PR和1.0.0 Release。
+- CodeArts已存在学号项目、27次提交截图、两个分支、v1.0.0标签和源码包；需要补同步后续修复，实际完成Issue/PR审阅证据。
 - 整理设计过程与本人修改证据，补充尚未完成的原型交互。
-- 部署到华为云，给出真实公网URL和访问截图。
+- 已按老师更新通知免费部署到Render，给出真实公网URL和访问截图；仍需云端写入/采集验收。
 - 补真实界面展示、对话截图、个人PSP与感想，不把占位内容当完成。
 - 发布博客后测试目录、图床、GIF和外部链接；在2026-09-24 23:59前通过课程页面提交，留意审核及班级群额外通知。
+
+![CodeArts提交与分支](evidence/codearts-history.png)
+
+![v1.0.0标签](evidence/codearts-tag.png)
+
+![版本包上传成功](evidence/codearts-artifact-upload.png)
+
+上图发布版本仍显示latest；后续本人确认已改为1.0.0，最终字段截图待补。
+
+![Render部署成功](evidence/render-live.png)
 
 详细清单见 `docs/submission-checklist.md`。

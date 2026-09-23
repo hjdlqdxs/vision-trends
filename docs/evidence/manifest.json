@@ -1,0 +1,65 @@
+[
+  {
+    "file": "cloud-trends-incognito.png",
+    "sourceAttachment": "codex-clipboard-93341d3d-322d-4b2c-ab77-1a08445040c6.png",
+    "description": "用户提供：无痕窗口中的Render热度走势，证明公网图表可见，不单独证明动画已播放",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "a575fc665f9e00114d1d52c8c496ec1dbb2289a1ae1016600911de3a2bf28a5c"
+  },
+  {
+    "file": "render-live.png",
+    "sourceAttachment": "codex-clipboard-3f2f5ebb-a7dc-4993-9538-d1d3a56813fc.png",
+    "description": "用户提供：a9671ee部署成功，189篇样本导入",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "a68278ca440e790dd7dbec8f3c0f2d8a2fa4e5cbc4b6c2afce64ab75b7e4b020"
+  },
+  {
+    "file": "codearts-artifact-upload.png",
+    "sourceAttachment": "codex-clipboard-d5058ccd-ad12-4ac9-8965-63d32f85784f.png",
+    "description": "用户提供：1.0.0 ZIP上传成功；此截图发布版本仍是latest，后续用户口头确认已改为1.0.0",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "34f64e831e3430c28f55340656a5789c5bf633cd578b70a9f2d762dea5cbe3ae"
+  },
+  {
+    "file": "codearts-history.png",
+    "sourceAttachment": "codex-clipboard-574839a6-0a31-4e1f-a87a-e404816354f3.png",
+    "description": "用户提供：CodeArts当时有27次提交、2分支、1标签",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "ddde34d33607dfc3257798e1724a99c7d6d3d1125904a146e259bdd9e6f79345"
+  },
+  {
+    "file": "figma-overview.png",
+    "sourceAttachment": "codex-clipboard-ad9e5753-b696-4ee2-9b95-48a8d9ae3348.png",
+    "description": "用户提供：Figma完整总览预览",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "882e5b95278d59ceb3daea619b3089bf6a1d06266bc879f41f9b48ab5977f8d0"
+  },
+  {
+    "file": "figma-repair-passed.png",
+    "sourceAttachment": "codex-clipboard-239aded9-42e3-4ece-b33a-43bb30c69c42.png",
+    "description": "用户提供：154位置通过，当前栏目保持本页6处",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "26b69496b6eb9033253f1deef5641d14955cf4ece45f27f253eea06c321cf527"
+  },
+  {
+    "file": "figma-connections.png",
+    "sourceAttachment": "codex-clipboard-e563eebb-ae58-4109-8d76-2da9b6e0e88a.png",
+    "description": "用户提供：Figma画板及原型交互连线",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "174f0309aeae2af82208e9a19d596ca25213c947aaa765079e73bfdc896e5fe9"
+  },
+  {
+    "file": "codearts-tag.png",
+    "sourceAttachment": "codex-clipboard-8b7cfbba-2a96-4614-b887-d54d62d1c3b0.png",
+    "description": "用户提供：CodeArts v1.0.0标签",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "8f45ce2c125af7ec7077689966b8f251920d226c65f38932f2463949dcaf51be"
+  },
+  {
+    "file": "render-build-failure.png",
+    "sourceAttachment": "codex-clipboard-c38f1388-d3db-499c-b280-fd9c09004cf3.png",
+    "description": "用户提供：5e5e647构建失败及Dockerfile第12行定位",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "ef6c3782f0d7a1fcda9ede06658eb40d337e17372a51540bb74ecd71b48712e4"
+  }
+]

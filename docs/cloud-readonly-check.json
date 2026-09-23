@@ -1,0 +1,201 @@
+{
+  "checkedAt": "2026-09-23T00:57:22.868222+00:00",
+  "baseUrl": "https://vision-trends.onrender.com",
+  "method": "Unauthenticated GET only; no cloud data changes.",
+  "results": [
+    {
+      "path": "/api/health",
+      "status": 200,
+      "passed": true,
+      "data": {
+        "ok": true,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "path": "/api/papers?pageSize=1",
+      "status": 200,
+      "passed": true,
+      "data": {
+        "papers": [
+          {
+            "id": 189,
+            "title": "Tree-NeRV: Efficient Non-Uniform Sampling for Neural Video Representation via Tree-Structured Feature Grids",
+            "conference": "ICCV",
+            "year": 2025,
+            "abstract": "Implicit Neural Representations for Videos (NeRV) have emerged as a powerful paradigm for video representation, enabling direct mappings from frame indices to video frames. However, existing NeRV-based methods do not fully exploit temporal redundancy, as they rely on uniform sampling along the temporal axis, leading to suboptimal Rate-Distortion (RD) performance.To address this limitation, we propose Tree-NeRV, a novel tree-structured feature representation for efficient and adaptive video encoding. Unlike conventional approaches, Tree-NeRV organizes feature representations within a Binary Search Tree (BST), enabling non-uniform sampling along the temporal axis. Additionally, we introduce an optimization-driven sampling strategy, dynamically allocating higher sampling density to regions with greater temporal variation. Extensive experiments demonstrate that Tree-NeRV achieves superior compression efficiency and reconstruction quality, outperforming prior uniform sampling-based methods. Our code is publicly available at https://github.com/zhaojiancheng007/Tree-NeRV.git.",
+            "authors": "Zhao, Jiancheng; Zhan, Yifan; Zhu, Qingtian; Ma, Mingze; Niu, Muyao; Wan, Zunian; Ji, Xiang; Zheng, Yinqiang",
+            "keywords": [
+              "Video understanding"
+            ],
+            "sourceUrl": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhao_Tree-NeRV_Efficient_Non-Uniform_Sampling_for_Neural_Video_Representation_via_Tree-Structured_ICCV_2025_paper.html",
+            "paperUrl": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhao_Tree-NeRV_Efficient_Non-Uniform_Sampling_for_Neural_Video_Representation_via_Tree-Structured_ICCV_2025_paper.pdf",
+            "keywordMethod": "controlled-vocabulary-v1",
+            "retrievedAt": "2026-09-20T08:55:14.404Z",
+            "updatedAt": "2026-09-23T00:42:37.715Z"
+          }
+        ],
+        "total": 189,
+        "page": 1,
+        "pageSize": 1
+      }
+    },
+    {
+      "path": "/api/trends?keyword=3D%20vision",
+      "status": 200,
+      "passed": true,
+      "data": {
+        "keyword": "3D vision",
+        "years": [
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "series": [
+          {
+            "conference": "CVPR",
+            "points": [
+              {
+                "year": 2022,
+                "total": 24,
+                "count": 7,
+                "percent": 29.166666666666668,
+                "status": "sampled"
+              },
+              {
+                "year": 2023,
+                "total": 24,
+                "count": 8,
+                "percent": 33.33333333333333,
+                "status": "sampled"
+              },
+              {
+                "year": 2024,
+                "total": 23,
+                "count": 6,
+                "percent": 26.08695652173913,
+                "status": "sampled"
+              },
+              {
+                "year": 2025,
+                "total": 23,
+                "count": 7,
+                "percent": 30.434782608695656,
+                "status": "sampled"
+              }
+            ]
+          },
+          {
+            "conference": "ICCV",
+            "points": [
+              {
+                "year": 2022,
+                "total": 0,
+                "count": null,
+                "percent": null,
+                "status": "not-held"
+              },
+              {
+                "year": 2023,
+                "total": 24,
+                "count": 5,
+                "percent": 20.833333333333336,
+                "status": "sampled"
+              },
+              {
+                "year": 2024,
+                "total": 0,
+                "count": null,
+                "percent": null,
+                "status": "not-held"
+              },
+              {
+                "year": 2025,
+                "total": 23,
+                "count": 5,
+                "percent": 21.73913043478261,
+                "status": "sampled"
+              }
+            ]
+          },
+          {
+            "conference": "ECCV",
+            "points": [
+              {
+                "year": 2022,
+                "total": 24,
+                "count": 3,
+                "percent": 12.5,
+                "status": "sampled"
+              },
+              {
+                "year": 2023,
+                "total": 0,
+                "count": null,
+                "percent": null,
+                "status": "not-held"
+              },
+              {
+                "year": 2024,
+                "total": 24,
+                "count": 6,
+                "percent": 25,
+                "status": "sampled"
+              },
+              {
+                "year": 2025,
+                "total": 0,
+                "count": null,
+                "percent": null,
+                "status": "not-held"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/config",
+      "status": 200,
+      "passed": true,
+      "data": {
+        "editions": [
+          [
+            "CVPR",
+            2022
+          ],
+          [
+            "ECCV",
+            2022
+          ],
+          [
+            "CVPR",
+            2023
+          ],
+          [
+            "ICCV",
+            2023
+          ],
+          [
+            "CVPR",
+            2024
+          ],
+          [
+            "ECCV",
+            2024
+          ],
+          [
+            "CVPR",
+            2025
+          ],
+          [
+            "ICCV",
+            2025
+          ]
+        ],
+        "writeTokenRequired": true
+      }
+    }
+  ]
+}
