@@ -103,5 +103,26 @@
     "description": "用户提供：TXT识别2个不同标题，ICCV2023批量采集成功2/2；可见Segment Anything已存在、未覆盖。第二条详情位于截图外。",
     "transformation": "none; original screenshot bytes",
     "sha256": "b4d853ad8a40c6c32af30c41e5a24fd47996e6f98a9487acd24190b6e6326d26"
+  },
+  {
+    "file": "trend-percent-2025.png",
+    "sourceAttachment": "ee132704e5c584ec14a604acce2d612a.png",
+    "description": "用户截图：3D vision样本占比，截至2025年",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "1d38512adf68d8388c5dbb5fff57debd7c831b373db2bdb0e0fc215b191d9146"
+  },
+  {
+    "file": "trend-percent-2023.png",
+    "sourceAttachment": "74fd1f6b11aca2cfb9bdbd86e5789a2f.png",
+    "description": "用户截图：滑块截至2023年，后续年份未显示数据点",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "30ce33c33f9448f5605cf6b241c461253e88b3901d5aa254cf00296cb01d2a8b"
+  },
+  {
+    "file": "trend-count-2025.png",
+    "sourceAttachment": "782e942eaaa98fd08ff763c557523818.png",
+    "description": "用户截图：切换为论文数量，截至2025年；用户另以文字确认播放、暂停、拖动、切换指标均正常",
+    "transformation": "none; original screenshot bytes",
+    "sha256": "7d59a650da893da6981fc43371417854e17be0f4c6cd726ca7e45bab8210d3f3"
   }
 ]
